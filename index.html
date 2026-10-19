@@ -1,0 +1,449 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>도시락 주문 장부</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Do+Hyeon&family=Gothic+A1:wght@400;600;800&family=IBM+Plex+Mono:wght@500;600&display=swap">
+<style>
+/* Layout: 한 줄 헤더 + 탭 두 개(내 주문 / 일자별 합계), 날짜 한 줄 = 주문서 한 칸 */
+:root{
+  --bg:#F3F5F0; --card:#FFFFFF; --ink:#1C2320; --muted:#66706A; --line:#DCE1D9;
+  --accent:#2F6B4F; --accent-soft:#E2EEE6; --prem:#B8661A; --prem-soft:#F7EADB;
+  --salad:#5E8A22; --salad-soft:#E9F1DA; --off:#ECEEEA; --warn:#B23B2E;
+  --f-display:"Do Hyeon","Gothic A1",system-ui,sans-serif;
+  --f-body:"Gothic A1",-apple-system,"Apple SD Gothic Neo","Malgun Gothic",sans-serif;
+  --f-num:"IBM Plex Mono",ui-monospace,Menlo,monospace;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#141917; --card:#1C2320; --ink:#E7ECE8; --muted:#97A29B; --line:#2E3833;
+  --accent:#6FC197; --accent-soft:#1F3229; --prem:#E9A35E; --prem-soft:#3A2A1A;
+  --salad:#A9CF6B; --salad-soft:#283319; --off:#181E1B; --warn:#F08A7C; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#141917; --card:#1C2320; --ink:#E7ECE8; --muted:#97A29B; --line:#2E3833;
+  --accent:#6FC197; --accent-soft:#1F3229; --prem:#E9A35E; --prem-soft:#3A2A1A;
+  --salad:#A9CF6B; --salad-soft:#283319; --off:#181E1B; --warn:#F08A7C; color-scheme:dark}
+body{background:var(--bg);color:var(--ink);font-family:var(--f-body);font-size:15px;line-height:1.5}
+.wrap{max-width:760px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:20px 120px;display:flex;flex-direction:column;gap:16px}
+h1{font-family:var(--f-display);font-weight:400;font-size:30px;margin:0;line-height:1.1;text-wrap:balance}
+.sub{color:var(--muted);font-size:13px;margin:4px 0 0}
+.top{display:flex;justify-content:space-between;align-items:flex-end;gap:12px;flex-wrap:wrap}
+.month{display:flex;align-items:center;gap:6px}
+.month b{font-family:var(--f-display);font-weight:400;font-size:24px;min-width:118px;text-align:center}
+button{font:inherit;color:inherit;cursor:pointer}
+button:focus-visible,input:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.icon{width:36px;height:36px;border-radius:10px;border:1px solid var(--line);background:var(--card);font-size:18px;line-height:1}
+.tabs{display:grid;grid-template-columns:1fr 1fr;background:var(--off);border:1px solid var(--line);border-radius:12px;padding:4px;gap:4px;position:sticky;top:env(safe-area-inset-top,0px);z-index:5}
+.tabs button{border:0;background:transparent;border-radius:9px;padding:10px;font-weight:600;color:var(--muted)}
+.tabs button[aria-selected="true"]{background:var(--card);color:var(--ink);box-shadow:0 1px 2px rgb(0 0 0 / .08)}
+.panel{display:flex;flex-direction:column;gap:12px}
+.note{font-size:13px;color:var(--muted);background:var(--off);border-radius:10px;padding:10px 12px}
+.note.warn{color:var(--warn)}
+.field{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.field label{font-weight:600;font-size:14px}
+input[type=text],input[type=number]{font:inherit;color:var(--ink);background:var(--card);border:1px solid var(--line);border-radius:10px;padding:9px 12px;min-width:0}
+#name{flex:1 1 160px}
+.tools{display:flex;gap:8px;flex-wrap:wrap}
+.chipbtn{border:1px solid var(--line);background:var(--card);border-radius:999px;padding:6px 12px;font-size:13px}
+.legend{display:flex;gap:14px;font-size:12px;color:var(--muted);align-items:center}
+.dot{display:inline-block;width:9px;height:9px;border-radius:50%;margin-right:5px;vertical-align:middle}
+.list{background:var(--card);border:1px solid var(--line);border-radius:14px;overflow:hidden}
+.row{display:grid;grid-template-columns:64px 1fr 1fr;align-items:center;gap:8px;padding:8px 12px;border-top:1px solid var(--line)}
+.row:first-child{border-top:0}
+.row.mon{border-top:2px solid var(--line)}
+.row.off{background:var(--off);color:var(--muted)}
+.d{font-family:var(--f-num);font-weight:600;font-variant-numeric:tabular-nums;font-size:15px;line-height:1.15}
+.d small{display:block;font-family:var(--f-body);font-weight:400;font-size:11px;color:var(--muted)}
+.step{display:flex;align-items:center;justify-content:space-between;border-radius:10px;padding:3px;gap:2px;min-width:0}
+.step.p{background:var(--prem-soft)} .step.s{background:var(--salad-soft)}
+.step button{width:34px;height:34px;border:0;border-radius:8px;background:var(--card);font-size:18px;line-height:1;flex:none}
+.step button:disabled{opacity:.35;cursor:default}
+.step span{flex:1;text-align:center;font-family:var(--f-num);font-weight:600;font-variant-numeric:tabular-nums;font-size:17px}
+.step.p span{color:var(--prem)} .step.s span{color:var(--salad)}
+.step .zero{color:var(--muted)!important;font-weight:500}
+.step .lbl{display:none}
+.offtxt{grid-column:2/4;font-size:13px}
+.head{display:grid;grid-template-columns:64px 1fr 1fr;gap:8px;padding:8px 12px;font-size:12px;color:var(--muted);font-weight:600;border-bottom:1px solid var(--line);background:var(--off)}
+.savebar{position:fixed;left:0;right:0;bottom:0;padding-bottom:calc(12px + env(safe-area-inset-bottom,0px));padding-top:12px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));background:var(--card);border-top:1px solid var(--line);z-index:6}
+.savebar .in{max-width:760px;margin:0 auto;display:flex;gap:12px;align-items:center;justify-content:space-between}
+.savebar .msg{font-size:13px;color:var(--muted);min-width:0}
+.primary{background:var(--accent);color:var(--bg);border:0;border-radius:12px;padding:12px 22px;font-weight:800;flex:none}
+.primary:disabled{opacity:.45;cursor:default}
+.summary{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px 16px;display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.summary div{display:flex;flex-direction:column;gap:2px;min-width:0}
+.summary .k{font-size:12px;color:var(--muted);font-weight:600}
+.summary .v{font-family:var(--f-num);font-weight:600;font-size:24px;font-variant-numeric:tabular-nums}
+.summary .v.p{color:var(--prem)} .summary .v.s{color:var(--salad)}
+.summary .money{grid-column:1/-1;border-top:1px dashed var(--line);padding-top:10px;flex-direction:row;justify-content:space-between;align-items:baseline;flex-wrap:wrap;gap:6px}
+.summary .money .v{font-size:20px}
+.prices{display:flex;gap:10px;flex-wrap:wrap;align-items:center;font-size:13px;color:var(--muted)}
+.prices input{width:96px;padding:6px 10px;font-family:var(--f-num)}
+.trow{display:grid;grid-template-columns:64px 44px 44px 48px 1fr;align-items:center;gap:8px;padding:9px 12px;border-top:1px solid var(--line)}
+.trow:first-child{border-top:0}
+.trow.mon{border-top:2px solid var(--line)}
+.trow.head2{font-size:12px;color:var(--muted);font-weight:600;background:var(--off);border-top:0}
+.n{font-family:var(--f-num);font-weight:600;font-variant-numeric:tabular-nums;text-align:right}
+.n.p{color:var(--prem)} .n.s{color:var(--salad)} .n.t{font-size:16px}
+.n.z{color:var(--muted);font-weight:500}
+.who{display:flex;flex-wrap:wrap;gap:4px;min-width:0}
+.who span{font-size:12px;background:var(--off);border-radius:6px;padding:2px 7px;white-space:nowrap}
+.who em{font-style:normal;font-family:var(--f-num);color:var(--muted)}
+.trow.off{color:var(--muted);background:var(--off)}
+.people{display:flex;flex-direction:column;gap:6px}
+.person{display:flex;justify-content:space-between;gap:10px;background:var(--card);border:1px solid var(--line);border-radius:10px;padding:8px 12px;font-size:14px}
+.person b{font-weight:600} .person span{font-family:var(--f-num);color:var(--muted);font-variant-numeric:tabular-nums}
+h2{font-family:var(--f-display);font-weight:400;font-size:20px;margin:6px 0 0}
+#copyArea{width:100%;min-height:120px;font-family:var(--f-num);font-size:12px;border-radius:10px;border:1px solid var(--line);background:var(--card);color:var(--ink);padding:10px}
+.empty{padding:24px 16px;text-align:center;color:var(--muted);font-size:14px}
+@media (max-width:480px){
+  .trow{grid-template-columns:52px 34px 34px 40px 1fr;gap:6px;padding:9px 10px}
+  .row,.head{grid-template-columns:52px 1fr 1fr}
+  .summary .v{font-size:20px}
+}
+@media (prefers-reduced-motion:no-preference){.primary,.tabs button{transition:background .15s,opacity .15s}}
+</style>
+<style>[hidden]{display:none!important}*{box-sizing:border-box}body{margin:0}</style>
+</head>
+<body>
+<style>
+.names{display:flex;flex-wrap:wrap;gap:6px}
+.names button{border:1px solid var(--line);background:var(--card);border-radius:999px;padding:5px 12px;font-size:13px}
+.names button[aria-pressed="true"]{background:var(--accent);border-color:var(--accent);color:var(--bg);font-weight:600}
+.danger{border:1px solid var(--line);background:var(--card);color:var(--warn);border-radius:999px;padding:6px 12px;font-size:13px}
+.danger.armed{background:var(--warn);color:var(--bg);border-color:var(--warn)}
+.status{font-size:12px;color:var(--muted)}
+.person{align-items:center;flex-wrap:wrap}
+.person .info{display:flex;flex-direction:column;gap:2px;min-width:0;flex:1}
+.person .acts{display:flex;gap:6px}
+.person .acts button{border:1px solid var(--line);background:var(--card);border-radius:8px;padding:5px 12px;font-size:13px}
+.person .acts .del{color:var(--warn)}
+.person .acts .del.armed{background:var(--warn);color:var(--bg);border-color:var(--warn)}
+</style>
+<div class="wrap">
+  <div class="top">
+    <div>
+      <h1>도시락 주문 장부</h1>
+      <p class="sub">온담푸드 · 평일 기준 (주말·공휴일 제외) · 변경은 전날 13시까지</p>
+    </div>
+    <div class="month">
+      <button class="icon" id="prevM" aria-label="이전 달">‹</button>
+      <b id="mLabel">—</b>
+      <button class="icon" id="nextM" aria-label="다음 달">›</button>
+    </div>
+  </div>
+
+  <div class="note warn" id="demoNote" hidden>체험 모드입니다. 지금 입력한 내용은 이 PC에만 저장돼요. 구글 시트를 연결하면 어느 PC에서든 함께 저장됩니다.</div>
+
+  <div class="tabs" role="tablist">
+    <button role="tab" id="tabMine" aria-selected="true">주문 입력</button>
+    <button role="tab" id="tabSum" aria-selected="false">일자별 합계</button>
+  </div>
+
+  <section class="panel" id="pMine">
+    <div class="field">
+      <label for="name">이름</label>
+      <input type="text" id="name" placeholder="예: 김다담" maxlength="20" autocomplete="off">
+    </div>
+    <div class="sub" id="chipHint" hidden>저장한 사람 · 이름을 누르면 그 주문을 불러와 고칠 수 있어요</div>
+    <div class="names" id="nameChips"></div>
+    <div class="note" id="editNote" hidden></div>
+    <div class="tools">
+      <button class="chipbtn" id="fillP1">처음부터 다시 (평일 프리미엄 1)</button>
+      <button class="chipbtn" id="clearM">모두 0으로 비우기</button>
+      <button class="danger" id="delBtn" hidden>내 주문 전체 삭제</button>
+    </div>
+    <div class="legend"><span><i class="dot" style="background:var(--prem)"></i>프리미엄</span><span><i class="dot" style="background:var(--salad)"></i>샐러드</span></div>
+    <div class="note">기본은 평일마다 프리미엄 1개예요. 샐러드를 올리면 그날 프리미엄은 0으로 바뀝니다. 확인 후 꼭 저장을 눌러주세요.</div>
+    <div class="list">
+      <div class="head"><span>날짜</span><span>프리미엄</span><span>샐러드</span></div>
+      <div id="mineRows"></div>
+    </div>
+  </section>
+
+  <section class="panel" id="pSum" hidden>
+    <div class="summary">
+      <div><span class="k">프리미엄</span><span class="v p" id="sumP">0</span></div>
+      <div><span class="k">샐러드</span><span class="v s" id="sumS">0</span></div>
+      <div><span class="k">총 도시락</span><span class="v" id="sumT">0</span></div>
+      <div class="money"><span class="k">저장한 사람</span><span class="v" id="sumPeople">0명</span></div>
+      <div class="money"><span class="k">총 주문금액</span><span class="v" id="sumMoney">—</span></div>
+    </div>
+    <div class="prices">
+      <label for="priceP">프리미엄 단가</label><input type="number" id="priceP" min="0" step="100" inputmode="numeric" placeholder="원">
+      <label for="priceS">샐러드 단가</label><input type="number" id="priceS" min="0" step="100" inputmode="numeric" placeholder="원">
+    </div>
+    <div class="list">
+      <div class="trow head2"><span>날짜</span><span class="n">프리</span><span class="n">샐러드</span><span class="n">합계</span><span>주문자</span></div>
+      <div id="sumRows"></div>
+    </div>
+    <h2 id="peopleTitle">사람별 합계</h2>
+    <div class="people" id="people"></div>
+    <h2>업체 전달용 텍스트</h2>
+    <textarea id="copyArea" readonly></textarea>
+    <div class="tools"><button class="chipbtn" id="copyBtn">텍스트 복사</button><button class="chipbtn" id="reloadBtn">새로고침</button><span class="status" id="copyMsg"></span></div>
+  </section>
+</div>
+
+<div class="savebar" id="saveBar">
+  <div class="in">
+    <span class="msg" id="saveMsg">불러오는 중…</span>
+    <button class="primary" id="saveBtn" disabled>저장</button>
+  </div>
+</div>
+
+<script>
+/* ▼▼ 구글 Apps Script 웹 앱 주소를 따옴표 안에 붙여넣으세요 (비워두면 체험 모드) ▼▼ */
+const API_URL = 'https://script.google.com/macros/s/AKfycby7mFO0zbjtNGDmF9pSJq5jwEfmhvVfUY6HWP_KGdlRjwL0cLvx-UL6y4rjFcrlPCVHyQ/exec';
+/* ▲▲ ------------------------------------------------------------------------ ▲▲ */
+
+(function(){
+  const WD=['일','월','화','수','목','금','토'];
+  const HOL={'2026-12-25':'성탄절','2027-01-01':'신정','2027-02-08':'설날','2027-02-09':'대체공휴일','2027-03-01':'삼일절','2027-05-05':'어린이날','2027-05-13':'부처님오신날','2027-08-16':'대체공휴일','2027-09-14':'추석','2027-09-15':'추석','2027-09-16':'추석','2027-10-04':'대체공휴일','2027-10-11':'대체공휴일','2027-12-27':'대체공휴일'};
+  const $=id=>document.getElementById(id);
+  const pad=n=>String(n).padStart(2,'0');
+  const now=new Date();
+  let Y=now.getFullYear(), M=now.getMonth()+2; if(M>12){M=1;Y++;}
+  const mk=()=>Y+'-'+pad(M);
+  const DEMO=!API_URL;
+
+  /* ---------- 저장소 ---------- */
+  const ls={get(k,d){try{const v=localStorage.getItem(k);return v?JSON.parse(v):d;}catch(e){return d;}},set(k,v){try{localStorage.setItem(k,JSON.stringify(v));}catch(e){}}};
+  const api = DEMO ? {
+    async list(month){ const s=ls.get('lunch-demo',{months:{},prices:{premium:0,salad:0}}); const m=s.months[month]||{};
+      return {ok:true,orders:Object.keys(m).map(n=>({name:n,days:m[n].days,updatedAt:m[n].updatedAt})),prices:s.prices}; },
+    async post(b){ const s=ls.get('lunch-demo',{months:{},prices:{premium:0,salad:0}});
+      if(b.action==='prices') s.prices={premium:b.premium,salad:b.salad};
+      else { s.months[b.month]=s.months[b.month]||{};
+        if(b.action==='delete') delete s.months[b.month][b.name];
+        else s.months[b.month][b.name]={days:b.days,updatedAt:Date.now()}; }
+      ls.set('lunch-demo',s); return this.list(b.month); }
+  } : {
+    async list(month){ const r=await fetch(API_URL+'?month='+encodeURIComponent(month)+'&t='+Date.now()); return r.json(); },
+    async post(b){ const r=await fetch(API_URL,{method:'POST',body:JSON.stringify(b)}); return r.json(); }
+  };
+
+  /* ---------- 상태 ---------- */
+  let orders=[];            // 이번 달 저장된 주문 [{name,days,updatedAt}]
+  let prices={premium:0,salad:0};
+  let me=ls.get('lunch-name','');   // 이 PC에서 마지막으로 쓴 이름
+  let draft=null, dirty=false, autoFill=false, saving=false, loadedMonth=null;
+
+  function days(){
+    const n=new Date(Y,M,0).getDate(), out=[];
+    for(let d=1;d<=n;d++){ const w=new Date(Y,M-1,d).getDay(), key=mk()+'-'+pad(d);
+      out.push({d,w,weekend:w===0||w===6,hol:HOL[key]||null}); }
+    return out;
+  }
+  const val=(o,d,k)=>(o&&o[d]&&o[d][k])||0;
+  const findOrder=name=>orders.find(o=>o.name===name);
+
+  function makeDraft(){
+    const saved=me&&findOrder(me);
+    if(saved){ draft=JSON.parse(JSON.stringify(saved.days||{})); dirty=false; autoFill=false; }
+    else { draft={}; days().forEach(x=>{ if(!x.weekend&&!x.hol) draft[x.d]={p:1,s:0}; }); dirty=!!me; autoFill=true; }
+  }
+
+  function setMsg(t){$('saveMsg').textContent=t;}
+  function refreshSaveBar(){
+    $('saveBtn').disabled=saving||!me||!dirty;
+    if(saving) return setMsg('저장 중…');
+    if(!me) return setMsg('이름을 먼저 적거나 골라주세요.');
+    if(dirty) return setMsg(autoFill?me+'님 '+M+'월 주문이 아직 없어요. 확인 후 저장하세요.':'저장하지 않은 변경이 있습니다.');
+    const o=findOrder(me);
+    setMsg(o&&o.updatedAt?'저장됨 · '+new Date(o.updatedAt).toLocaleString('ko-KR',{month:'numeric',day:'numeric',hour:'2-digit',minute:'2-digit'}):'저장됨');
+  }
+
+  /* ---------- 주문 입력 ---------- */
+  function renderNames(){
+    const box=$('nameChips'); box.textContent='';
+    orders.map(o=>o.name).sort((a,b)=>a.localeCompare(b,'ko')).forEach(n=>{
+      const b=document.createElement('button'); b.textContent=n; b.setAttribute('aria-pressed',n===me);
+      b.onclick=()=>selectName(n); box.appendChild(b);
+    });
+    $('chipHint').hidden=!orders.length;
+    const saved=me&&findOrder(me);
+    $('delBtn').hidden=!saved;
+    $('editNote').hidden=!saved;
+    if(saved) $('editNote').textContent=me+'님 '+M+'월 주문을 불러왔어요. 수량을 고친 뒤 저장하면 바뀝니다. 새로 하려면 "처음부터 다시", 없애려면 "내 주문 전체 삭제"를 누르세요.';
+  }
+  function selectName(n){
+    if(dirty&&!autoFill&&n!==me&&!confirmSwitch()) return;
+    me=n; ls.set('lunch-name',me); $('name').value=me; makeDraft(); render();
+  }
+  let switchArmed=false;
+  function confirmSwitch(){ if(switchArmed){switchArmed=false;return true;} switchArmed=true; setMsg('저장 안 한 변경이 있어요. 한 번 더 누르면 버리고 바꿉니다.'); setTimeout(()=>{switchArmed=false;},4000); return false; }
+
+  function renderMine(){
+    const box=$('mineRows'); box.textContent=''; let first=true;
+    days().forEach(x=>{
+      if(x.weekend) return;
+      const r=document.createElement('div'); r.className='row'+(x.w===1&&!first?' mon':'')+(x.hol?' off':''); first=false;
+      const dc=document.createElement('div'); dc.className='d'; dc.innerHTML=x.d+'일<small>'+WD[x.w]+'요일</small>'; r.appendChild(dc);
+      if(x.hol){ const t=document.createElement('div'); t.className='offtxt'; t.textContent=x.hol+' · 배달 없음'; r.appendChild(t); }
+      else ['p','s'].forEach(k=>{
+        const v=val(draft,x.d,k), st=document.createElement('div'); st.className='step '+k;
+        const lab=(k==='p'?'프리미엄':'샐러드');
+        const minus=document.createElement('button'); minus.textContent='−'; minus.disabled=!me||v<=0; minus.setAttribute('aria-label',x.d+'일 '+lab+' 빼기');
+        const sp=document.createElement('span'); sp.textContent=v; if(!v) sp.className='zero';
+        const plus=document.createElement('button'); plus.textContent='+'; plus.disabled=!me||v>=30; plus.setAttribute('aria-label',x.d+'일 '+lab+' 더하기');
+        minus.onclick=()=>change(x.d,k,-1); plus.onclick=()=>change(x.d,k,1);
+        st.append(minus,sp,plus); r.appendChild(st);
+      });
+      box.appendChild(r);
+    });
+    ['fillP1','clearM'].forEach(id=>$(id).disabled=!me);
+  }
+  function change(d,k,delta){
+    const nv=Math.max(0,Math.min(30,val(draft,d,k)+delta));
+    if(!draft[d]) draft[d]={p:0,s:0}; draft[d][k]=nv;
+    if(nv>0) draft[d][k==='s'?'p':'s']=0;   // 샐러드를 고르면 프리미엄 0 (반대도)
+    if(!draft[d].p&&!draft[d].s) delete draft[d];
+    dirty=true; autoFill=false; renderMine(); refreshSaveBar();
+  }
+
+  /* ---------- 합계 ---------- */
+  const won=n=>n.toLocaleString('ko-KR')+'원';
+  function renderSum(){
+    const per={};
+    orders.forEach(o=>Object.entries(o.days||{}).forEach(([d,v])=>{
+      const p=v.p||0,s=v.s||0; if(!p&&!s) return;
+      (per[d]=per[d]||{p:0,s:0,who:[]}); per[d].p+=p; per[d].s+=s; per[d].who.push({name:o.name,p,s});
+    }));
+    const box=$('sumRows'); box.textContent=''; let TP=0,TS=0,first=true,lines=[];
+    days().forEach(x=>{
+      if(x.weekend) return;
+      const a=per[x.d]||{p:0,s:0,who:[]};
+      const r=document.createElement('div'); r.className='trow'+(x.w===1&&!first?' mon':'')+(x.hol?' off':''); first=false;
+      const dc=document.createElement('div'); dc.className='d'; dc.innerHTML=x.d+'일<small>'+WD[x.w]+'</small>'; r.appendChild(dc);
+      if(x.hol){ const t=document.createElement('div'); t.style.gridColumn='2/6'; t.style.fontSize='13px'; t.textContent=x.hol; r.appendChild(t); }
+      else {
+        TP+=a.p; TS+=a.s;
+        [['p',a.p],['s',a.s],['t',a.p+a.s]].forEach(([c,v])=>{const s=document.createElement('span'); s.className='n '+c+(v?'':' z'); s.textContent=v||'·'; r.appendChild(s);});
+        const w=document.createElement('div'); w.className='who';
+        a.who.sort((m,n)=>m.name.localeCompare(n.name,'ko')).forEach(o=>{
+          const c=document.createElement('span'); c.textContent=o.name+' ';
+          const e=document.createElement('em'); e.textContent=(o.p?'P'+o.p:'')+(o.p&&o.s?' ':'')+(o.s?'S'+o.s:''); c.appendChild(e); w.appendChild(c);
+        });
+        r.appendChild(w);
+        if(a.p||a.s) lines.push(x.d+'일('+WD[x.w]+') 프리미엄 '+a.p+' / 샐러드 '+a.s);
+      }
+      box.appendChild(r);
+    });
+    const people=orders.map(o=>{let p=0,s=0;Object.values(o.days||{}).forEach(v=>{p+=v.p||0;s+=v.s||0;});return {name:o.name,p,s};}).filter(x=>x.p||x.s);
+    $('sumP').textContent=TP; $('sumS').textContent=TS; $('sumT').textContent=TP+TS;
+    $('sumPeople').textContent=people.length+'명';
+    const money=(prices.premium||0)*TP+(prices.salad||0)*TS;
+    $('sumMoney').textContent=(prices.premium||prices.salad)?won(money):'단가를 입력하면 계산됩니다';
+    $('peopleTitle').textContent='사람별 합계 · '+people.length+'명';
+    const pb=$('people'); pb.textContent='';
+    if(!people.length){ const e=document.createElement('div'); e.className='empty'; e.textContent='아직 '+M+'월 주문이 없습니다. "주문 입력" 탭에서 이름을 적고 저장하세요.'; pb.appendChild(e); }
+    people.sort((a,b)=>a.name.localeCompare(b.name,'ko')).forEach(p=>{
+      const d=document.createElement('div'); d.className='person';
+      const info=document.createElement('div'); info.className='info';
+      const b=document.createElement('b'); b.textContent=p.name;
+      const s=document.createElement('span'); s.textContent='프리미엄 '+p.p+' · 샐러드 '+p.s;
+      info.append(b,s);
+      const acts=document.createElement('div'); acts.className='acts';
+      const ed=document.createElement('button'); ed.textContent='수정';
+      ed.onclick=()=>{ switchTab(false); selectName(p.name); window.scrollTo(0,0); };
+      const del=document.createElement('button'); del.className='del'; del.textContent='삭제';
+      del.onclick=()=>armDelete(del,p.name,'삭제');
+      acts.append(ed,del); d.append(info,acts); pb.appendChild(d);
+    });
+    const wk=days().filter(x=>!x.weekend&&!x.hol).length;
+    let txt=M+'월 온담푸드 도시락 주문 (평일 '+wk+'일, '+people.length+'명)\n'+(lines.join('\n')||'주문 없음')+'\n----\n프리미엄 '+TP+'개 + 샐러드 '+TS+'개 = 총 '+(TP+TS)+'개';
+    if(prices.premium||prices.salad) txt+='\n총 주문금액 '+won(money);
+    $('copyArea').value=txt;
+    if(document.activeElement!==$('priceP')) $('priceP').value=prices.premium||'';
+    if(document.activeElement!==$('priceS')) $('priceS').value=prices.salad||'';
+  }
+
+  function render(){
+    $('mLabel').textContent=Y+'년 '+M+'월';
+    renderNames(); renderMine(); renderSum(); refreshSaveBar();
+  }
+
+  function apply(res){
+    if(!res||!res.ok) throw new Error((res&&res.error)||'응답 오류');
+    orders=res.orders||[]; prices=res.prices||prices;
+  }
+  async function load(keepDraft){
+    const month=mk();
+    try{
+      const res=await api.list(month);
+      if(month!==mk()) return;
+      apply(res);
+      if(!(keepDraft&&dirty&&!autoFill&&loadedMonth===month)) makeDraft();
+      loadedMonth=month; render();
+    }catch(e){ setMsg('불러오지 못했습니다. 인터넷 연결이나 주소를 확인해 주세요.'); }
+  }
+
+  async function save(){
+    const n=$('name').value.trim();
+    if(!n){ setMsg('이름을 먼저 적어주세요.'); $('name').focus(); return; }
+    me=n; ls.set('lunch-name',me);
+    saving=true; refreshSaveBar();
+    try{ apply(await api.post({action:'save',month:mk(),name:me,days:draft})); dirty=false; autoFill=false; saving=false; makeDraft(); render(); setMsg('저장했습니다.'); }
+    catch(e){ saving=false; refreshSaveBar(); setMsg('저장하지 못했습니다. 잠시 후 다시 눌러주세요.'); }
+  }
+
+  // 삭제는 두 번 눌러야 실행 (실수 방지)
+  async function armDelete(btn,name,label){
+    if(!btn.classList.contains('armed')){
+      btn.classList.add('armed'); btn.textContent='한 번 더 누르면 삭제';
+      setTimeout(()=>{ btn.classList.remove('armed'); btn.textContent=label; },4000);
+      return;
+    }
+    btn.classList.remove('armed'); btn.textContent='삭제 중…'; btn.disabled=true;
+    try{
+      apply(await api.post({action:'delete',month:mk(),name}));
+      btn.disabled=false; btn.textContent=label;
+      if(name===me){ dirty=false; }
+      makeDraft(); render();
+      setMsg(name+'님 '+M+'월 주문을 삭제했습니다.'); $('copyMsg').textContent=name+'님 주문을 삭제했습니다.';
+    }catch(e){ btn.disabled=false; btn.textContent=label; setMsg('삭제하지 못했습니다. 잠시 후 다시 눌러주세요.'); $('copyMsg').textContent='삭제하지 못했습니다.'; }
+  }
+  $('delBtn').onclick=()=>armDelete($('delBtn'),me,'내 주문 전체 삭제');
+
+  let priceTimer=null;
+  function priceChanged(){
+    prices={premium:Math.max(0,+$('priceP').value||0),salad:Math.max(0,+$('priceS').value||0)};
+    renderSum(); clearTimeout(priceTimer);
+    priceTimer=setTimeout(()=>{ api.post({action:'prices',month:mk(),premium:prices.premium,salad:prices.salad}).catch(()=>{}); },900);
+  }
+
+  function switchTab(sum){
+    $('tabMine').setAttribute('aria-selected',!sum); $('tabSum').setAttribute('aria-selected',sum);
+    $('pMine').hidden=sum; $('pSum').hidden=!sum; $('saveBar').hidden=sum;
+    if(sum) load(true);
+  }
+  function goMonth(delta){
+    if(dirty&&!autoFill&&!confirmSwitch()) return;
+    M+=delta; if(M<1){M=12;Y--;} if(M>12){M=1;Y++;}
+    orders=[]; draft={}; dirty=false; render(); load(false);
+  }
+  $('tabMine').onclick=()=>switchTab(false);
+  $('tabSum').onclick=()=>switchTab(true);
+  $('prevM').onclick=()=>goMonth(-1);
+  $('nextM').onclick=()=>goMonth(1);
+  $('fillP1').onclick=()=>{ draft={}; days().forEach(x=>{ if(!x.weekend&&!x.hol) draft[x.d]={p:1,s:0}; }); dirty=true; autoFill=false; renderMine(); refreshSaveBar(); };
+  $('clearM').onclick=()=>{ draft={}; dirty=true; autoFill=false; renderMine(); refreshSaveBar(); };
+  $('name').onchange=()=>{ const n=$('name').value.trim(); if(n&&n!==me) selectName(n); };
+  $('saveBtn').onclick=save;
+  $('priceP').oninput=priceChanged; $('priceS').oninput=priceChanged;
+  $('reloadBtn').onclick=()=>load(true);
+  $('copyBtn').onclick=()=>{
+    const t=$('copyArea').value, fb=()=>{$('copyArea').select(); $('copyMsg').textContent='선택해 두었으니 Ctrl+C로 복사하세요.';};
+    try{ navigator.clipboard.writeText(t).then(()=>{$('copyMsg').textContent='복사했습니다.';},fb); }catch(e){fb();}
+  };
+  document.addEventListener('visibilitychange',()=>{ if(!document.hidden) load(true); });
+  setInterval(()=>{ if(!document.hidden&&!saving) load(true); },60000);
+
+  $('demoNote').hidden=!DEMO;
+  $('name').value=me;
+  render(); load(false);
+})();
+</script>
+</body>
+</html>
