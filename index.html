@@ -729,8 +729,19 @@ async function fetchAll(j, p, lots){
     if (again.length) await pool(again);
     again.forEach(reg=>{ if (result.regs[reg.op].error && !prev[reg.op].error) result.regs[reg.op] = prev[reg.op]; });
   }
+  // 대장의 부속지번도 함께 넣기 (건물이 여러 지번에 걸쳐 있음)
+  (result.regs.getBrAtchJibunInfo?.items || []).forEach(a=>{
+    if (!a.atchSigunguCd || !a.atchBjdongCd || a.atchBun == null) return;
+    const q = {sigunguCd: String(a.atchSigunguCd), bjdongCd: String(a.atchBjdongCd), platGbCd: String(a.atchPlatGbCd) === "1" ? "1" : "0",
+      bun: String(a.atchBun).padStart(4,"0"), ji: String(a.atchJi || 0).padStart(4,"0")};
+    const m = String(a.atchPlatPlc || "").match(/(\S+?)\s+(?:산\s*)?\d+(?:-\d+)?\s*(?:번지)?\s*$/);
+    q.dong = q.bjdongCd === p.bjdongCd && q.sigunguCd === p.sigunguCd ? p.dong : (m ? m[1] : "");
+    q.label = lotLabel(q); q.atch = true;
+    if (!lots.some(x=>lotPnu(x) === lotPnu(q))) lots.push(q);
+  });
   // 추가 지번: 총괄표제부·표제부만 (호출 수를 줄이기 위해)
   const prog = ()=>{ const n = $("#progN"); if (n) n.textContent = ++done; };
+  { const t = $("#progN")?.parentElement; if (t && lots.length > 1) t.lastChild.textContent = "/" + (done + (lots.length - 1) * 2); }
   lots[0].regs = {getBrRecapTitleInfo: result.regs.getBrRecapTitleInfo, getBrTitleInfo: result.regs.getBrTitleInfo};
   for (const q of lots.slice(1)){
     q.regs = {};
