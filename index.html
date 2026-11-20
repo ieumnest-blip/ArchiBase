@@ -436,10 +436,38 @@ const DEFAULTS = { jusoKey: "U01TX0FVVEgyMDI2MTExMjA5NDkyMjEyMTEwOTM=", dataKey:
 function keyState(){
   const ok = $("#jusoKey").value.trim() && $("#dataKey").value.trim();
   $("#keyState").textContent = ok ? "· 설정됨" : "· 키를 입력하세요";
-  if (!ok) $("#keyBox").hidden = false;
+  if (!ok && $("#keyBox").hidden) openKeyBox();
 }
 keyState();
-$("#keyBtn").addEventListener("click", ()=>$("#keyBox").hidden = false);
+/* API 인증키 설정 열기는 암호(9939) 확인 후 — 페이지를 열어 둔 동안 한 번만 묻기 */
+var keyUnlocked = false;
+function openKeyBox(){
+  if (keyUnlocked){ $("#keyBox").hidden = false; return; }
+  const H = "3383ba0ebc954df0025ba4f96248ce42b7984214f973119872dbe3fb46092561";
+  const d = document.createElement("div");
+  d.style.cssText = "position:fixed;inset:0;z-index:99998;background:rgba(0,0,0,.55);display:flex;align-items:center;justify-content:center";
+  d.innerHTML = `<form style="background:var(--card,#1f2937);color:var(--text,#f3f4f6);padding:22px 24px;border-radius:12px;min-width:240px;text-align:center;box-shadow:0 8px 30px rgba(0,0,0,.4)">
+    <div style="font-weight:700;margin-bottom:10px">🔒 API 인증키 설정 암호</div>
+    <input type="password" inputmode="numeric" placeholder="암호" style="width:100%;box-sizing:border-box;padding:9px 10px;font-size:16px;text-align:center;letter-spacing:4px">
+    <div class="row" style="gap:6px;margin-top:10px;justify-content:center"><button type="submit">확인</button><button type="button" class="ghost" data-x>취소</button></div>
+    <div data-m style="margin-top:8px;font-size:13px;color:#ef4444;min-height:18px"></div></form>`;
+  document.body.appendChild(d);
+  const f = d.querySelector("form"), inp = f.querySelector("input"); setTimeout(()=>inp.focus(), 30);
+  const close = ()=>d.remove();
+  f.querySelector("[data-x]").addEventListener("click", close);
+  d.addEventListener("keydown", e=>{ if (e.key === "Escape") close(); });
+  d.addEventListener("click", e=>{ if (e.target === d) close(); });
+  f.addEventListener("submit", async e=>{
+    e.preventDefault();
+    const v = inp.value.trim();
+    let h = "";
+    if (window.crypto?.subtle){ const b = await crypto.subtle.digest("SHA-256", new TextEncoder().encode(v)); h = [...new Uint8Array(b)].map(x=>x.toString(16).padStart(2,"0")).join(""); }
+    else if (v === "9939") h = H;
+    if (h === H){ keyUnlocked = true; close(); $("#keyBox").hidden = false; }
+    else { f.querySelector("[data-m]").textContent = "암호가 맞지 않습니다"; inp.value = ""; inp.focus(); }
+  });
+}
+$("#keyBtn").addEventListener("click", openKeyBox);
 $("#keyClose").addEventListener("click", ()=>$("#keyBox").hidden = true);
 $("#keyBox").addEventListener("click", e=>{ if (e.target.id === "keyBox") $("#keyBox").hidden = true; });
 
@@ -584,7 +612,7 @@ $("#f").addEventListener("submit", async e=>{
   const key = $("#jusoKey").value.trim();
   $("#cands").innerHTML = "";
   if (!kw) return;
-  if (!key || !$("#dataKey").value.trim()) { msg("먼저 API 인증키 2개를 입력하세요."); $("#keyBox").hidden = false; return; }
+  if (!key || !$("#dataKey").value.trim()) { msg("먼저 API 인증키 2개를 입력하세요."); openKeyBox(); return; }
   msg(`<span class="spinner"></span>주소 검색 중…`, "warn");
   $("#go").disabled = true;
   try{
