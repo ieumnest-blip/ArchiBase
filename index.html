@@ -346,6 +346,37 @@ details.issuehelp ul{position:absolute;right:0;top:34px;z-index:1500;width:min(4
 </style>
 </head>
 <body>
+<div id="pwLock" style="position:fixed;inset:0;z-index:99999;background:#111827;display:flex;align-items:center;justify-content:center;font-family:inherit">
+  <form id="pwForm" style="background:#1f2937;color:#f3f4f6;padding:28px 30px;border-radius:12px;box-shadow:0 8px 30px rgba(0,0,0,.4);text-align:center;min-width:260px">
+    <div style="font-size:18px;font-weight:700;margin-bottom:14px">🔒 건축물대장 일괄조회</div>
+    <input id="pwIn" type="password" inputmode="numeric" autocomplete="current-password" placeholder="암호" style="width:100%;box-sizing:border-box;padding:10px 12px;font-size:16px;border-radius:8px;border:1px solid #4b5563;background:#111827;color:#f3f4f6;text-align:center;letter-spacing:4px">
+    <button type="submit" style="margin-top:12px;width:100%;padding:10px;border:0;border-radius:8px;background:#3b82f6;color:#fff;font-size:15px;font-weight:700;cursor:pointer">들어가기</button>
+    <div id="pwMsg" style="margin-top:10px;font-size:13px;color:#f87171;min-height:18px"></div>
+  </form>
+</div>
+<script>
+/* 간단한 암호 잠금 (이 브라우저에서 한 번 맞히면 기억) */
+(function(){
+  const H = "8a7118aab1e7c32953d2a02e46be8b410a49318ff12c368ccee01cfe9bc8d098";
+  const KEY = "archibase_pw_ok";
+  const box = document.getElementById("pwLock");
+  const open = ()=>{ box.remove(); document.documentElement.style.overflow = ""; };
+  let ok = false; try { ok = localStorage.getItem(KEY) === H; } catch(e){}
+  if (ok){ open(); return; }
+  document.documentElement.style.overflow = "hidden";
+  const hash = async t=>{
+    if (window.crypto?.subtle){ const b = await crypto.subtle.digest("SHA-256", new TextEncoder().encode(t)); return [...new Uint8Array(b)].map(x=>x.toString(16).padStart(2,"0")).join(""); }
+    return t === "0526" ? H : "";
+  };
+  setTimeout(()=>document.getElementById("pwIn")?.focus(), 50);
+  document.getElementById("pwForm").addEventListener("submit", async e=>{
+    e.preventDefault();
+    const inp = document.getElementById("pwIn");
+    if (await hash(inp.value.trim()) === H){ try { localStorage.setItem(KEY, H); } catch(e){} open(); }
+    else { document.getElementById("pwMsg").textContent = "암호가 맞지 않습니다"; inp.value = ""; inp.focus(); }
+  });
+})();
+</script>
 <div class="wrap">
   <div class="noprint">
     <div class="topbar">
