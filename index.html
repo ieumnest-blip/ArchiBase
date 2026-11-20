@@ -439,7 +439,7 @@ const L = {
   archGbCdNm:"건축구분", archPmsDay:"건축허가일", realStcnsDay:"실제착공일", jimokCdNm:"지목", jiyukCdNm:"지역", jiguCdNm:"지구", guyukCdNm:"구역",
   sttCdNm:"상태", mgmPmsrgstPk:"관리허가대장PK"
 };
-const SKIP = new Set(["rnum","sigunguCd","bjdongCd","platGbCd","bun","ji","naRoadCd","naBjdongCd","naUgrndCd","naMainBun","naSubBun",
+const SKIP = new Set(["_jibun","rnum","sigunguCd","bjdongCd","platGbCd","bun","ji","naRoadCd","naBjdongCd","naUgrndCd","naMainBun","naSubBun",
   "regstrGbCd","regstrKindCd","mainAtchGbCd","mainPurpsCd","strctCd","roofCd","flrGbCd","exposPubuseGbCd","jijiguGbCd","jijiguCd",
   "modeCd","unitGbCd","pmsnoGbCd","pmsnoKikCd","atchRegstrGbCd","atchSigunguCd","atchBjdongCd","atchPlatGbCd","guyukCd","guyukCdNm","jiyukCd","jiguCd","jiyukCdNm","jiguCdNm"]);
 const NUMS = /Area$|Rat$|Cnt$|^heit$|^area$|^hsprc$|^capa|Utcnt$/;
@@ -557,15 +557,7 @@ $("#f").addEventListener("submit", async e=>{
   msg(`<span class="spinner"></span>주소 검색 중…`, "warn");
   $("#go").disabled = true;
   try{
-    const qs = `confmKey=${encodeURIComponent(key)}&currentPage=1&countPerPage=20&keyword=${encodeURIComponent(kw)}&resultType=json`;
-    let data;
-    try{
-      const r = await fetch("https://business.juso.go.kr/addrlink/addrLinkApi.do?" + qs);
-      data = await r.json();
-    }catch(err){
-      data = await jsonp("https://business.juso.go.kr/addrlink/addrLinkApiJsonp.do?" + qs);
-    }
-    if (typeof data === "string") data = JSON.parse(data);
+    const data = await jusoApi(kw, 20);
     const c = data.results.common;
     if (c.errorCode !== "0") throw new Error(`주소 API 오류(${c.errorCode}): ${c.errorMessage}`);
     lastJuso = data.results.juso || [];
@@ -582,17 +574,61 @@ $("#cands").addEventListener("click", e=>{
   const c = e.target.closest(".cand"); if (c) pick(+c.dataset.i);
 });
 
+/* 도로명주소 API 호출 (관련지번 포함: addInfoYn=Y) */
+async function jusoApi(kw, n){
+  const key = $("#jusoKey").value.trim();
+  const qs = `confmKey=${encodeURIComponent(key)}&currentPage=1&countPerPage=${n}&keyword=${encodeURIComponent(kw)}&resultType=json&addInfoYn=Y`;
+  let data;
+  try{
+    const r = await fetch("https://business.juso.go.kr/addrlink/addrLinkApi.do?" + qs);
+    data = await r.json();
+  }catch(err){
+    data = await jsonp("https://business.juso.go.kr/addrlink/addrLinkApiJsonp.do?" + qs);
+  }
+  if (typeof data === "string") data = JSON.parse(data);
+  return data;
+}
+
 /* ---------- 2. 건축물대장 조회 ---------- */
 let result = null;
-function pick(i){
+const lotLabel = q=>`${q.dong ? q.dong + " " : ""}${q.platGbCd === "1" ? "산" : ""}${+q.bun}${+q.ji ? "-" + (+q.ji) : ""}`;
+const lotPnu = q=>q.sigunguCd + q.bjdongCd + (q.platGbCd === "1" ? "2" : "1") + q.bun + q.ji;
+/* 관련지번 한 개("장동 306-57", "산 12-3" 등)를 조회용 값으로 바꿈. 동 이름이 다르면 주소 검색으로 법정동코드를 찾음 */
+async function resolveLot(j, txt){
+  const m = String(txt).trim().match(/^(.*?)\s*(산)?\s*(\d+)(?:-(\d+))?$/);
+  if (!m) return null;
+  const dong = m[1].trim(), here = j.liNm || j.emdNm;
+  let adm = j.admCd;
+  if (dong && dong !== here && dong !== j.emdNm && !dong.endsWith(here)){
+    try{
+      const d = await jusoApi(`${j.siNm} ${j.sggNm} ${txt}`, 5);
+      const hit = (d.results?.juso || []).find(x=>(x.liNm || x.emdNm) === dong || x.emdNm === dong || String(x.jibunAddr).includes(dong));
+      if (!hit) return null;
+      adm = hit.admCd;
+    }catch(e){ return null; }
+  }
+  return {sigunguCd: adm.slice(0,5), bjdongCd: adm.slice(5,10), platGbCd: m[2] ? "1" : "0",
+    bun: m[3].padStart(4,"0"), ji: String(m[4] || 0).padStart(4,"0"), dong: dong || here};
+}
+async function pick(i){
   const j = lastJuso[i];
   $("#cands").innerHTML = "";
   const p = {
     sigunguCd: j.admCd.slice(0,5), bjdongCd: j.admCd.slice(5,10),
     platGbCd: j.mtYn === "1" ? "1" : "0",
-    bun: String(j.lnbrMnnm).padStart(4,"0"), ji: String(j.lnbrSlno || 0).padStart(4,"0")
+    bun: String(j.lnbrMnnm).padStart(4,"0"), ji: String(j.lnbrSlno || 0).padStart(4,"0"), dong: j.liNm || j.emdNm
   };
-  fetchAll(j, p);
+  // 도로명 하나에 지번이 여러 개 묶여 있으면(관련지번) 모두 조회
+  const lots = [p];
+  const rel = String(j.relJibun || "").split(",").map(x=>x.trim()).filter(Boolean);
+  if (rel.length) msg(`<span class="spinner"></span>관련지번 ${rel.length}개 확인 중…`, "warn");
+  for (const r of rel){
+    const q = await resolveLot(j, r);
+    if (q && !lots.some(x=>lotPnu(x) === lotPnu(q))) lots.push(q);
+  }
+  msg("");
+  lots.forEach(q=>q.label = lotLabel(q));
+  fetchAll(j, p, lots);
 }
 
 async function callApi(op, p, pageNo, svcOverride){
@@ -644,10 +680,37 @@ async function fetchOne(op, p, svc){
   return { items, total: first.total, truncated: first.total > items.length };
 }
 
-async function fetchAll(j, p){
-  result = { juso: j, params: p, at: new Date(), regs: {} };
+/* 지번별 표제부를 하나로 합치고(같은 대장은 처음 나온 지번에만), 지번별·전체 합계를 계산 */
+function mergeLots(){
+  const lots = result.lots, seen = new Set(), seenR = new Set(), seenP = new Set();
+  const pk = it=>String(it.mgmBldrgstPk || "") || JSON.stringify([it.bldNm, it.dongNm, it.archArea, it.totArea]);
+  const merged = [];
+  lots.forEach(q=>{
+    const T = q.regs?.getBrTitleInfo, R = q.regs?.getBrRecapTitleInfo;
+    q.own = [];
+    (T?.items || []).forEach(it=>{ const k = pk(it); if (seen.has(k)) return; seen.add(k); it._jibun = q.label; q.own.push(it); merged.push(it); });
+    q.recap = null;
+    (R?.items || []).forEach(it=>{ const k = pk(it); if (seenR.has(k)) return; seenR.add(k); if (!q.recap) q.recap = it; });
+    const num = k=>q.own.reduce((s, t)=>s + (+t[k] || 0), 0);
+    let plat = +q.recap?.platArea || 0;
+    if (!plat){ const tp = Math.max(0, ...q.own.map(t=>+t.platArea || 0)); if (tp && !seenP.has(tp)){ plat = tp; seenP.add(tp); } } // 표제부 대지면적은 대지 전체 값이라 같은 값은 한 번만
+    q.sum = {n: q.own.length, plat,
+      arch: num("archArea"), tot: num("totArea"), heit: Math.max(0, ...q.own.map(t=>+t.heit || 0)),
+      err: T?.error || ""};
+  });
+  if (lots.length > 1){
+    const T = result.regs.getBrTitleInfo;
+    result.regs.getBrTitleInfo = {items: merged, total: merged.length, truncated: lots.some(q=>q.regs?.getBrTitleInfo?.truncated), error: merged.length ? undefined : T.error};
+  } else (result.regs.getBrTitleInfo.items || []).forEach(it=>it._jibun = lots[0].label);
+  const S = k=>lots.reduce((s, q)=>s + q.sum[k], 0);
+  result.total = {n: S("n"), plat: S("plat"), arch: S("arch"), tot: S("tot"), heit: Math.max(0, ...lots.map(q=>q.sum.heit))};
+}
+async function fetchAll(j, p, lots){
+  lots = lots && lots.length ? lots : [Object.assign({}, p, {label: lotLabel(p)})];
+  result = { juso: j, params: p, lots, at: new Date(), regs: {} };
   filterTxt = "";
-  $("#out").innerHTML = targetCard() + `<div class="card noprint"><span class="spinner"></span>건축물대장 ${REGS.length}종 조회 중… <span id="progN">0</span>/${REGS.length}</div>`;
+  const nAll = REGS.length + (lots.length - 1) * 2;
+  $("#out").innerHTML = targetCard() + `<div class="card noprint"><span class="spinner"></span>건축물대장 조회 중${lots.length > 1 ? ` (지번 ${lots.length}개)` : ""}… <span id="progN">0</span>/${nAll}</div>`;
   let done = 0;
   const run = async reg=>{
     try { result.regs[reg.op] = await fetchOne(reg.op, p, reg.svc); }
@@ -666,6 +729,17 @@ async function fetchAll(j, p){
     if (again.length) await pool(again);
     again.forEach(reg=>{ if (result.regs[reg.op].error && !prev[reg.op].error) result.regs[reg.op] = prev[reg.op]; });
   }
+  // 추가 지번: 총괄표제부·표제부만 (호출 수를 줄이기 위해)
+  const prog = ()=>{ const n = $("#progN"); if (n) n.textContent = ++done; };
+  lots[0].regs = {getBrRecapTitleInfo: result.regs.getBrRecapTitleInfo, getBrTitleInfo: result.regs.getBrTitleInfo};
+  for (const q of lots.slice(1)){
+    q.regs = {};
+    for (const op of ["getBrRecapTitleInfo", "getBrTitleInfo"]){
+      try { q.regs[op] = await fetchOne(op, q); } catch(err){ q.regs[op] = {error: err.message, items: [], total: 0}; }
+      prog();
+    }
+  }
+  mergeLots();
   render();
 }
 
@@ -679,6 +753,7 @@ function targetCard(){
       <div style="min-width:0">
         <h2>${esc(j.roadAddr)}</h2>
         <div class="hint">[지번] ${esc(j.jibunAddr)} · ${p.platGbCd==="1"?"산 ":""}${+p.bun}${+p.ji?"-"+(+p.ji):""}번지 · 조회 ${result.at.toLocaleString("ko-KR")}</div>
+        ${result.lots?.length > 1 ? `<div class="hint">이 도로명주소의 지번 <b>${result.lots.length}개</b> 함께 조회: ${esc(result.lots.map(q=>q.label).join(", "))}</div>` : ""}
       </div>
       <div class="row noprint issue" style="gap:5px">
         <button type="button" class="copy sm" onclick="copyAddr(this)" title="세움터·정부24·등기소 주소 검색에 붙여넣기">📋 지번주소 복사</button>
@@ -1555,8 +1630,9 @@ async function initMap(){
     await loadLeaflet();
     const LF = window.L; // 상단의 라벨 객체 L과 구분
     const p = result.params;
-    const pnu = p.sigunguCd + p.bjdongCd + (p.platGbCd === "1" ? "2" : "1") + p.bun + p.ji;
-    const parcel = await vwData(`data=LP_PA_CBND_BUBUN&attrFilter=pnu:=:${pnu}`);
+    const lotsAll = result.lots?.length ? result.lots : [p];
+    const pnu = lotsAll.map(lotPnu).join(", ");
+    const parcel = (await Promise.all(lotsAll.map(q=>vwData(`data=LP_PA_CBND_BUBUN&attrFilter=pnu:=:${lotPnu(q)}`).catch(()=>[])))).flat();
     const map = LF.map(box, {zoomControl:true, scrollWheelZoom:true, zoomSnap:0.25, zoomDelta:0.5, wheelPxPerZoomLevel:240, wheelDebounceTime:20});
     mapObj = map;
     setupSizer(); applySide();
@@ -1565,7 +1641,7 @@ async function initMap(){
     const sat = tile("Satellite","jpeg").addTo(map), hyb = tile("Hybrid","png"), base = tile("Base","png");
     LF.control.layers({"항공사진":sat, "일반지도":base}, {"지명·도로":hyb}, {collapsed:true}).addTo(map);
     const recapT = result.regs.getBrRecapTitleInfo.items[0];
-    const regArea = +recapT?.archArea || (result.regs.getBrTitleInfo.items || []).reduce((s,t)=>s + (+t.archArea || 0), 0);
+    const regArea = result.lots?.length > 1 ? result.total.arch : (+recapT?.archArea || (result.regs.getBrTitleInfo.items || []).reduce((s,t)=>s + (+t.archArea || 0), 0));
     const measure = addMeasure(LF, map, regArea);
     if (!parcel.length){
       map.setView([37.5665, 126.978], 7);
@@ -1632,7 +1708,7 @@ async function initMap(){
     const nUnlinked = linked.filter(b=>!b.reg).length;
     const nLinkedT = titles.filter(t=>linked.some(b=>b.t === t)).length, nMissing = titles.length - nLinkedT;
     const nParts = blds.length - nUnlinked;
-    st.innerHTML = `${esc(parcel[0].properties?.addr || "")} · 대장 건물 <b>${titles.length}동</b> 중 지도 연결 <b>${nLinkedT}동</b>` +
+    st.innerHTML = `${esc(parcel[0].properties?.addr || "")}${parcel.length > 1 ? ` 외 ${parcel.length - 1}필지` : ""} · 대장 건물 <b>${titles.length}동</b> 중 지도 연결 <b>${nLinkedT}동</b>` +
       (nParts > nLinkedT ? ` (지도 외곽선 ${nParts}조각)` : "") +
       (nUnlinked ? ` · <b style="color:#b45309">대장 미연결 ${nUnlinked}동</b>` : "") +
       (nMissing > 0 ? ` · 지도에 외곽선 없는 대장 건물 ${nMissing}동 (신축 등으로 지도 자료가 아직 없을 수 있음)` : "") +
@@ -1651,6 +1727,7 @@ async function initMap(){
       el.open = false;
       el.innerHTML = `<summary style="cursor:pointer;font-size:12.5px;color:${warn ? "#b45309" : "#666"}">대장별 조회 점검${warn ? " ⚠ 층별개요에 표제부보다 동이 더 많습니다" : ""}</summary>
         <table style="font-size:12px;border-collapse:collapse;margin:4px 0"><tr style="color:#666"><td>대장</td><td>응답</td><td>받음</td><td></td></tr>${rows}</table>
+        ${result.lots?.length > 1 ? `<div class="hint" style="margin-bottom:3px">함께 조회한 지번: ${esc(result.lots.map(q=>`${q.label}(표제부 ${q.regs?.getBrTitleInfo?.items?.length ?? 0}건${q.regs?.getBrTitleInfo?.error ? " · 오류" : ""})`).join(", "))}</div>` : ""}
         <div class="hint" style="margin-bottom:3px">조회 지번: 시군구 ${esc(result.params.sigunguCd)} · 법정동 ${esc(result.params.bjdongCd)} · 대지구분 ${esc(result.params.platGbCd)} · 번지 ${esc(result.params.bun)}-${esc(result.params.ji)}</div>
         <div class="hint">층별개요에 나온 동 ${fd.length}개: ${esc(fd.slice(0, 15).join(", "))}${fd.length > 15 ? " …" : ""}<br>표제부 동 ${td.length}개: ${esc(td.slice(0, 15).join(", "))}</div>`;
     })();
@@ -2400,12 +2477,27 @@ function renderSummary(errs, any){
 
   if (!any && !errs.length) h += `<div class="empty">이 지번에 등록된 건축물대장이 없습니다. (나대지이거나 다른 지번에 등록되어 있을 수 있습니다)</div>`;
 
+  /* 0. 자료 기준 안내 (공공데이터는 월 단위 갱신) */
+  {
+    const days = (R.getBrTitleInfo.items || []).map(t=>String(t.crtnDay || "")).filter(d=>/^\d{8}$/.test(d)).sort();
+    const last = days.length ? fmt("crtnDay", days[days.length - 1]) : "";
+    h += `<div class="msg warn" style="margin:0 0 8px;font-size:12.5px">ⓘ 공공데이터포털 건축물대장 자료(<b>월 단위 갱신</b>)입니다${last ? ` · 이 자료 생성일 <b>${esc(last)}</b>` : ""}. 최근 철거·신축·증축은 아직 반영되지 않았을 수 있으니 <b>정부24·세움터에서 최종 확인</b>하세요.</div>`;
+  }
+  /* 0-1. 지번이 여러 개면 지번별 표 + 합계 */
+  if (result.lots?.length > 1){
+    const n2 = v=>v > 0 ? Number(v).toLocaleString("ko-KR", {maximumFractionDigits:2}) : "-";
+    const row = (name, s, b)=>`<tr${b ? ' style="font-weight:700;background:var(--accent-soft)"' : ""}><td>${esc(name)}</td><td class="num">${s.n || "-"}</td><td class="num">${n2(s.plat)}</td><td class="num">${n2(s.arch)}</td><td class="num">${n2(s.tot)}</td><td class="num">${s.heit > 0 ? s.heit + "m" : "-"}</td></tr>`;
+    h += `<div class="bldtitle">지번별 대장 · 면적 · 높이</div><div class="tw" style="margin-bottom:4px"><table class="sumtbl"><thead><tr><th>지번</th><th>동수</th><th>대지면적㎡</th><th>건축면적㎡</th><th>연면적㎡</th><th>최고높이</th></tr></thead><tbody>` +
+      result.lots.map(q=>q.sum.err && !q.sum.n ? `<tr><td>${esc(q.label)}</td><td colspan="5" style="color:#c62828;white-space:normal">조회 실패: ${esc(q.sum.err)}</td></tr>` : (q.sum.n || q.sum.plat ? row(q.label, q.sum) : `<tr><td>${esc(q.label)}</td><td colspan="5" class="hint">대장 없음</td></tr>`)).join("") +
+      row("합계", result.total, true) + `</tbody></table></div>
+      <div class="srcnote">같은 대장이 여러 지번에 걸쳐 나오면 처음 나온 지번에만 셉니다 (관리번호 기준). 대지면적은 총괄표제부 값, 없으면 표제부 값을 쓰며 같은 값은 한 번만 더합니다. 최고높이 합계 칸은 전체 중 가장 높은 값입니다. 층별개요 등 나머지 장은 대표 지번(${esc(result.lots[0].label)}) 기준입니다.</div>`;
+  }
   /* 1. 건물 개요 한 줄 */
   if (titles.length){
     const mainN = titles.filter(t=>/주건축물/.test(t.mainAtchGbCdNm||"")).length;
     const atchN = titles.length - mainN;
     const facts = [`건물 <b>${titles.length}동</b>` + (atchN ? ` (주건축물 ${mainN} · 부속 ${atchN})` : "")];
-    const src = recap || (titles.length === 1 ? titles[0] : null);
+    const src = result.lots?.length > 1 ? {platArea: result.total.plat, totArea: result.total.tot} : (recap || (titles.length === 1 ? titles[0] : null));
     if (src){
       if (+src.platArea) facts.push(`대지면적 <b>${val(src,"platArea")}㎡</b>`);
       if (+src.totArea) facts.push(`연면적 <b>${val(src,"totArea")}㎡</b>`);
@@ -2413,13 +2505,13 @@ function renderSummary(errs, any){
       if (+src.vlRat) facts.push(`용적률 <b>${val(src,"vlRat")}%</b>`);
     }
     h += `<div class="sumline">${facts.join('<span class="sep">·</span>')}</div>` +
-      `<div class="srcnote">출처: 건축HUB 건축물대장정보 · 동수=표제부 · 면적·건폐율·용적률=${recap ? "총괄표제부" : "표제부(총괄 없음)"}</div>`;
+      `<div class="srcnote">출처: 건축HUB 건축물대장정보 · 동수=표제부 · ${result.lots?.length > 1 ? `면적=지번 ${result.lots.length}개 합계` : `면적·건폐율·용적률=${recap ? "총괄표제부" : "표제부(총괄 없음)"}`}</div>`;
 
     /* 2. 동별 구조·지붕·높이 (빨간 강조 항목) — 옆 칸에 맞게 건물별 카드로 */
     h += `<div class="bldtitle">동별 구조 · 지붕 · 높이${qm(MEMO_BLD)}</div><div class="srcnote">출처: 건축HUB 건축물대장정보 · 표제부</div>` + titles.map(t=>{
       const name = [t.bldNm, t.dongNm].map(x=>String(x??"").trim()).filter(Boolean).join(" ") || "-";
       const fl = [+t.grndFlrCnt ? `지상 ${val(t,"grndFlrCnt")}층` : "", +t.ugrndFlrCnt ? `지하 ${val(t,"ugrndFlrCnt")}층` : ""].filter(Boolean).join(" / ");
-      return `<div class="bcard pick" data-bti="${R.getBrTitleInfo.items.indexOf(t)}"><div><b>${esc(name)}</b> <span class="hint">${esc([val(t,"mainAtchGbCdNm"), join2(val(t,"mainPurpsCdNm"), val(t,"etcPurps"))].filter(Boolean).join(" · "))}</span></div>
+      return `<div class="bcard pick" data-bti="${R.getBrTitleInfo.items.indexOf(t)}"><div>${result.lots?.length > 1 ? `<span class="hint">[${esc(t._jibun || "")}]</span> ` : ""}<b>${esc(name)}</b> <span class="hint">${esc([val(t,"mainAtchGbCdNm"), join2(val(t,"mainPurpsCdNm"), val(t,"etcPurps"))].filter(Boolean).join(" · "))}</span></div>
         <div class="hlrow"><span class="k">✔ 구조</span><span class="v">${esc(join2(val(t,"strctCdNm"), val(t,"etcStrct")) || "-")}</span>
           <span class="k">✔ 지붕</span><span class="v">${esc(join2(val(t,"roofCdNm"), val(t,"etcRoof")) || "-")}</span>
           <span class="k">✔ 높이</span><span class="v">${esc(val(t,"heit") ? val(t,"heit") + "m" : "-")}</span></div>
@@ -2459,7 +2551,7 @@ function renderSummary(errs, any){
 function renderKv(items){
   const order = Object.keys(L);
   return items.map(it=>{
-    const title = [it.bldNm, it.dongNm, it.mainAtchGbCdNm, it.regstrKindCdNm].filter(x=>x && String(x).trim()).join(" · ") || "건축물";
+    const title = [result.lots?.length > 1 ? it._jibun : "", it.bldNm, it.dongNm, it.mainAtchGbCdNm, it.regstrKindCdNm].filter(x=>x && String(x).trim()).join(" · ") || "건축물";
     const fields = Object.keys(it).filter(k=>!SKIP.has(k) && String(it[k] ?? "").trim() !== "");
     fields.sort((a,b)=>(order.indexOf(a)+1||999)-(order.indexOf(b)+1||999));
     return `<div class="bldtitle">${esc(title)}</div>` + kvBlock(it, fields);
