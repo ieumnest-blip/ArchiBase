@@ -162,6 +162,91 @@ button.xs{padding:1px 8px;font-size:11.5px;border-radius:5px;margin-left:4px;ver
 .mapbar+.mapgrid{margin-top:8px}
 .cadicon{background:none;border:0}
 .shroofs summary{color:var(--text)}
+.hzfl{font-size:12px;background:var(--bg);border-radius:6px;padding:6px 8px;margin:6px 0;line-height:1.55}
+.hzmeas{font-size:12.5px;margin:6px 0;line-height:1.55}
+.hzin{border-top:1px dashed var(--line);padding-top:6px;margin-top:6px}
+.hzr{gap:4px;flex-wrap:nowrap;margin:4px 0;font-size:12.5px}
+#hzEdit input[type=number]{width:58px;padding:4px 5px}
+.hzlab{width:86px;flex:none;font-size:12.5px}
+.hzh{width:16px;height:16px;border-radius:50%;background:#fff;border:3px solid #7c3aed;box-sizing:border-box;cursor:grab;box-shadow:0 1px 3px rgba(0,0,0,.45)}
+.hzc{width:26px;height:26px;border-radius:50%;background:#7c3aed;color:#fff;font-size:16px;display:flex;align-items:center;justify-content:center;cursor:move;box-shadow:0 1px 3px rgba(0,0,0,.45)}
+.hztag{background:rgba(124,58,237,.9);color:#fff;font-size:11px;font-weight:700;border-radius:4px;padding:0 5px;text-align:center;line-height:18px;white-space:nowrap}
+.hzlist{margin-top:8px;border-top:1px dashed var(--line);padding-top:6px}
+.hzrow{padding:4px 0;font-size:12.5px;border-bottom:1px dashed var(--line)}
+.hzz{flex:1;min-width:0}
+.hzm{width:14px;height:14px;border-radius:50%;background:rgba(255,255,255,.85);border:2px dashed #f59e0b;box-sizing:border-box;cursor:copy}
+.drawmode .leaflet-overlay-pane .leaflet-interactive{pointer-events:none!important}
+.rooftool{border:2px solid var(--accent);border-top:0;border-radius:0 0 8px 8px;padding:6px 10px 10px;margin:0 0 8px;background:var(--card,#fff)}
+.rthead{display:flex;align-items:center;justify-content:space-between;gap:6px;font-size:13px;padding:4px 0;border-bottom:1px dashed var(--line);margin-bottom:4px}
+.shroof.rtopen{background:var(--accent-soft,#eef4ff);outline:2px solid var(--accent)}
+.shroof .rtbtns{grid-column:1/-1;display:flex;gap:5px;flex-wrap:wrap}
+.shroof .rtbtns .on{background:var(--accent);color:#fff;border-color:var(--accent)}
+#solPlay{flex:none;width:30px;height:30px;border-radius:50%;padding:0;font-size:11px;line-height:1;background:var(--accent);color:#fff;border:1px solid var(--accent);cursor:pointer}
+.solbar #solClock{flex:none;min-width:46px;font-size:15px}
+.solbar #solSpeed{flex:none;font-size:12px;padding:2px 4px;border-radius:5px}
+.shleg{font-size:12px;color:var(--muted);margin:5px 2px 8px;line-height:1.6}
+.shstate{font-size:11.5px;color:var(--muted);margin-top:8px;line-height:1.5}
+.shroof .shlink{font-size:12px}
+.shroof .shlink>summary{cursor:pointer;color:var(--muted);font-size:11.5px;list-style:none}
+.shroof .shlink>summary::before{content:"▸ "}.shroof .shlink[open]>summary::before{content:"▾ "}
+.laybox>summary{cursor:pointer;font-weight:700;font-size:12.5px}
+.lg{display:inline-block;width:11px;height:11px;border-radius:2px;vertical-align:-1px;margin:0 3px 0 6px}
+.solavg{font-size:12px;font-weight:700;border-radius:10px;padding:0 8px;white-space:nowrap}
+.solavg.ok{background:#dcfce7;color:#166534}.solavg.ng{background:#fee2e2;color:#b91c1c}
+.solhr .ok{color:#16a34a}.solhr .ng{color:#b91c1c;font-weight:700}
+.solhr .cur{outline:2px solid var(--accent);border-radius:4px;padding:0 3px;background:#fff}
+#fbBtn.on{border-color:#16a34a;color:#166534}
+.hzin .hzr{flex-wrap:wrap!important;row-gap:4px}.hzin .hzr .hint{white-space:nowrap}
+.hzslot{display:inline-flex;min-width:118px;min-height:24px;border-radius:12px;margin-left:4px;flex:none}
+.hzslot.drop{outline:2px dashed #94a3b8;outline-offset:1px}.hzslot.over{outline-color:var(--accent);background:var(--accent-soft,#eef4ff)}
+.hzchip{display:inline-block;background:#7c3aed;color:#fff;font-size:12px;font-weight:700;border-radius:12px;padding:3px 9px;cursor:grab;white-space:nowrap;user-select:none}
+.solmodal{position:fixed;inset:0;background:rgba(15,23,42,.35);z-index:4000;display:flex;align-items:center;justify-content:center}
+.solmodal[hidden]{display:none}
+.solcard{background:var(--card,#fff);color:var(--text);border-radius:12px;padding:16px 18px;width:min(440px,92vw);box-shadow:0 10px 30px rgba(0,0,0,.3);font-size:13px}
+.solcard .hzr{flex-wrap:wrap!important;row-gap:4px}.solcard .hzr .hint{white-space:nowrap}
+.solcard input[type=number]{width:80px;padding:5px 6px}
+.bgrp{font-size:12.5px;font-weight:800;margin:10px 0 4px;padding:3px 8px;border-radius:6px}
+.bgrp.main{background:#e8f0fe;color:#1a3f8f}.bgrp.atch{background:#f1f3f6;color:#55606f}
+.bcard.atch{border-style:dashed}
+.mapmark{margin-top:4px;font-size:12px;display:flex;gap:6px;align-items:center;flex-wrap:wrap}
+.mapmark .ok{color:#1d7a3a}.mapmark .no{color:#b45309;font-weight:700}
+.leaflet-tooltip.tag.name.main{border:2px solid #2f7bff;color:#0f2f73;font-weight:800}
+.leaflet-tooltip.tag.name.atch{border:1px dashed #8b98ad;color:#55606f;background:rgba(255,255,255,.85);font-size:11px}
+.bgrpd>summary{cursor:pointer;list-style:none;display:flex;align-items:center;gap:6px}
+.bgrpd>summary::before{content:"▸";font-size:12px}.bgrpd[open]>summary::before{content:"▾"}
+.bgrpd>summary::-webkit-details-marker{display:none}
+.filepick{display:flex;align-items:center;gap:10px;border:2px dashed var(--accent);background:var(--accent-soft,#eef4ff);border-radius:10px;padding:12px 14px;cursor:pointer;font-size:13px;line-height:1.5}
+.filepick:hover,.filepick.over{background:#dbe7ff}
+.filepick .fi{font-size:26px}
+.hzrot{width:22px;height:22px;border-radius:50%;background:#f59e0b;color:#fff;font-size:15px;display:flex;align-items:center;justify-content:center;cursor:grab;box-shadow:0 1px 3px rgba(0,0,0,.45)}
+.shbulk{margin:0 0 8px;font-size:12.5px}.shbulk>summary{cursor:pointer;color:var(--muted);font-weight:600}
+.shtbl{width:100%;border-collapse:collapse;font-size:12.5px;margin:6px 0 8px}
+.shtbl th{font-weight:700;color:var(--muted);text-align:left;padding:4px 6px;border-bottom:1px solid var(--line);font-size:11.5px}
+.shtbl td{padding:5px 6px;border-bottom:1px dashed var(--line);white-space:nowrap}
+.shtbl td:first-child{white-space:normal}.shtbl td.num{text-align:right}
+.shtbl .shrow{cursor:pointer}.shtbl .shrow:hover,.shtbl .shrow.hot{background:#e0f7fa}
+.shtbl .shrow.cur{background:var(--accent-soft,#eef4ff);font-weight:700}.shtbl .shrow.cur td:first-child{color:var(--accent)}
+.shtbl .shrow .selmk{display:none;color:#7c3aed;margin-right:3px}.shtbl .shrow.sel .selmk{display:inline}.shtbl .shrow.sel{outline:2px dashed #7c3aed;outline-offset:-2px}
+.shtbl .atag{font-size:10.5px;color:#55606f;background:#eef0f3;border-radius:4px;padding:0 4px;margin-right:3px;font-weight:600}
+.shtbl .ntag{font-size:10.5px;color:#c62828;font-weight:700}
+.shtbl b.ok{color:#16a34a}.shtbl b.ng{color:#b91c1c}
+.mapbar label[hidden]{display:none!important}
+.laybox.flash{outline:3px solid #f59e0b;outline-offset:2px}
+#shRes .shbig{cursor:pointer}#shRes .shbig:hover{filter:brightness(.97)}
+.shtog{font-size:11.5px;font-weight:600;opacity:.8;margin-top:4px}
+.solsub{border:1px dashed var(--line);border-radius:7px;padding:7px 9px;margin:6px 0}
+#rtSol .filebtn{display:inline-block;border:1px solid var(--accent);background:var(--accent);color:#fff;border-radius:6px;padding:4px 10px;cursor:pointer;font-weight:600;font-size:12.5px;white-space:nowrap}
+#solDrawBtn.on{background:#16a34a;color:#fff;border-color:#16a34a;white-space:normal;text-align:left}
+#solForm input[type=number]{width:70px;padding:4px 5px}
+.soltag{background:rgba(22,163,74,.92);color:#fff;font-size:11px;font-weight:700;border-radius:4px;padding:0 6px;text-align:center;line-height:18px;white-space:nowrap;display:inline-block;box-shadow:0 1px 3px rgba(0,0,0,.4)}
+.soltag.ng{background:#dc2626}.soltag.ok{background:#16a34a}.soltag.warn{background:#ea580c}
+.leaflet-marker-draggable .soltag{cursor:move}
+.solres{font-size:12.5px;line-height:1.55;margin-top:8px;border-top:1px dashed var(--line);padding-top:6px}
+.solr{padding:4px 0;border-bottom:1px dashed var(--line)}
+.solhr{display:flex;flex-wrap:wrap;gap:2px 8px;font-size:11.5px;color:var(--muted);margin-top:2px}
+.autotag{background:#f97316;color:#fff;font-size:11px;font-weight:800;border-radius:9px;text-align:center;line-height:18px}
+#layAuto select{font-size:12.5px;padding:3px 5px}
+#layAuto input[type=number]{width:70px;padding:4px 5px}
 .shset{border:1px solid var(--line);border-radius:8px;padding:8px 10px;margin:8px 0}
 .shset>summary{cursor:pointer;font-weight:700;font-size:13.5px}
 #shSet{margin-top:4px;background:var(--bg)}
@@ -266,7 +351,7 @@ details.issuehelp ul{position:absolute;right:0;top:34px;z-index:1500;width:min(4
 .mapcol{position:relative}
 .mapside{position:absolute;top:10px;right:58px;z-index:900;padding:6px 10px;font-size:12.5px;background:rgba(255,255,255,.95);color:var(--accent);border:1px solid var(--accent);border-radius:6px;box-shadow:0 1px 4px rgba(0,0,0,.25)}
 .side .mapbar{display:grid;grid-template-columns:1fr 1fr;gap:5px 10px;padding:8px 10px;margin:0 0 8px;border:1px solid var(--line);border-radius:8px;font-size:13px}
-.side .mapbar #ovOpen{grid-column:1 / -1;margin-top:2px}
+.side .mapbar #ovOpen,.side .mapbar #layOpen{margin-top:2px}
 @media (max-width:900px){.mapgrid,.mapgrid.wide{grid-template-columns:1fr!important}}
 .sidetabs{display:flex;gap:4px;position:sticky;top:0;z-index:5;background:var(--card);padding-bottom:6px}
 .sidetabs button{flex:1;padding:6px 2px;font-size:12.5px;background:var(--bg);color:var(--muted);border:1px solid var(--line);border-radius:6px;font-weight:600}
@@ -385,6 +470,7 @@ details.issuehelp ul{position:absolute;right:0;top:34px;z-index:1500;width:min(4
         <input id="q" placeholder="주소 입력 — 예: 테헤란로 152 / 역삼동 737" autocomplete="off">
         <button id="go" type="submit">주소 검색</button>
       </form>
+      <button type="button" class="ghost sm" id="fbBtn">☁ 연결 중…</button>
       <button type="button" class="ghost sm" id="keyBtn">⚙ API 인증키 <span class="hint" id="keyState"></span></button>
     </div>
     <div id="msg"></div>
@@ -957,13 +1043,16 @@ function mapSlideHtml(info){
           <label><input type="checkbox" data-lay="reg" checked><i class="sw" style="border-color:#5b8def;background:rgba(91,141,239,.18)"></i>대장 등록 건물</label>
           <label><input type="checkbox" data-lay="unlink"><i class="sw" style="border-color:#facc15;border-style:dashed;background:rgba(250,204,21,.18)"></i>노란 점선 체크</label>
           <label><input type="checkbox" data-lay="names" checked>건물 이름</label>
+          <label hidden><input type="checkbox" data-lay="atchnames">부속건축물 이름</label>
           <label><input type="checkbox" data-lay="shade">☀ 음영(그늘)</label>
-          <label><input type="checkbox" data-lay="shtxt" checked>그늘 글자 (+mm)</label>
+          <label hidden><input type="checkbox" data-lay="shtxt" checked>그늘 글자 (+mm)</label>
           <label><input type="checkbox" data-lay="dim">항공사진 흐리게</label>
           <label title="현황도를 올려 위치를 맞추면 켤 수 있습니다"><input type="checkbox" data-lay="draw" disabled><i class="sw" style="border-color:#e91e63"></i>현황도 보이기</label>
-          <button type="button" class="ghost sm" id="ovOpen" style="grid-column:1 / -1">📐 현황도 겹쳐보기</button>
+          <label title="태양광 상자에서 설비 배치도를 겹쳐 놓으면 켤 수 있습니다"><input type="checkbox" data-lay="layshow" disabled><i class="sw" style="border-color:#1f2547;background:rgba(31,37,71,.25)"></i>배치도 보이기</label>
+          <button type="button" class="ghost sm" id="ovOpen">📐 현황도 겹쳐보기</button>
+          <button type="button" class="ghost sm" id="layOpen">🗺 배치도 겹쳐보기</button>
         </div>
-        <div class="sidetabs noprint"><button type="button" data-side="info" class="on">기본정보</button><button type="button" data-side="shade" hidden>☀ 음영</button><button type="button" data-side="ov">📐 현황도</button><button type="button" data-side="ck" hidden>✏ 체크</button></div>
+        <div class="sidetabs noprint"><button type="button" data-side="info" class="on">기본정보</button><button type="button" data-side="shade" hidden>☀ 음영</button><button type="button" data-side="ov" hidden>📐 현황도</button><button type="button" data-side="ck" hidden>✏ 체크</button></div>
         <section class="sidebox" id="infoPanel">
           <div id="mapState" class="mapnote"></div>
           <details id="regDiag" class="regdiag"></details>
@@ -1137,7 +1226,7 @@ function ovHtml(){
   return `<section class="sidebox noprint" id="ovBox" hidden>
     <div class="sideh">📐 현황도 겹쳐보기</div>
     <div class="hint" style="margin-bottom:8px">세움터 건축물 현황도(배치도) PDF·사진을 항공사진 위에 겹쳐, 도면에 없는 지붕(신고 안 된 구조물)을 찾습니다.</div>
-    <label class="filebtn">현황도 파일 고르기<input type="file" id="ovFile" accept="image/*,.pdf,application/pdf" hidden></label>
+    <label class="filepick" id="ovDrop"><span class="fi">📂</span><span><b>여기를 눌러 현황도 파일 고르기</b><br><span class="hint">PDF·사진 · 파일을 여기로 끌어다 놓아도 됩니다</span></span><input type="file" id="ovFile" accept="image/*,.pdf,application/pdf" hidden></label>
     <div id="ovStep" class="ovstep" style="margin-top:8px">PDF나 사진 파일을 고르세요.</div>
     <div id="ovUnl" class="ovunl"></div>
     <div id="ovPick" hidden style="margin-top:8px">
@@ -1162,6 +1251,10 @@ function ovHtml(){
 }
 function setupOverlay(LF, map, ctx){
   const box = $("#ovBox"); if (!box) return;
+  { const dz = $("#ovDrop"); // 파일을 끌어다 놓기
+    if (dz){ dz.addEventListener("dragover", e=>{ e.preventDefault(); dz.classList.add("over"); });
+      dz.addEventListener("dragleave", ()=>dz.classList.remove("over"));
+      dz.addEventListener("drop", e=>{ e.preventDefault(); dz.classList.remove("over"); const f = e.dataTransfer.files; if (!f?.length) return; const inp = $("#ovFile"); inp.files = f; inp.dispatchEvent(new Event("change", {bubbles:true})); }); } }
   const Z0 = 20;
   const ov = {src:null, ink:null, integ:null, W:0, H:0, dpts:[], mpts:[], T:null, step:"", zoom:1, marks:[], markMode:false, tmp:LF.layerGroup().addTo(map), markLayer:LF.layerGroup().addTo(map)};
   // 도면 그림을 놓을 칸 (항공사진 위, 건물 외곽선 아래)
@@ -1344,6 +1437,7 @@ function setupOverlay(LF, map, ctx){
     const scaleTxt = (s * mpp * 1000).toFixed(0);
     step(`✅ 겹쳐졌습니다. 도면 진하기를 조절하며 <b>분홍선(도면) 밖에 지붕이 보이는 곳</b>을 찾아 <b>[✏ 체크]</b> 탭의 노란 점선 그리기로 표시하세요. <span class="hint">(도면 1픽셀 ≈ ${scaleTxt}mm)</span>`);
     checkUnlinked();
+    ovSave();
   }
   function place(){
     if (!ov.T) return;
@@ -1448,7 +1542,7 @@ function setupOverlay(LF, map, ctx){
     ov.T = {s: T0.s*k, c: T0.c*cd - T0.sn*sd, sn: T0.sn*cd + T0.c*sd,
             tx: k*a1 + Pv.x - k*b1 + A.dx/mpp, ty: k*a2 + Pv.y - k*b2 + A.dy/mpp};
     place();
-    if (final){ clipImage(); checkUnlinked(true); ctx.fills?.(); }
+    if (final){ clipImage(); checkUnlinked(true); ctx.fills?.(); ovSave(); }
   }
   const settle = ()=>{ clearTimeout(ov.adjT); ov.adjT = setTimeout(()=>applyAdj(true), 350); };
   $("#ovRot").addEventListener("input", e=>{ ov.adj.rot = +e.target.value; syncAdj(); applyAdj(false); settle(); });
@@ -1459,6 +1553,36 @@ function setupOverlay(LF, map, ctx){
     const st = 0.2; if (m === "l") ov.adj.dx -= st; if (m === "r") ov.adj.dx += st; if (m === "u") ov.adj.dy -= st; if (m === "d") ov.adj.dy += st;
     applyAdj(false); settle();
   });
+  // 주소별 저장: 그림(줄여서) + 도면 점·지도 점 + 미세조정 → 다시 열면 바로 겹쳐짐
+  const ovKey = ()=>{ const id = cloudId(); return id ? `archibase_ov_${id}` : null; };
+  function ovSave(){
+    const k = ovKey(); if (!k || !ov.T0 || !ov.src || ov.restoring) return;
+    const f = Math.min(1, 2600/Math.max(ov.src.width, ov.src.height));
+    let cv = ov.src; if (f < 1){ cv = document.createElement("canvas"); cv.width = Math.round(ov.src.width*f); cv.height = Math.round(ov.src.height*f); cv.getContext("2d").drawImage(ov.src, 0, 0, cv.width, cv.height); }
+    if (ov.saveSrc !== ov.src){ ov.saveSrc = ov.src; ov.saveCv = cv; } else cv = ov.saveCv;
+    const meta = {dpts:ov.dpts.map(p=>[p[0]*f, p[1]*f]), mpts:ov.mpts.map(p=>[p.lat, p.lng]), adj:ov.adj, op:+$("#ovOp").value || 60};
+    try{ localStorage.setItem(k, JSON.stringify(Object.assign({img:cv.toDataURL("image/jpeg", 0.8)}, meta))); }catch(e){}
+    window._ovCloud = {meta, cv}; cloudPush("ov");
+  }
+  window._ovRestore = async ()=>{
+    const k = ovKey(); if (!k || ov.T) return;
+    let d = null; try{ d = JSON.parse(localStorage.getItem(k) || "null"); }catch(e){}
+    if (!d?.img && window._ovCloudLoaded){ d = window._ovCloudLoaded; window._ovCloudLoaded = null; }
+    if (!d?.img || !d.dpts?.length || !d.mpts?.length) return;
+    try{
+      const im = await new Promise((res, rej)=>{ const i = new Image(); i.onload = ()=>res(i); i.onerror = ()=>rej(new Error("그림")); i.src = d.img; });
+      const cv = document.createElement("canvas"); cv.width = im.naturalWidth; cv.height = im.naturalHeight; cv.getContext("2d").drawImage(im, 0, 0);
+      ov.restoring = true;
+      ov.src = cv; prepare(cv); ov.saveSrc = cv; ov.saveCv = cv;
+      ov.dpts = d.dpts; ov.mpts = d.mpts.map(p=>LF.latLng(p[0], p[1]));
+      if (d.op) $("#ovOp").value = d.op;
+      fit();
+      if (d.adj && (d.adj.rot || d.adj.sc || d.adj.dx || d.adj.dy)){ ov.adj = d.adj; syncAdj(); applyAdj(true); }
+      step(`✅ 저장해 둔 현황도를 불러와 겹쳤습니다. 새 현황도로 바꾸려면 위의 파일 고르기를 누르세요.`);
+      ov.restoring = false;
+    }catch(e){ ov.restoring = false; }
+  };
+  $("#ovOp").addEventListener("change", ()=>ovSave());
   const sumTxt = ()=>{ const nIn = ov.nIn || 0, nOut = ov.nOut || 0; return (nIn + nOut) ? `현황도 비교: 대장 미연결 ${nIn + nOut}곳 중 <b style="color:#c62828">현황도에 없음 ${nOut}곳</b>` + (nIn ? ` · 현황도에 그려져 있어 대장 건물로 바꾼 곳 ${nIn}곳` : "") : ""; };
   return {show: v=>{ img.style.display = v && ov.T ? "" : "none"; },
     removed: ()=>{ if (!ov.sum) return; ov.nOut = Math.max(0, (ov.nOut || 0) - 1); ov.sum = sumTxt(); showSum(); }};
@@ -1733,6 +1857,8 @@ async function initMap(){
     mgr.parcel(parcel.flatMap(f=>polysOf(f).map(poly=>poly[0])));
 
     const REG = {color:"#5b8def", weight:2, fillColor:"#5b8def", fillOpacity:0.12};
+    const ATC = {color:"#8b98ad", weight:1.5, dashArray:"5 4", fillColor:"#8b98ad", fillOpacity:0.08}; // 부속건축물
+    const isMainT = t=>/주건축물/.test(t?.mainAtchGbCdNm || "");
     const UNL = {color:"#facc15", weight:3, dashArray:"8 6", fillColor:"#facc15", fillOpacity:0.14};
     const tName = t=>[t.bldNm, t.dongNm].map(x=>String(x ?? "").trim()).filter(Boolean).join(" ") || "대장 건물";
     // 조각을 어느 대장 건물에 붙일지 직접 고르는 칸 (자동 연결이 틀렸을 때)
@@ -1769,9 +1895,15 @@ async function initMap(){
       const nameTags = [];
       linked.filter(b=>b.reg).forEach(b=>{
         const big = linked.filter(o=>o.reg && (o.t || null) === (b.t || null) && (b.t || o === b)).sort((x, y)=>y.area - x.area)[0];
-        if (big === b) nameTags.push({ring:b.ring, text:b.name, cls:"name"});
+        if (big === b){
+          const main = !!b.t && isMainT(b.t);
+          if (!main && !$('#mapBar [data-lay="atchnames"]')?.checked) return; // 부속·대장 없음 이름은 켰을 때만
+          nameTags.push({ring:b.ring, text: main ? b.name : !b.t ? `${b.name} (대장 없음)` : "부속 · " + b.name, cls:"name " + (main ? "main" : "atch")});
+        }
       });
       mgr.set("name", nameTags);
+      try{ fills(); }catch(e){} // 처음 한 번은 아직 준비 전
+      try{ cardMarks(); }catch(e){}
     };
     refreshNames();
     const showStatus = ()=>{
@@ -1805,7 +1937,8 @@ async function initMap(){
     const fills = ()=>{
       const dr = $('#mapBar [data-lay="draw"]');
       const off = $('#mapBar [data-lay="shade"]').checked || (dr.checked && !dr.disabled);
-      regL.setStyle(off ? {...REG, fillOpacity:0} : REG); unL.setStyle(off ? {...UNL, fillOpacity:0} : UNL);
+      regL.eachLayer(l=>{ const b = byF.get(l.feature), st = !b?.t || !isMainT(b.t) ? ATC : REG; l.setStyle(off ? {...st, fillOpacity:0} : st); });
+      unL.setStyle(off ? {...UNL, fillOpacity:0} : UNL);
     };
     // ---- 노란 점선 체크: 대장 미연결 건물 + 직접 그린 곳 (글자·글자색 수정) ----
     const YEL = "#facc15", checks = [], ckLayer = LF.layerGroup().addTo(map);
@@ -1881,14 +2014,91 @@ async function initMap(){
     map.removeLayer(unL); map.removeLayer(ckLayer); mgr.show("check", false);
 
     // 기본정보 카드 클릭 → 해당 건물(또는 면적이 비슷한 건물)을 지도에 강조
-    const hiL = LF.layerGroup().addTo(map); let hiT = null;
-    const toast = t=>{ const d = LF.DomUtil.create("div", "mflash", map.getContainer()); d.textContent = t; setTimeout(()=>d.remove(), 3800); };
+    const hiL = LF.layerGroup().addTo(map); let hiT = null, hiCard = null;
+    // 동별 카드에 지도 연결 상태 표시 (외곽선이 없으면 지도에서 골라 연결)
+    function cardMarks(){
+      document.querySelectorAll("#infoPanel .bcard.pick").forEach(c=>{
+        const t = titles[+c.dataset.bti]; if (!t) return;
+        const n = linked.filter(b=>b.reg && b.t === t).length;
+        let m = c.querySelector(".mapmark"); if (!m){ m = document.createElement("div"); m.className = "mapmark"; c.appendChild(m); }
+        m.innerHTML = n ? `<span class="ok">🗺 지도 연결됨${n > 1 ? ` (${n}조각)` : ""}</span> <button type="button" class="xs ghost" data-pickt="${c.dataset.bti}">다른 외곽선으로</button>`
+          : `<span class="no">⚠ 지도에 이 건물 외곽선이 연결되지 않음</span> <button type="button" class="xs" data-pickt="${c.dataset.bti}">📍 지도에서 골라 연결</button>`;
+      });
+    }
+    window._cardMarks = cardMarks;
+    let pickT = null;
+    $("#infoPanel")?.addEventListener("click", e=>{
+      const b = e.target.closest("[data-pickt]"); if (!b) return;
+      e.stopPropagation(); pickT = +b.dataset.pickt;
+      map.getContainer().classList.add("measuring");
+      map.doubleClickZoom.disable();
+      toast(`지도에서 「${tName(titles[pickT])}」 건물 외곽선을 클릭하세요. 외곽선이 없으면 건물 모서리를 차례로 찍어 그리고, 첫 점이나 더블클릭으로 끝내세요 (Esc 취소)`, 9000);
+    }, true);
+    // 외곽선이 없는 대장 건물: 직접 그려서 연결 (이 주소에 저장 → 다음에도 나옴, 음영 계산에도 들어감)
+    let pdraw = null;
+    const pdrawEnd = ()=>{
+      if (!pdraw || pdraw.pts.length < 3){ return; }
+      const T = pdraw.t, ring = pdraw.pts.map(p=>[p.lng, p.lat]);
+      map.removeLayer(pdraw.line); pdraw = null; pickT = null;
+      map.getContainer().classList.remove("measuring"); setTimeout(()=>map.doubleClickZoom.enable(), 300);
+      addDrawn(ring, T, true);
+      toast(`「${tName(titles[T])}」 외곽선을 그려 연결했습니다`);
+    };
+    function addDrawn(ring, T, save){
+      if (!titles[T]) return;
+      const f = {type:"Feature", properties:{drawn:true}, geometry:{type:"Polygon", coordinates:[ring.concat([ring[0]])]}};
+      const b = {f, a:{}, area:footArea(f), t:titles[T], reg:true, how:"직접 그림"};
+      b.name = tName(b.t); b.ring = polysOf(f)[0][0];
+      blds.push(f); linked.push(b); byF.set(f, b);
+      regL.addData(f); regL.eachLayer(l=>{ if (l.feature === f) pickOn(l); });
+      mgr.roofs(blds.flatMap(x=>polysOf(x).map(poly=>poly[0])));
+      refreshNames(); fills(); showStatus();
+      if (save) drawnSave();
+      shadeRebuild();
+    }
+    function drawnSave(){
+      const id = cloudId(); if (!id) return;
+      const out = linked.filter(b=>b.f.properties?.drawn && b.reg && b.t && blds.includes(b.f)).map(b=>({ring:polysOf(b.f)[0][0].slice(0, -1), ti:titles.indexOf(b.t)}));
+      try{ out.length ? localStorage.setItem(`archibase_bld_${id}`, JSON.stringify(out)) : localStorage.removeItem(`archibase_bld_${id}`); }catch(e){}
+      cloudPush("bld");
+    }
+    window._drawnSave = drawnSave;
+    function shadeRebuild(){ // 건물이 늘면 음영을 새로 계산 (그린 영역·태양광은 저장돼 있어 그대로 돌아옴)
+      if (!shade || shade.loading) return;
+      try{ hzCancel(); solCancel(); shadePlay(false); }catch(e){}
+      [shade.group, shade.editLayer, shade.hzTmp].forEach(l=>{ if (l) map.removeLayer(l); });
+      shade.times = []; try{ shadeGeoDraw(); }catch(e){}
+      mgr.set("shade", []);
+      shade = null;
+      if (!$("#shPanel").hidden) shadeToggle(ctx, true);
+    }
+    map.on("click", e=>{
+      if (pickT == null) return;
+      if (!pdraw) pdraw = {t:pickT, pts:[], line:LF.polyline([], {color:"#2f7bff", weight:3, dashArray:"6 4", interactive:false}).addTo(map)};
+      const p = pdraw.pts;
+      if (p.length >= 3 && map.latLngToContainerPoint(p[0]).distanceTo(e.containerPoint) < 12){ pdrawEnd(); return; }
+      p.push(e.latlng); pdraw.line.setLatLngs(p.concat(p.length >= 3 ? [p[0]] : []));
+    });
+    map.on("dblclick", e=>{ if (pdraw){ e.originalEvent?.preventDefault(); pdrawEnd(); } });
+    map.on("popupopen", ()=>{ if (pdraw) map.closePopup(); });
+    // 저장해 둔 직접 그린 외곽선 다시 올리기
+    (async ()=>{
+      try{ await cloudLoad(cloudId()); }catch(e){}
+      let d = null; try{ d = JSON.parse(localStorage.getItem(`archibase_bld_${cloudId()}`) || "null"); }catch(e){}
+      (d || []).forEach(o=>addDrawn(o.ring, o.ti, false));
+      try{ await window._ovRestore?.(); }catch(e){} // 저장해 둔 현황도 겹치기
+    })();
+    const pickOn = l=>l.on("click", ()=>{ if (pickT == null || pdraw) return; const T = pickT; pickT = null; map.getContainer().classList.remove("measuring"); setTimeout(()=>{ map.closePopup(); relinkPiece(keyOf(l.feature), T); toast(`「${tName(titles[T])}」에 연결했습니다`); }, 0); });
+    regL.eachLayer(pickOn); unL.eachLayer(pickOn);
+    document.addEventListener("keydown", e=>{ if (e.key === "Escape" && pickT != null){ pickT = null; if (pdraw){ map.removeLayer(pdraw.line); pdraw = null; } map.doubleClickZoom.enable(); map.getContainer().classList.remove("measuring"); } });
+    cardMarks();
+    const toast = (t, ms)=>{ const d = LF.DomUtil.create("div", "mflash", map.getContainer()); d.textContent = t; setTimeout(()=>d.remove(), ms || 3800); };
     const showPieces = (list, style)=>{
       hiL.clearLayers(); clearTimeout(hiT);
       if (!list.length) return false;
       const pts = [];
       list.forEach(b=>{ const ll = b.ring.map(q=>[q[1], q[0]]); pts.push(...ll); hiL.addLayer(LF.polygon(ll, Object.assign({interactive:false}, style))); });
-      map.fitBounds(LF.latLngBounds(pts), {maxZoom:20, padding:[80, 80]});
+      const bb = LF.latLngBounds(pts); if (!map.getBounds().intersects(bb)) map.panTo(bb.getCenter()); // 확대는 그대로, 화면 밖이면 옮기기만
       hiT = setTimeout(()=>hiL.clearLayers(), 7000);
       return true;
     };
@@ -1896,7 +2106,7 @@ async function initMap(){
       const c = e.target.closest(".bcard.pick"); if (!c || e.target.closest("a,button,input,select")) return;
       if (c.dataset.bti != null){
         const t = titles[+c.dataset.bti], list = linked.filter(b=>b.reg && b.t === t);
-        if (showPieces(list, {color:"#ff6d00", weight:4, fillColor:"#ff6d00", fillOpacity:0.3})) toast(`${tName(t)} · 지도 외곽선 ${list.length}조각 표시`);
+        if (showPieces(list, {color:"#00e5ff", weight:4, fillColor:"#00e5ff", fillOpacity:0.35})) toast(`${tName(t)} · 지도 외곽선 ${list.length}조각 표시`);
         else toast("이 대장 건물과 연결된 지도 외곽선이 없습니다 (지도 자료에 아직 없는 건물일 수 있음)");
       } else if (c.dataset.tmp != null){
         const a = parseFloat(String(c.dataset.tmp).replace(/,/g, ""));
@@ -1906,6 +2116,16 @@ async function initMap(){
         if (showPieces(list, {color:"#84cc16", weight:4, dashArray:"8 6", fillColor:"#84cc16", fillOpacity:0.28})) toast(`가설건축물은 위치 정보가 없어 면적(약 ${a}㎡)이 비슷한 건물 ${list.length}곳을 표시합니다`);
         else toast(`면적이 비슷한(약 ${a}㎡) 외곽선이 없습니다 — 철거됐거나 지도에 아직 없을 수 있습니다`);
       }
+    });
+    // 카드에 마우스를 올리면 그 건물을 하늘색으로 (음영 탭 지붕 목록과 같게)
+    $("#infoPanel")?.addEventListener("mouseover", e=>{
+      const c = e.target.closest(".bcard.pick"); if (!c || c.dataset.bti == null || c === hiCard) return;
+      hiCard = c; const t = titles[+c.dataset.bti];
+      showPieces(linked.filter(b=>b.reg && b.t === t), {color:"#00e5ff", weight:4, fillColor:"#00e5ff", fillOpacity:0.35});
+    });
+    $("#infoPanel")?.addEventListener("mouseout", e=>{
+      const c = e.target.closest(".bcard.pick"); if (!c || c.contains(e.relatedTarget)) return;
+      hiCard = null; hiL.clearLayers(); clearTimeout(hiT);
     });
     // 대장 미연결 건물 삭제: 지도·노란 점선 목록·음영·현황도 겹쳐보기 모두에서 빠짐
     function removeUnlinked(b){
@@ -1919,13 +2139,18 @@ async function initMap(){
       mgr.roofs(blds.flatMap(f=>polysOf(f).map(poly=>poly[0])));
       shadeRemovePiece(key);
       map.closePopup(); ckList(); refreshNames(); fills(); showStatus();
+      if (b.f.properties?.drawn) window._drawnSave?.();
       ovApi?.removed?.();
     }
     window.removeUnlinkedPiece = key=>removeUnlinked(linked.find(o=>keyOf(o.f) === key));
     // 음영 탭 목록의 이름도 같이 바꾸기
     const syncShade = b=>{
       const sb = shade?.roofs?.find(x=>x.key === keyOf(b.f));
-      if (sb){ sb.name = b.reg ? b.name : "대장 미연결 건물"; sb.t = b.t; shadeRoofList(); }
+      if (sb){
+        sb.name = b.reg ? b.name : "대장 미연결 건물"; sb.t = b.t;
+        if (!["user", "userfl", "zone", "gis"].includes(sb.src) && b.t && +b.t.heit > 0){ sb.h = +b.t.heit; sb.src = "ledger"; sb.est = false; shade.minZ = shadeMinZ(); shade.recalc?.(); }
+        shadeRoofList();
+      }
     };
     // 조각의 대장 연결을 직접 바꾸기 (-1 = 미연결, 0~ = 표제부 순서)
     window.relinkPiece = (key, v)=>{
@@ -1941,6 +2166,7 @@ async function initMap(){
       if (b.reg && ci >= 0) checks.splice(ci, 1);
       if (!b.reg && ci < 0) checks.push({id:++ckSeq, src:"unlinked", b, layer:lay, ring:b.ring, text:"건축물 현황도 확인 요망", color:"#c62828", edited:false});
       map.closePopup(); ckList(); refreshNames(); fills(); syncShade(b);
+      if (b.f.properties?.drawn) window._drawnSave?.();
     };
 
     const ovApi = setupOverlay(LF, map, {blds: linked, st, mgr, measureOff: measure.off, fills, parcelRings: parcel.flatMap(f=>polysOf(f).map(poly=>poly[0])),
@@ -1950,7 +2176,13 @@ async function initMap(){
     const ctx = {LF, map, parcel, pl, linked, mgr, regL, unL, REG, UNL, fills};
 
     // 옆 칸 탭: 기본정보 / 음영확인 / 현황도
+    const tabReveal = (name, on)=>{ // 기본정보 뒤에 켠 순서대로 탭이 붙음
+      const t = document.querySelector(`.sidetabs [data-side="${name}"]`); if (!t) return;
+      if (on && t.hidden){ t.parentElement.appendChild(t); t.hidden = false; }
+      if (!on) t.hidden = true;
+    };
     const sideShow = name=>{
+      if (name !== "info") tabReveal(name, true);
       $("#infoPanel").hidden = name !== "info"; $("#shPanel").hidden = name !== "shade"; $("#ovBox").hidden = name !== "ov"; $("#ckPanel").hidden = name !== "ck";
       if (shade?.editLayer) name === "shade" ? shade.editLayer.addTo(map) : map.removeLayer(shade.editLayer);
       document.querySelectorAll(".sidetabs button").forEach(b=>b.classList.toggle("on", b.dataset.side === name));
@@ -1964,6 +2196,17 @@ async function initMap(){
       sideShow(b.dataset.side);
     });
     $("#ovOpen").addEventListener("click", ()=>sideShow("ov"));
+    // 배치도 겹쳐보기: 음영을 켜고 고른 건물의 ☀ 태양광 상자에서 배치도 칸을 엶
+    $("#layOpen").addEventListener("click", async ()=>{
+      const sc = $('#mapBar [data-lay="shade"]');
+      if (!sc.checked){ sc.checked = true; sc.dispatchEvent(new Event("change", {bubbles:true})); }
+      for (let k = 0; k < 100 && (!shade || shade.loading || !shade.roofs); k++) await new Promise(r=>setTimeout(r, 200));
+      if (!shade?.roofs?.length){ toast("이 필지에 건물 외곽선이 없어 배치도를 놓을 수 없습니다"); return; }
+      sideShow("shade");
+      if (shade.rt?.kind !== "sol") rtOpen(shade.cur ?? shade.roofs[0].i, "sol");
+      const lb = $("#layBox"); if (lb){ lb.open = true; lb.scrollIntoView({block:"center", behavior:"smooth"}); lb.classList.add("flash"); setTimeout(()=>lb.classList.remove("flash"), 1600); }
+      if (!layHasSrc()) toast("오른쪽 🗺 설비 배치도 칸의 [파일 고르기]를 눌러 배치도를 고르세요");
+    });
     const ckOn = ()=>{ const cb = $('#mapBar [data-lay="unlink"]'); if (!cb.checked){ cb.checked = true; cb.dispatchEvent(new Event("change", {bubbles:true})); } sideShow("ck"); };
     // 보기 체크
     const lay = {parcel: pl, reg: regL, unlink: unL};
@@ -1972,8 +2215,9 @@ async function initMap(){
       if (lay[k]) on ? lay[k].addTo(map) : map.removeLayer(lay[k]);
       if (k === "reg") mgr.show("name", on && $('[data-lay="names"]').checked);
       if (k === "names") mgr.show("name", on && $('[data-lay="reg"]').checked);
+      if (k === "atchnames") refreshNames();
       if (k === "unlink"){
-        document.querySelector('.sidetabs [data-side="ck"]').hidden = !on;
+        tabReveal("ck", on);
         mgr.show("check", on);
         on ? (unL.addTo(map), ckLayer.addTo(map)) : (map.removeLayer(unL), map.removeLayer(ckLayer));
         if (on) sideShow("ck"); else if (!$("#ckPanel").hidden) sideShow("info");
@@ -1981,8 +2225,9 @@ async function initMap(){
       if (k === "shtxt") mgr.show("shade", on && $('#mapBar [data-lay="shade"]').checked);
       if (k === "draw"){ ovApi.show(on); const dm = $('#mapBar [data-lay="dim"]'); if (dm.checked !== on){ dm.checked = on; box.classList.toggle("dim", on); } }
       if (k === "dim") box.classList.toggle("dim", on);
+      if (k === "layshow") layShowSet(on);
       if (k === "shade"){
-        document.querySelector('.sidetabs [data-side="shade"]').hidden = !on;
+        tabReveal("shade", on);
         shadeToggle(ctx, on);
         if (on) sideShow("shade");
         else if (!$("#shPanel").hidden) sideShow("info");
@@ -2010,6 +2255,18 @@ function sunPos(ms, lat, lon){
   const az = Math.atan2(Math.sin(H), Math.cos(H)*Math.sin(la) - Math.tan(dec)*Math.cos(la)) / r + 180;
   return {alt: alt/r, az: (az % 360 + 360) % 360};
 }
+/* 점에서 쏜 선이 다각형 테두리와 만나는 모든 거리 */
+function rayAll(px, py, ux, uy, ring, out){
+  for (let i = 0, n = ring.length; i < n; i++){
+    const A = ring[i], B = ring[(i+1) % n];
+    const ex = B[0]-A[0], ey = B[1]-A[1], den = ux*ey - uy*ex;
+    if (Math.abs(den) < 1e-12) continue;
+    const ax = A[0]-px, ay = A[1]-py;
+    const t = (ax*ey - ay*ex) / den, s = (ax*uy - ay*ux) / den;
+    if (t > 0 && s >= 0 && s <= 1) out.push(t);
+  }
+  return out;
+}
 /* 점(px,py)에서 방향(ux,uy)으로 쏜 선이 다각형 테두리와 처음 만나는 거리 */
 function rayHit(px, py, ux, uy, ring){
   let best = Infinity;
@@ -2034,41 +2291,39 @@ function hull(pts){
 function shadePanelHtml(){
   const y = new Date().getFullYear();
   return `<section class="sidebox noprint" id="shPanel" hidden>
-    <div class="sideh row" style="justify-content:space-between;flex-wrap:nowrap"><span>☀ 음영확인 <span class="hint">주변 건물 그림자 기준 · 참고용</span></span>
+    <div class="sideh row" style="justify-content:space-between;flex-wrap:nowrap"><span>☀ 음영확인 <span class="hint">참고용</span></span>
       <button type="button" class="ghost sm" id="shSetBtn" onclick="const d=document.getElementById('shSet');d.hidden=!d.hidden;this.classList.toggle('on',!d.hidden)">⚙ 설정</button></div>
     <div class="shbar"><div class="r1"><button type="button" id="shPlay" title="시간대별 그림자 자동 재생">▶</button><b id="shClock">-</b><input type="range" id="shT" min="0" max="0" value="0" aria-label="시간 고르기"><select id="shSpeed" title="재생 속도"><option value="800">느리게</option><option value="400" selected>보통</option><option value="150">빠르게</option></select></div><div class="r2"><span id="shSun" class="hint"></span><button type="button" class="ghost sm" id="shApply" title="지금 설정된 건물 높이로 음영을 다시 계산합니다">↻ 높이 반영</button></div></div>
     <div class="shset" id="shSet" hidden>
     <div class="shgrid">
       <label>날짜<input type="date" id="shDate" value="${y}-12-22"></label>
       <label>시간<span class="row" style="gap:4px;flex-wrap:nowrap"><input type="number" id="shFrom" min="5" max="19" step="0.5" value="9">~<input type="number" id="shTo" min="5" max="19" step="0.5" value="15">시</span></label>
-      <label>설치 높이(지붕 위, mm)<input type="number" id="shH" min="0" step="100" value="0"></label>
-      <label>지도 표시<select id="shMode"><option value="need">더 띄워야 하는 높이</option><option value="hours">하루 중 그늘 시간</option><option value="now">선택 시각 그늘</option></select></label>
-      <label>패널 경사(°)<input type="number" id="shTilt" min="0" max="60" step="1" value="30"></label>
-      <label>패널 세로 길이(mm)<input type="number" id="shLen" min="0" step="10" value="2300"></label>
     </div>
-    </div>
-    <div id="shState" class="mapnote" style="margin:0"></div>
-    <details class="sidehelp"><summary>보는 법 · 계산 기준</summary>
-      <p>· 맨 위 문장이 답입니다 — 패널 아래 끝을 지붕에서 몇 mm 띄워야 그늘이 안 지는지 알려 줍니다.<br>
-      · 그늘 지는 곳(색칠된 덩어리) 옆에 빨간 "그늘 · +1,200mm" 글자가 붙습니다 — 그 덩어리에 그늘이 안 지려면 패널 아래 끝을 지붕에서 이만큼 띄워야 한다는 뜻입니다.<br>
-      · 그늘 덩어리가 <b>6㎡보다 작으면</b>(패널 3~4장 정도) 글자를 붙이지 않고 색칠만 합니다. 지붕 가장자리 자투리처럼 패널을 놓지 않을 곳까지 글자가 붙어 화면이 복잡해지는 것을 막기 위해서입니다. 이런 자투리도 맨 위 "띄워야 하는 높이"에는 들어갑니다.<br>
-      · 색칠된 칸만 그늘 지는 곳입니다. "설치 높이"를 바꾸면 그 높이에서 그늘이 남는지 바로 다시 보여 줍니다.<br>
-      · 기본값은 그림자가 가장 긴 <b>동지(12월 22일) 9시~15시</b>입니다.<br>
-      · 지붕은 평평하다고 보고, 패널 <b>맨 아래 끝</b>이 설치 높이에 있다고 계산합니다. 위쪽 끝 = 설치 높이 + 세로 길이 × sin(경사).<br>
-      · <b>계산에 안 들어가는 것</b>: 산·언덕 지형, 나무·전봇대, 외곽선 없는 구조물(불법 증축 등), 패널끼리의 그늘.<br>
-      · 높이 자료가 없는 건물은 층수 × 3.5m(층수도 없으면 4m)로 어림했습니다. 지도에서 주변 건물을 누르면 높이를 고칠 수 있습니다.<br>
-      · 제목 아래 시간 막대를 끌면 시간대별 그림자가 바뀌고, ▶를 누르면 설정한 시간 범위를 자동으로 재생합니다. 옆의 칸에서 재생 속도를 고를 수 있습니다.</p>
-    </details>
-    <div id="shRes"></div>
-    <div class="shleg" id="shLeg"></div>
+    <input type="hidden" id="shH" value="0"><input type="hidden" id="shMode" value="now">
+    <label class="shcol"><input type="checkbox" id="shGround" checked style="width:auto;height:auto"> 땅에 드리운 그림자도 보기</label>
     <label class="shcol"><input type="color" id="shHitCol" value="#ff9800"> 그늘을 만드는 주변 건물 외곽선 색</label>
+    </div>
+    <div id="shRes"></div>
+    <label class="shcol" style="margin:-2px 0 6px"><input type="checkbox" class="solTagChk" ${solTagsOn() ? "checked" : ""} style="width:auto;height:auto"> 지도에 <b>☀ 태양광 구역 이름표</b> 보이기</label>
+    <div class="shleg" id="shLeg"></div>
+    <div id="toolPark" hidden></div>
     <details class="shset shroofs" id="shRoofs" open></details>
+    <div id="shState" class="shstate"></div>
+    <details class="sidehelp"><summary>보는 법 · 계산 기준</summary>
+      <p>· 시간 막대를 끌거나 ▶를 누르면 그 시각에 지붕과 패널 위에 <b>실제로 떨어지는 그림자</b>가 지도에 그려집니다.<br>
+      · 맨 위 문장은 하루(기본 동지 12월 22일 9~15시) 동안 지붕 어디에도 그늘이 안 지려면 패널 아래 끝을 지붕에서 몇 mm 띄워야 하는지입니다. 지붕의 빨간 "그늘 · +○mm" 글자도 같은 뜻입니다.<br>
+      · <b>☀ 태양광</b>: 패널 구역과 측면도 높이(낮은 쪽·높은 쪽)를 넣으면 그 구조물 높이로 패널 위 그늘을 계산합니다. 구역을 그린 지붕은 빨간 글자 대신 구역 결과로 봅니다.<br>
+      · <b>📐 높이 영역</b>: 건물 일부만 높이가 다르면 그 부분을 그려 높이를 넣습니다.<br>
+      · 지붕은 평평하다고 봅니다. 높이 자료가 없는 건물은 층수 × 3.5m(층수도 없으면 4m)로 어림했고, 지도에서 눌러 고칠 수 있습니다.<br>
+      · <b>계산에 안 들어가는 것</b>: 산·언덕 지형, 나무·전봇대, 외곽선 없는 구조물, 한 구역 안의 패널 줄 사이 그늘.</p>
+    </details>
   </section>`;
 }
 let shPlayT = null;
 function shadePlay(on){
   clearInterval(shPlayT); shPlayT = null;
   const b = $("#shPlay"); if (b) b.textContent = on ? "❚❚" : "▶";
+  const b2 = $("#solPlay"); if (b2) b2.textContent = on ? "❚❚" : "▶";
   if (!on || !shade) return;
   $("#shMode").value = "now";
   const ms = +($("#shSpeed")?.value) || 400;
@@ -2110,14 +2365,14 @@ const deletedKeys = new Set(); // 지운 대장 미연결 건물 (음영·현황
 const shadeB = i=>shade?.blds?.find(b=>b.i === +i);
 async function shadeToggle(ctx, on){
   if (!on){
-    if (shade?.group) ctx.map.removeLayer(shade.group);
+    if (shade?.group){ ctx.map.removeLayer(shade.group); shadeGeoDraw(); }
     if (shade?.editLayer) ctx.map.removeLayer(shade.editLayer);
-    shadePlay(false);
+    hzCancel(); solCancel(); shadePlay(false);
     ctx.mgr.show("shade", false);
     return;
   }
   ctx.mgr.show("shade", $('#mapBar [data-lay="shtxt"]').checked);
-  if (shade?.group){ shade.group.addTo(ctx.map); return; }
+  if (shade?.group){ shade.group.addTo(ctx.map); shadeGeoDraw(); return; }
   if (!shade) await initShade(ctx);
 }
 async function initShade(ctx){
@@ -2136,6 +2391,7 @@ async function initShade(ctx){
     const M = 150; // 필지 둘레 150m 안의 건물까지 그림자 계산
     const all = (await vwData(`data=LT_C_BLDGINFO&size=1000&geomFilter=BOX(${bb.getWest() - M/kx},${bb.getSouth() - M/ky},${bb.getEast() + M/kx},${bb.getNorth() + M/ky})`)).filter(f=>!deletedKeys.has(keyOf(f)));
     const mine = all.filter(f=>{ const c = centerOf(f); return ctx.parcel.some(pf=>polysOf(pf).some(poly=>inRing(c, poly[0]))); });
+    (ctx.linked || []).filter(o=>o.f.properties?.drawn && o.reg).forEach(o=>{ all.push(o.f); mine.push(o.f); }); // 지도 자료에 없어 직접 그린 건물
     if (!mine.length){ st.innerHTML = `<div class="msg warn">이 필지 안에 지도 건물 외곽선이 없어 지붕 음영을 계산할 수 없습니다. (신축 건물은 지도 자료가 아직 없을 수 있음)</div>`; shade = null; return; }
     const titles = result.regs.getBrTitleInfo.items || [];
     const linked = linkBuildings(mine, titles);
@@ -2161,7 +2417,7 @@ async function initShade(ctx){
       const pts = rings.flat(), cx = pts.reduce((s,q)=>s+q[0],0)/pts.length, cy = pts.reduce((s,q)=>s+q[1],0)/pts.length;
       const rr = Math.max(...pts.map(q=>Math.hypot(q[0]-cx, q[1]-cy)));
       const fl = L ? (+a.grnd_flr > 0 ? +a.grnd_flr : (t && pieces <= 1 && +t.grndFlrCnt > 0 ? +t.grndFlrCnt : null)) : null;
-      return {i, f, key: keyOf(f), mine: !!L, name, h, est, src, fl, rings, cx, cy, rr, area: footArea(f)};
+      return {i, f, key: keyOf(f), mine: !!L, name, h, est, src, fl, rings, cx, cy, rr, area: footArea(f), t};
     });
     const roofs = blds.filter(b=>b.mine);
     // 층당 높이: 높이와 층수를 둘 다 아는 건물에서 계산 (예: 16.5m ÷ 4층 = 4.1m)
@@ -2195,14 +2451,16 @@ async function initShade(ctx){
     blds.forEach(b=>{
       if (!b.mine) return;
       b.edit = LF.polygon(b.rings.map(r=>r.map(q=>toLL(q[0], q[1]))), {stroke:false, fillOpacity:0}).addTo(editLayer);
-      b.edit.bindTooltip(()=>`${esc(b.name)} · 약 ${Math.round(b.area).toLocaleString()}㎡ · 높이 ${b.h.toFixed(1)}m`, {sticky:true});
+      b.edit.bindTooltip(()=>`${esc(b.name)} · 약 ${Math.round(b.area).toLocaleString()}㎡ · 높이 ${b.h.toFixed(1)}m${b.zones?.length ? ` · 높이 영역 ${b.zones.length}개` : ""}`, {sticky:true});
       b.edit.on("mouseover", ()=>shadeHot(b.i, true)).on("mouseout", ()=>shadeHot(b.i, false));
+      b.edit.on("popupopen", ()=>{ if (shade && shade.cur !== b.i){ shade.cur = b.i; if (shade.rt && !shade.hz && !shade.solDraw && !shade.solRect && !shade.solShape){ shade.rt = {i:b.i, kind:shade.rt.kind}; shade.hzSel = b.i; shadeRoofList(); rtFill(); } else shadeRoofList(); } }); // 지도에서 누른 건물을 목록에서 자세히
       b.edit.on("click", e=>{ if (e.originalEvent?.ctrlKey || e.originalEvent?.metaKey){ setTimeout(()=>b.edit.closePopup(), 0); shadeSelToggle(b.i); } });
       b.edit.on("popupopen", ()=>{ shadeHot(b.i, true); const r = document.querySelector(`.shroof[data-i="${b.i}"]`); r?.scrollIntoView({block:"nearest", behavior:"smooth"}); });
       b.edit.on("popupclose", ()=>shadeHot(b.i, false));
       b.edit.bindPopup(()=>`<div class="shpop"><b>${esc(b.name)}</b> <span class="hint nw">약 ${Math.round(b.area).toLocaleString()}㎡</span> <span class="hint nw">· 지금 ${b.h.toFixed(1)}m</span><br>
         층수 <input type="number" id="shEditF" step="1" min="1" value="${b.fl || ""}"> 층 <button type="button" onclick="shadeSetF(${b.i})">적용</button> <span class="hint">× ${shade.flH}m</span><br>
-        또는 높이 <input type="number" id="shEdit" step="0.1" min="0.1" value="${b.h.toFixed(1)}"> m <button type="button" onclick="shadeSetH(${b.i})">적용</button><br><span class="hint">${esc(SRC_TXT[b.src] || "")}</span></div>`);
+        또는 높이 <input type="number" id="shEdit" step="0.1" min="0.1" value="${b.h.toFixed(1)}"> m <button type="button" onclick="shadeSetH(${b.i})">적용</button><br><span class="hint">${esc(SRC_TXT[b.src] || "")}</span>
+        <div class="row" style="gap:5px;margin-top:6px"><button type="button" onclick="rtOpen(${b.i},'hz')">📐 높이 영역</button><button type="button" onclick="rtOpen(${b.i},'sol')">☀ 태양광</button></div></div>`);
     });
     blds.forEach(b=>{
       if (b.mine) return;
@@ -2213,15 +2471,17 @@ async function initShade(ctx){
     });
 
     if (!$("#shPanel").hidden) editLayer.addTo(map);
-    shade = {map, LF, blds, roofs, cells, cell, toLL, c0, shadowLayer, group, editLayer, rnd, flH, flRef, mgr: ctx.mgr, times: [], minZ: Math.min(...roofs.map(b=>b.h))};
+    shade = {map, LF, blds, roofs, cells, cell, toLL, c0, shadowLayer, group, editLayer, rnd, flH, flRef, mgr: ctx.mgr, times: [], minZ: Math.min(...roofs.map(b=>b.h)), toXY2: (lat, lng)=>[(lng - c0.lng)*kx, (lat - c0.lat)*ky], kx, ky};
     shade.sel = new Set(); // 일괄 변경으로 고른 지붕 조각
-    const recalc = ()=>{ st.innerHTML = `<span class="spinner"></span>그림자 계산 중…`; setTimeout(()=>{ shadeCompute(); shadeDraw(); }, 30); };
+    const recalc = ()=>{ hzSave(); solSave(); roofSave(); st.innerHTML = `<span class="spinner"></span>그림자 계산 중…`; setTimeout(()=>{ shadeCompute(); shadeDraw(); }, 30); };
     shade.recalc = recalc;
     roofs.forEach(b=>{ if (b.src === "floors" && b.fl) b.h = Math.round(b.fl * flH * 10)/10; });
-    shade.minZ = Math.min(...roofs.map(b=>b.h));
-    shadeRoofList();
+    await cloudLoad(cloudId()); roofRestore(); hzRestore();
+    shade.minZ = shadeMinZ();
+    shadeRoofList(); hzInit(); solInit(); shadeGeoInit();
+    if (fb?.fresh && fb.fresh === cloudId()) ["hz", "sol", "roof"].forEach(cloudPush); // 클라우드에 처음 → 이 브라우저 내용을 올림
     ["shDate","shFrom","shTo"].forEach(id=>$("#"+id).addEventListener("change", recalc));
-    ["shH","shTilt","shLen","shMode","shHitCol"].forEach(id=>$("#"+id).addEventListener("input", shadeDraw));
+    ["shH","shMode","shHitCol","shGround"].forEach(id=>$("#"+id).addEventListener("input", shadeDraw));
     $("#shT").addEventListener("input", ()=>{ $("#shMode").value = "now"; shadeDraw(); });
     $("#shPlay").addEventListener("click", ()=>shadePlay(!shPlayT));
     $("#shSpeed").addEventListener("change", ()=>{ if (shPlayT) shadePlay(true); });
@@ -2242,21 +2502,21 @@ function shadeRemovePiece(key){
   shade.blds = shade.blds.filter(x=>x !== b);
   shade.roofs = shade.roofs.filter(x=>x !== b);
   shade.sel?.delete(b.i);
-  shade.minZ = shade.roofs.length ? Math.min(...shade.roofs.map(x=>x.h)) : 0;
+  shade.minZ = shade.roofs.length ? shadeMinZ() : 0;
   shade.map.closePopup(); shadeRoofList(); shade.recalc();
 }
-const SRC_TXT = {gis:"지도 자료 높이", ledger:"건축물대장 높이", floors:"층수 × 층당 높이", ledgermax:"⚠ 대장 최고높이(여러 조각에 같은 값) — 층수 입력 필요", est:"⚠ 높이 자료 없음 — 층수 입력 필요", user:"직접 입력(m)", userfl:"층수 × 층당 높이"};
+const SRC_TXT = {gis:"지도 자료 높이", ledger:"건축물대장 높이", floors:"층수 × 층당 높이", ledgermax:"⚠ 대장 최고높이(여러 조각에 같은 값) — 층수 입력 필요", est:"⚠ 높이 자료 없음 — 층수 입력 필요", user:"직접 입력(m)", userfl:"층수 × 층당 높이", zone:"높이 영역 바깥 높이"};
 function shadeSetHeight(i, v){
   if (!shade || !(v > 0)) return;
   const b = shadeB(i); if (!b) return; b.h = v; b.est = false; b.src = "user"; b.fl = 0;
-  shade.minZ = Math.min(...shade.roofs.map(x=>x.h));
+  shade.minZ = shadeMinZ();
   shade.map.closePopup(); shadeRoofList(); shade.recalc();
 }
 window.shadeSetH = i=>shadeSetHeight(i, +document.getElementById("shEdit")?.value);
 function shadeSetFloors(i, v){
   if (!shade || !(v > 0)) return;
   const b = shadeB(i); if (!b) return; b.fl = v; b.h = Math.round(v * shade.flH * 10)/10; b.est = false; b.src = "userfl";
-  shade.minZ = Math.min(...shade.roofs.map(x=>x.h));
+  shade.minZ = shadeMinZ();
   shade.map.closePopup(); shadeRoofList(); shade.recalc();
 }
 window.shadeSetF = i=>shadeSetFloors(i, +document.getElementById("shEditF")?.value);
@@ -2267,14 +2527,14 @@ function shadeHot(i, on){ // 목록 줄 ↔ 지도 지붕 조각 서로 강조
   if (!shade) return;
   const b = shadeB(i); if (!b?.edit) return;
   b.edit.setStyle(on ? ROOF_ON : ROOF_OFF); if (on) b.edit.bringToFront();
-  document.querySelectorAll(`.shroof[data-i="${i}"]`).forEach(r=>r.classList.toggle("hot", on));
+  document.querySelectorAll(`.shroof[data-i="${i}"],.shrow[data-i="${i}"]`).forEach(r=>r.classList.toggle("hot", on));
   b.noMk?.getElement()?.classList.toggle("hot", on);
 }
 function shadeMultiHtml(){
-  return `<div class="shmulti"><div class="row" style="gap:5px;flex-wrap:wrap"><b style="font-size:12.5px">선택 <span id="shSelN">${shade.sel.size}</span>개</b><button type="button" class="ghost sm" data-selall="1">전체 선택</button><button type="button" class="ghost sm" data-selall="0">선택 해제</button></div>
-    <div class="hint" style="margin-top:4px">건물 이름을 클릭하거나 Ctrl(맥은 ⌘)+클릭으로 조각을 여러 개 고르고, Esc로 선택을 풉니다. 지도에서 지붕을 Ctrl+클릭해도 됩니다. 높이·층수는 입력 후 <b>Enter</b>를 누르면 적용됩니다.</div>
-    <div class="row" style="gap:5px;margin-top:6px"><span class="hint" style="width:34px">높이</span><input type="number" id="shMH" step="0.1" min="0.1" style="width:64px;padding:4px 5px" placeholder="Enter"><span class="hint">m</span><button type="button" class="ghost sm" data-undo="1" ${shade.undo?.length ? "" : "disabled"}>되돌리기</button></div>
-    <div class="row" style="gap:5px;margin-top:6px"><span class="hint" style="width:34px">층수</span><input type="number" id="shMF" step="1" min="1" max="99" style="width:64px;padding:4px 5px" placeholder="Enter"><span class="hint">층</span><button type="button" class="ghost sm" data-undo="1" ${shade.undo?.length ? "" : "disabled"}>되돌리기</button></div></div></div>`;
+  const u = shade.undo?.length ? "" : "disabled";
+  return `<div class="shmulti"><div class="row" style="gap:5px;flex-wrap:wrap;font-size:12.5px"><b>여러 개 한 번에</b><span class="hint">이름 클릭 · Ctrl+클릭으로 고르기, Esc 해제</span></div>
+    <div class="row" style="gap:5px;margin-top:5px;flex-wrap:wrap;font-size:12.5px"><span class="nw">선택 <b id="shSelN">${shade.sel.size}</b>개</span><input type="number" id="shMH" step="0.1" min="0.1" style="width:66px;padding:4px 5px" placeholder="높이 m"><input type="number" id="shMF" step="1" min="1" max="99" style="width:52px;padding:4px 5px" placeholder="층"><span class="hint">Enter</span>
+      <button type="button" class="ghost sm" data-selall="1">전체</button><button type="button" class="ghost sm" data-selall="0">해제</button><button type="button" class="ghost sm" data-undo="1" ${u}>되돌리기</button></div></div>`;
 }
 function shadeApplySel(kind){
   if (!shade) return;
@@ -2289,19 +2549,19 @@ function shadeApplySel(kind){
     else { b.h = Math.round(v * 10)/10; b.src = "user"; b.fl = 0; }
     b.est = false;
   });
-  shade.minZ = Math.min(...shade.roofs.map(x=>x.h));
+  shade.minZ = shadeMinZ();
   shadeRoofList(); shade.recalc();
 }
 function shadeUndo(){
   const snap = shade?.undo?.pop(); if (!snap) return;
   snap.forEach(o=>{ if (shade.roofs.includes(o.b)) Object.assign(o.b, {h:o.h, fl:o.fl, src:o.src, est:o.est}); });
-  shade.minZ = shade.roofs.length ? Math.min(...shade.roofs.map(x=>x.h)) : 0;
+  shade.minZ = shade.roofs.length ? shadeMinZ() : 0;
   shadeRoofList(); shade.recalc();
 }
 /* 선택: Ctrl(맥 ⌘)+클릭으로 여러 개, Esc로 해제. 목록 줄과 지도 지붕 모두 */
 function shadeSelRefresh(){
   if (!shade?.sel) return;
-  document.querySelectorAll(".shroof").forEach(r=>r.classList.toggle("sel", shade.sel.has(+r.dataset.i)));
+  document.querySelectorAll(".shroof,.shrow").forEach(r=>r.classList.toggle("sel", shade.sel.has(+r.dataset.i)));
   const n = $("#shSelN"); if (n) n.textContent = shade.sel.size;
   shade.roofs.forEach(b=>{ if (b.edit) b.edit.setStyle(shade.sel.has(b.i) ? {stroke:true, color:"#7c3aed", weight:3, dashArray:"6 4", fillOpacity:0} : {stroke:false}); });
 }
@@ -2310,6 +2570,20 @@ function shadeSelToggle(i){
   shade.sel.has(i) ? shade.sel.delete(i) : shade.sel.add(i);
   shadeSelRefresh();
 }
+// 다른 곳으로 옮긴 켜기·끄기 버튼 → 지도 막대의 (숨긴) 체크를 대신 누름
+function mapBarSet(k, on){ const cb = $(`#mapBar [data-lay="${k}"]`); if (!cb || cb.checked === on) return; cb.checked = on; cb.dispatchEvent(new Event("change", {bubbles:true})); }
+document.addEventListener("click", e=>{
+  const b = e.target.closest?.("[data-atchname]"); if (!b) return;
+  e.preventDefault(); e.stopPropagation(); // 묶음이 접히고 펼쳐지지 않게
+  const on = !$('#mapBar [data-lay="atchnames"]').checked; mapBarSet("atchnames", on);
+  document.querySelectorAll("[data-atchname]").forEach(x=>x.textContent = (on ? "☑" : "☐") + " 지도에 이름 보이기 (대장 없는 건물 포함)");
+}, true);
+document.addEventListener("click", e=>{
+  const box = e.target.closest?.("#shRes .shbig"); if (!box || !shade) return;
+  const on = $('#mapBar [data-lay="shtxt"]')?.checked !== false; mapBarSet("shtxt", !on); shadeDraw();
+});
+document.addEventListener("mouseover", e=>{ const r = e.target.closest?.(".shrow"); if (r && !r.contains(e.relatedTarget)) shadeHot(+r.dataset.i, true); });
+document.addEventListener("mouseout", e=>{ const r = e.target.closest?.(".shrow"); if (r && !r.contains(e.relatedTarget)) shadeHot(+r.dataset.i, false); });
 document.addEventListener("mousedown", e=>{ // Ctrl+클릭이 글자 드래그로 번지지 않게
   if ((e.ctrlKey || e.metaKey) && e.target.closest?.(".shroof") && !e.target.closest("input,select,button")) e.preventDefault();
 });
@@ -2320,6 +2594,11 @@ document.addEventListener("click", e=>{
   if (e.target.closest?.("[data-undo]")){ shadeUndo(); return; }
   const nm = e.target.closest?.("[data-pick]");
   if (nm){ shadeSelToggle(+nm.dataset.pick); return; } // 이름 클릭: Ctrl 없이도 선택/해제
+  const tr = e.target.closest?.(".shrow");
+  if (tr){ const i = +tr.dataset.i;
+    if (e.ctrlKey || e.metaKey){ shadeSelToggle(i); return; }
+    shade.cur = i; if (shade.rt && shade.rt.i !== i) rtOpen(i, shade.rt.kind); else shadeRoofList();
+    return; }
   const row = e.target.closest?.(".shroof");
   if (row && (e.ctrlKey || e.metaKey) && !e.target.closest("input,select,button")) shadeSelToggle(+row.dataset.i);
 });
@@ -2335,8 +2614,23 @@ document.addEventListener("keydown", e=>{
   if (e.target.closest?.("input,select,textarea")) return; // 높이 입력 중의 Esc는 입력 취소
   shade.sel.clear(); shadeSelRefresh();
 });
+function solPct(b){ // 건물 태양광 구역의 하루 평균 그늘 %
+  const S = shade, qs = (S.sol || []).filter(q=>q.bi === b.i), T = S.times?.length || 0;
+  if (!qs.length) return null; if (!T) return "";
+  let n = 0, sh = 0; qs.forEach(q=>q.cells?.forEach(c=>{ n += T; if (c.need) for (let i = 0; i < T; i++) if (c.need[i] > 1e-6) sh++; }));
+  return n ? Math.round(sh/n*100) : 0;
+}
+function solTableHtml(rows, need){
+  const S = shade;
+  return `<table class="shtbl"><thead><tr><th>건물</th><th>높이</th><th>패널</th><th title="하루 평균 그늘">그늘</th></tr></thead><tbody>` + rows.map(b=>{
+    const nq = (S.sol || []).filter(q=>q.bi === b.i).length, p = solPct(b), atch = b.t && !/주건축물/.test(b.t.mainAtchGbCdNm || "");
+    return `<tr class="shrow${b.i === S.cur ? " cur" : ""}${S.sel.has(b.i) ? " sel" : ""}" data-i="${b.i}"><td><span class="selmk">✔</span>${b.i === S.cur ? "▶ " : ""}${atch ? '<span class="atag">부속</span>' : ""}${esc(b.name)}${need(b) ? ' <span class="ntag" title="층수 입력 필요">층수?</span>' : ""}${b.zones?.length ? ' <span title="높이 영역">📐</span>' : ""}</td>
+      <td class="num">${b.h.toFixed(1)}m</td><td class="num">${nq ? nq + "구역" : "-"}</td><td class="num" data-shpct="${b.i}">${p == null ? "-" : p === "" ? "…" : `<b class="${p ? "ng" : "ok"}">${p}%</b>`}</td></tr>`;
+  }).join("") + `</tbody></table>`;
+}
 function shadeRoofList(){
   const S = shade, el = $("#shRoofs"); if (!S || !el) return;
+  const tool = $("#roofTool"); if (tool) $("#toolPark").appendChild(tool); // 다시 그려도 상자 안 내용은 그대로
   const rows = S.roofs.slice().sort((a, b)=>b.area - a.area);
   // 지도에 조각 번호 (목록과 같은 번호) — 조각 안쪽 칸 중 가운데에 가까운 곳
   S.noLayer = S.noLayer || S.LF.layerGroup();
@@ -2353,18 +2647,22 @@ function shadeRoofList(){
   S.map.removeLayer(S.noLayer); // 지도 번호는 표시하지 않음 (목록 줄에 마우스를 올리면 하늘색 강조)
   const need = b=>b.src === "ledgermax" || b.src === "est";
   const nChk = rows.filter(need).length;
-  el.innerHTML = `<summary>🏢 지붕 조각 높이 ${rows.length}조각` + (nChk ? ` · <span style="color:#c62828">층수 입력 필요 ${nChk}</span>` : "") + `</summary>
-    <div class="hint" style="margin:6px 0">대장에는 동마다 <b>가장 높은 곳</b> 높이 하나만 있습니다. 사무동과 공장처럼 높이가 다른 조각은 <b>층수</b>를 넣으면 <b>층수 × 층당 높이</b>로 계산합니다. 지도에서 지붕을 눌러도 고칠 수 있습니다.</div>
-    <div class="hint" style="margin-bottom:6px">줄에 마우스를 올리면 지도에서 그 조각이 <b style="color:#00a3bf">하늘색</b>으로 표시됩니다. 높이(m)는 <b>두 번 클릭</b>하면 직접 고칠 수 있고, <b>대장 연결</b>이 틀린 조각은 줄 안의 칸에서 바꿀 수 있습니다.</div>
-    <div class="row" style="gap:5px;margin-bottom:6px"><b style="font-size:12.5px">층당 높이</b><input type="number" id="shFlH" step="0.1" min="1" value="${S.flH}" style="width:64px;padding:5px 6px"><span class="hint">m · ${esc(S.flRef)}</span></div>` +
+  if (S.cur == null || !rows.some(b=>b.i === S.cur)) S.cur = rows[0]?.i;
+  el.innerHTML = `<summary>🏢 지붕별 높이 · 높이 영역 · 태양광 <span class="hint">${rows.length}조각</span>` + (nChk ? ` <span style="color:#c62828;font-size:12.5px">· 층수 입력 필요 ${nChk}</span>` : "") + `</summary>
+    <div class="hint" style="margin:6px 0">줄을 누르면 그 건물을 아래에서 자세히 봅니다(지도에서 건물을 눌러도 됨). 높이(m)는 <b>두 번 클릭</b>해 고치고, 건물 일부만 높이가 다르면 <b>📐</b>, 패널은 <b>☀</b>를 누르세요.</div>
+    ${solTableHtml(rows, need)}
+    <details class="shbulk"><summary>⚙ 층당 높이 · 여러 건물 높이 한 번에 바꾸기</summary>
+    <div class="row" style="gap:5px;margin:6px 0"><b style="font-size:12.5px">층당 높이</b><input type="number" id="shFlH" step="0.1" min="1" value="${S.flH}" style="width:64px;padding:5px 6px"><span class="hint">m · ${esc(S.flRef)}</span></div>` +
     (nChk ? `<div class="row" style="gap:5px;margin-bottom:6px"><span class="hint">입력 필요 조각 모두</span><input type="number" id="shBulk" step="1" min="1" style="width:56px;padding:5px 6px"><span class="hint">층으로</span><button type="button" class="ghost sm" id="shBulkBtn">적용</button></div>` : "") +
-    shadeMultiHtml() + rows.map(b=>`<div class="shroof${need(b) ? " chk" : ""}${S.sel.has(b.i) ? " sel" : ""}" data-i="${b.i}">
+    shadeMultiHtml() + `</details>` + rows.filter(b=>b.i === S.cur).map(b=>`<div class="shroof${need(b) ? " chk" : ""}${S.sel.has(b.i) ? " sel" : ""}" data-i="${b.i}">
       <div class="shhead"><span class="shname" data-pick="${b.i}" title="클릭하면 선택/해제 (Ctrl+클릭으로 여러 개도 가능)"><span class="selmk">✔</span><b>${esc(b.name)}</b></span> <span class="hint nw">약 ${Math.round(b.area).toLocaleString()}㎡</span></div>
-      <div class="hint">${esc(SRC_TXT[b.src] || "")}</div>
+      <div class="hint">${esc(SRC_TXT[b.src] || "")}${b.zones?.length ? ` · 📐 높이 영역 ${b.zones.length}개 (${b.zones.map(z=>z.h.toFixed(1)+"m").join(", ")})` : ""}</div>
       <span class="row" style="gap:2px;flex-wrap:nowrap"><input type="number" step="1" min="1" max="99" value="${b.fl || ""}" placeholder="?" data-fl="${b.i}"><span class="hint">층</span></span>
       <b class="shh" data-hh="${b.i}" title="두 번 클릭하면 높이(m)를 직접 고칠 수 있습니다">${b.h.toFixed(1)}m</b>
       <button type="button" class="ghost sm" data-zoom="${b.i}" title="지도에서 보기">🔍</button>
-      <div class="shlink">${window.linkSelHtml ? window.linkSelHtml(b.key) : ""}</div></div>`).join("");
+      <div class="rtbtns"><button type="button" class="ghost sm${S.rt?.i === b.i && S.rt.kind === "hz" ? " on" : ""}" data-rt="hz" data-i="${b.i}" title="건물 일부만 높이가 다를 때">📐 높이 영역${b.zones?.length ? ` ${b.zones.length}` : ""}</button><button type="button" class="ghost sm${S.rt?.i === b.i && S.rt.kind === "sol" ? " on" : ""}" data-rt="sol" data-i="${b.i}" title="패널 범위·측면도 높이로 그늘 확인">☀ 태양광${(S.sol || []).filter(q=>q.bi === b.i).length ? ` ${(S.sol || []).filter(q=>q.bi === b.i).length}` : ""}</button></div>
+      <details class="shlink"${/미연결/.test(b.name) ? " open" : ""}><summary>대장 연결</summary>${window.linkSelHtml ? window.linkSelHtml(b.key) : ""}</details></div>`).join("");
+  if (S.rt && tool){ const r = el.querySelector(`.shroof[data-i="${S.rt.i}"]`); if (r){ r.classList.add("rtopen"); r.after(tool); } else S.rt = null; }
 }
 ["mouseover", "focusin"].forEach(ev=>document.addEventListener(ev, e=>{ const r = e.target.closest?.(".shroof"); if (r) shadeHot(+r.dataset.i, true); }));
 ["mouseout", "focusout"].forEach(ev=>document.addEventListener(ev, e=>{ const r = e.target.closest?.(".shroof"); if (r && !r.contains(e.relatedTarget)) shadeHot(+r.dataset.i, false); }));
@@ -2386,14 +2684,14 @@ document.addEventListener("change", e=>{
     const v = +e.target.value; if (!(v > 0)) return;
     shade.flH = v; shade.flRef = "직접 입력";
     shade.roofs.forEach(b=>{ if ((b.src === "floors" || b.src === "userfl") && b.fl) b.h = Math.round(b.fl * v * 10)/10; });
-    shade.minZ = Math.min(...shade.roofs.map(x=>x.h)); shadeRoofList(); shade.recalc();
+    shade.minZ = shadeMinZ(); shadeRoofList(); shade.recalc();
   }
 });
 document.addEventListener("click", e=>{
   if (e.target.id === "shBulkBtn"){
     const v = +$("#shBulk").value; if (!(v > 0) || !shade) return;
     shade.roofs.forEach(b=>{ if (b.src === "ledgermax" || b.src === "est"){ b.fl = v; b.h = Math.round(v * shade.flH * 10)/10; b.est = false; b.src = "userfl"; } });
-    shade.minZ = Math.min(...shade.roofs.map(x=>x.h)); shadeRoofList(); shade.recalc();
+    shade.minZ = shadeMinZ(); shadeRoofList(); shade.recalc();
   }
   const z = e.target.dataset?.zoom;
   if (z !== undefined && shade){
@@ -2402,6 +2700,1424 @@ document.addEventListener("click", e=>{
     setTimeout(()=>b.edit.openPopup(), 350);
   }
 });
+/* ---------- 높이 영역: 건물 일부만 높이가 다를 때 (영역 안 = 영역 높이, 바깥 지붕 = 나머지 높이) ---------- */
+const hzR1 = v=>Math.round(v*10)/10;
+const hzN = v=>Math.round(v).toLocaleString();
+const hzPt = (r, a, b)=>{ const c = Math.cos(r.ang), s = Math.sin(r.ang); return [r.ox + a*c - b*s, r.oy + a*s + b*c]; };
+const hzLoc = (r, x, y)=>{ const c = Math.cos(r.ang), s = Math.sin(r.ang), dx = x - r.ox, dy = y - r.oy; return [dx*c + dy*s, -dx*s + dy*c]; };
+const hzRing = r=>[[r.u0, r.v0], [r.u1, r.v0], [r.u1, r.v1], [r.u0, r.v1]].map(([a, b])=>hzPt(r, a, b));
+const hzArea = ring=>Math.abs(ring.reduce((s, p, i)=>{ const q = ring[(i+1) % ring.length]; return s + p[0]*q[1] - q[0]*p[1]; }, 0))/2;
+function shadeMinZ(){ const r = shade?.roofs || []; if (!r.length) return 0; return Math.min(...r.flatMap(b=>[b.h, ...(b.zones || []).map(z=>z.h)])); }
+function hzHeightAt(b, x, y){ // 지붕 밖이면 0, 영역 안이면 영역 높이(나중에 그린 것 우선), 나머지는 건물 높이
+  if (!b.rings.some(r=>inRing([x, y], r))) return 0;
+  const zs = b.zones;
+  if (zs) for (let k = zs.length - 1; k >= 0; k--) if (inRing([x, y], zs[k].ring)) return zs[k].h;
+  return b.h;
+}
+function hzApplied(b, ring){ const S = shade; return S.cells.reduce((n, c)=>n + (c.b === b && inRing([c.x, c.y], ring) ? 1 : 0), 0) * S.cell * S.cell; }
+function hzAngle(b){ const r = b.rings[0]; let best = 0, ang = 0; r.forEach((p, i)=>{ const q = r[(i+1) % r.length], L = Math.hypot(q[0]-p[0], q[1]-p[1]); if (L > best){ best = L; ang = Math.atan2(q[1]-p[1], q[0]-p[0]); } }); return ang; }
+function hzKey(){ const p = result?.params; return p ? "archibase_hz_" + [p.sigunguCd, p.bjdongCd, p.platGbCd, p.bun, p.ji].join("-") : null; }
+function hzSave(){ // 이 브라우저에 주소(지번)별로 저장
+  const S = shade, k = hzKey(); if (!S?.roofs || !k) return;
+  const out = {};
+  S.roofs.forEach(b=>{
+    if (!b.zones?.length) return;
+    out[b.key] = {h:b.h, src:b.src, fl:b.fl, h0:b.h0, src0:b.src0, fl0:b.fl0, est0:b.est0,
+      zones: b.zones.map(z=>{
+        let r = null;
+        if (z.r){ const c = hzPt(z.r, (z.r.u0 + z.r.u1)/2, (z.r.v0 + z.r.v1)/2); r = {c:S.toLL(c[0], c[1]), ang:z.r.ang, w:z.r.u1 - z.r.u0, l:z.r.v1 - z.r.v0}; }
+        return {ll: z.ring.map(q=>S.toLL(q[0], q[1])), h:z.h, fl:z.fl, kind:z.kind, mode:z.mode, r};
+      })};
+  });
+  try{ Object.keys(out).length ? localStorage.setItem(k, JSON.stringify(out)) : localStorage.removeItem(k); }catch(e){}
+  cloudPush("hz");
+}
+function hzRestore(){
+  const S = shade, k = hzKey(); if (!S?.roofs || !k) return;
+  let d = null; try{ d = JSON.parse(localStorage.getItem(k) || "null"); }catch(e){}
+  if (!d) return;
+  S.roofs.forEach(b=>{
+    const o = d[b.key]; if (!o?.zones?.length) return;
+    b.zones = o.zones.map(z=>{
+      let r = null;
+      if (z.r){ const c = S.toXY2(z.r.c[0], z.r.c[1]); r = {ox:c[0], oy:c[1], ang:z.r.ang, u0:-z.r.w/2, u1:z.r.w/2, v0:-z.r.l/2, v1:z.r.l/2}; }
+      return {ring: z.ll.map(q=>S.toXY2(q[0], q[1])), h:+z.h, fl:z.fl || 0, kind:z.kind, mode:z.mode, r};
+    });
+    Object.assign(b, {h:+o.h, src:o.src || "zone", fl:o.fl || 0, h0:o.h0, src0:o.src0, fl0:o.fl0, est0:o.est0, est:false});
+  });
+}
+/* 층별개요 면적 → 추천 넓이 (면적이 줄어드는 층 찾기) */
+function hzFloors(b){
+  const items = result?.regs?.getBrFlrOulnInfo?.items || [], titles = result?.regs?.getBrTitleInfo?.items || [];
+  const t = b.t, nm = x=>String(x ?? "").trim();
+  let list = t ? items.filter(x=>nm(x.dongNm) === nm(t.dongNm)) : [];
+  if (!list.length && titles.length === 1) list = items;
+  const m = new Map();
+  list.forEach(x=>{
+    const g = String(x.flrGbCd || ""), gn = nm(x.flrGbCdNm);
+    if (g === "10" || /지하/.test(gn)) return;
+    const roof = g === "30" || /옥탑/.test(gn), no = roof ? 999 : (+x.flrNo || 0);
+    if (!roof && no <= 0) return;
+    const k = roof ? "옥탑" : no + "층", o = m.get(k) || {k, no, roof, area:0};
+    o.area += +x.area || 0; m.set(k, o);
+  });
+  const F = [...m.values()].filter(o=>o.area > 0).sort((a, c)=>a.no - c.no);
+  const ledgerH = t && +t.heit > 0 ? +t.heit : (b.h0 ?? b.h);
+  let rec = null;
+  if (F.length >= 2){
+    const top = F[F.length - 1], big = F.filter(o=>!o.roof && o.area > top.area*1.15);
+    if (big.length) rec = {hi: top.area, top: top.k, outFl: Math.max(...big.map(o=>o.no)), lo: Math.max(0, Math.max(...big.map(o=>o.area)) - top.area)};
+  }
+  return {F, txt: F.map(o=>`${o.k} ${hzN(o.area)}㎡`).join(" · "), rec, ledgerH};
+}
+function hzFloorHtml(fi){
+  if (!fi.F.length) return `<div class="hzfl hint">층별개요 면적 자료가 없어 추천 넓이가 없습니다. 영역을 직접 그려 넓이를 확인하세요. · 대장 높이 ${fi.ledgerH.toFixed(1)}m</div>`;
+  return `<div class="hzfl"><b>층별개요</b> ${esc(fi.txt)}` +
+    (fi.rec ? `<br>추천: <b>높은 부분 약 ${hzN(fi.rec.hi)}㎡</b>(${esc(fi.rec.top)}) · 낮은 부분 약 ${hzN(fi.rec.lo)}㎡(${fi.rec.outFl}층까지)` : `<br><span class="hint">층마다 면적이 같아 추천할 영역이 없습니다.</span>`) +
+    ` · 대장 높이 <b>${fi.ledgerH.toFixed(1)}m</b></div>`;
+}
+function hzRenderIdle(){
+  const S = shade, el = $("#hzIdle"); if (!S?.roofs || !el) return;
+  const rows = S.roofs.slice().sort((a, c)=>c.area - a.area);
+  if (S.hzSel == null || !rows.some(b=>b.i === S.hzSel)) S.hzSel = rows[0]?.i;
+  const b = shadeB(S.hzSel), mode = S.hzMode || "hi";
+  const zl = rows.filter(x=>x.zones?.length && x.i === S.hzSel);
+  el.innerHTML = `<div class="hint" style="margin:4px 0 6px">높이가 다른 부분을 그리면 <b>영역 안 = 영역 높이</b>, <b>바깥 지붕 = 나머지 높이</b>로 계산합니다. 겹치면 나중에 그린 것이 우선이고, 지붕 밖으로 나간 부분은 빠집니다.</div>
+    <div class="row" style="gap:12px;margin-top:6px;font-size:12.5px"><label class="nw"><input type="radio" name="hzMode" value="hi"${mode === "hi" ? " checked" : ""}> 높은 부분 그리기</label><label class="nw"><input type="radio" name="hzMode" value="lo"${mode === "lo" ? " checked" : ""}> 낮은 부분 그리기</label></div>
+    <div class="hint">작은 쪽이 더 높으면 '높은 부분'(영역 안에 대장 높이가 자동으로 들어가고 바깥 층수만 입력), 더 낮으면 '낮은 부분'을 고르세요.</div>
+    ${b ? hzFloorHtml(hzFloors(b)) : ""}
+    <div class="row" style="gap:6px;margin-top:6px"><button type="button" class="ghost sm" data-hz="rect">▭ 자동 사각형</button><button type="button" class="ghost sm" data-hz="poly">✏ 점 찍어 그리기</button></div>` +
+    (zl.length ? `<div class="hzlist"><b style="font-size:12.5px">그린 높이 영역</b>` + zl.map(x=>`<div class="hzrow"><b>${esc(x.name)}</b> <span class="hint">· 바깥 지붕 ${x.h.toFixed(1)}m</span>` +
+      x.zones.map((z, k)=>`<div class="row" style="gap:4px;flex-wrap:nowrap"><span class="hzz">영역 ${k + 1} · <b>${z.h.toFixed(1)}m</b>${z.fl ? ` (${z.fl}층)` : ""} · 약 ${hzN(hzApplied(x, z.ring))}㎡</span>
+        <button type="button" class="ghost sm" data-hzz="edit" data-b="${x.i}" data-k="${k}" title="다시 그리기">✏</button><button type="button" class="ghost sm" data-hzz="zoom" data-b="${x.i}" data-k="${k}" title="지도에서 보기">🔍</button><button type="button" class="ghost sm" data-hzz="del" data-b="${x.i}" data-k="${k}" title="지우기">✕</button></div>`).join("") + `</div>`).join("") +
+      `<div class="hint" style="margin-top:4px">그린 영역과 높이는 이 브라우저에 주소별로 저장되어, 같은 주소를 다시 검색하면 그대로 나옵니다.</div></div>` : "");
+}
+function hzRender(){
+  const S = shade; if (!S?.hzLayer) return;
+  S.hzLayer.clearLayers();
+  S.roofs.forEach(b=>(b.zones || []).forEach(z=>{
+    S.hzLayer.addLayer(S.LF.polygon(z.ring.map(q=>S.toLL(q[0], q[1])), {color:"#7c3aed", weight:2, dashArray:"5 4", fillColor:"#a78bfa", fillOpacity:0.12, interactive:false}));
+    const c = z.ring.reduce((s, q)=>[s[0] + q[0]/z.ring.length, s[1] + q[1]/z.ring.length], [0, 0]);
+    S.hzLayer.addLayer(S.LF.marker(S.toLL(c[0], c[1]), {interactive:false, keyboard:false, icon:S.LF.divIcon({className:"cadicon", iconSize:[60, 18], iconAnchor:[30, 9], html:`<div class="hztag">${z.h.toFixed(1)}m</div>`})}));
+  }));
+  if (!S.hz) hzRenderIdle();
+}
+function hzInit(){
+  const S = shade, map = S.map;
+  $("#toolPark").innerHTML = `<div id="roofTool" class="rooftool"><div class="rthead"><b id="rtTitle"></b><button type="button" class="ghost sm" data-rtx="1" title="닫기">✕ 닫기</button></div><div id="rtHz" hidden><div id="hzIdle"></div><div id="hzEdit" hidden></div></div>${solHtml()}</div>`;
+  S.rt = null;
+  S.hzLayer = S.LF.layerGroup().addTo(S.editLayer);
+  S.hzTmp = S.LF.layerGroup().addTo(map);
+  if (!map._hzOn){
+    map._hzOn = true;
+    map.on("click", e=>{
+      const hz = shade?.hz; if (!hz || hz.kind !== "poly" || hz.ring) return;
+      const p = hz.pts;
+      if (p.length >= 3 && map.latLngToContainerPoint(p[0]).distanceTo(e.containerPoint) < 12){ hzPolyEnd(); return; }
+      const last = p[p.length - 1]; if (last && map.latLngToContainerPoint(last).distanceTo(e.containerPoint) < 5) return;
+      p.push(e.latlng); hz.line.setLatLngs(p); hz.poly.setLatLngs(p.length >= 3 ? p : []); hzMeas();
+    });
+    map.on("dblclick contextmenu", e=>{ const hz = shade?.hz; if (hz?.kind === "poly" && !hz.ring){ e.originalEvent?.preventDefault(); hzPolyEnd(); } });
+    map.on("popupopen", ()=>{ if (shade?.hz) map.closePopup(); });
+  }
+  hzRender();
+}
+/* 지붕 조각 줄 아래에 여는 도구 상자 (📐 높이 영역 / ☀ 태양광) */
+function drawMode(on){ shade?.map?.getContainer().classList.toggle("drawmode", !!on); } // 그리는 동안 건물 선택·말풍선 끔
+function rtOpen(i, kind){
+  const S = shade; if (!S?.roofs) return;
+  const same = S.rt && S.rt.i === i && S.rt.kind === kind;
+  hzCancel(); solCancel(); layAutoEnd(); if (lay.step) layQuitPick();
+  if (same){ rtClose(); return; }
+  S.rt = {i, kind}; S.hzSel = i; S.cur = i; S.map.closePopup();
+  shadeRoofList(); rtFill();
+  setTimeout(()=>$("#roofTool")?.scrollIntoView({block:"nearest", behavior:"smooth"}), 60);
+}
+function rtClose(){
+  const S = shade; if (!S) return;
+  hzCancel(); solCancel(); layAutoEnd(); if (lay.step) layQuitPick();
+  S.rt = null; const t = $("#roofTool"); if (t) $("#toolPark").appendChild(t);
+  shadeRoofList();
+}
+function rtFill(){
+  const S = shade, b = shadeB(S.rt?.i); if (!b) return; const hz = S.rt.kind === "hz";
+  $("#rtTitle").textContent = (hz ? "📐 높이 영역 · " : "☀ 태양광 구역 · ") + b.name;
+  $("#rtHz").hidden = !hz; $("#rtSol").hidden = hz;
+  if (hz) hzRenderIdle(); else { solList(); const lb = $("#layBox"); if (lb) lb.open = !lay.T0 || lay.step === "d" || lay.step === "m"; if (shade.times?.length) shadeDraw(); }
+}
+function hzStart(kind, b, rep){
+  const S = shade; if (!S?.roofs) return;
+  hzCancel(); solCancel();
+  b = b || shadeB(S.hzSel); if (!b) return;
+  const z0 = rep != null ? b.zones?.[rep] : null;
+  const mode = z0?.mode || S.hzMode || "hi", fi = hzFloors(b);
+  const ref = fi.rec ? (mode === "hi" ? fi.rec.hi : fi.rec.lo) : 0;
+  const hz = S.hz = {b, kind, mode, fi, ref, rep: z0 ? rep : null, target: ref > 0 ? Math.round(ref) : Math.round(b.area*0.25), lock:true, fix:{u:"u0", v:"v0"}, pts:[]};
+  const L = S.LF, map = S.map;
+  map.closePopup(); drawMode(true);
+  hz.poly = L.polygon([], {color:"#7c3aed", weight:3, dashArray:"6 4", fillColor:"#a78bfa", fillOpacity:0.25, interactive:false}).addTo(S.hzTmp);
+  if (kind === "rect"){
+    if (z0?.r){ hz.r = {...z0.r}; hz.target = Math.round((z0.r.u1 - z0.r.u0)*(z0.r.v1 - z0.r.v0)); }
+    else {
+      const ang = hzAngle(b), r0 = {ox:b.cx, oy:b.cy, ang};
+      const loc = b.rings[0].map(q=>hzLoc(r0, q[0], q[1]));
+      const a0 = Math.min(...loc.map(q=>q[0])), a1 = Math.max(...loc.map(q=>q[0])), b0 = Math.min(...loc.map(q=>q[1])), b1 = Math.max(...loc.map(q=>q[1]));
+      const k = Math.min(1, Math.sqrt(hz.target/Math.max(1, (a1 - a0)*(b1 - b0)))), w = Math.max(1, (a1 - a0)*k), l = Math.max(1, hz.target / w);
+      const c = hzPt(r0, (a0 + a1)/2, (b0 + b1)/2);
+      hz.r = {ox:c[0], oy:c[1], ang, u0:-w/2, u1:w/2, v0:-l/2, v1:l/2};
+    }
+    const ic = (cls, s, t)=>L.divIcon({className:"cadicon", iconSize:[s, s], iconAnchor:[s/2, s/2], html:`<div class="${cls}">${t || ""}</div>`});
+    hz.hd = {};
+    ["u0", "u1", "v0", "v1"].forEach(s=>{
+      const m = L.marker([0, 0], {draggable:true, icon:ic("hzh", 16), zIndexOffset:1000, keyboard:false, title:"끌어서 이 변을 옮깁니다"}).addTo(S.hzTmp);
+      m.on("drag", ()=>hzDragSide(s, m)).on("dragend", ()=>hzDrawRect());
+      hz.hd[s] = m;
+    });
+    const cm = L.marker([0, 0], {draggable:true, icon:ic("hzc", 26, "✥"), zIndexOffset:1100, keyboard:false, title:"끌어서 영역을 옮깁니다"}).addTo(S.hzTmp);
+    const xy = ()=>{ const p = cm.getLatLng(); return S.toXY2(p.lat, p.lng); };
+    cm.on("dragstart", ()=>{ hz.cPrev = xy(); })
+      .on("drag", ()=>{ const p = xy(); hz.r.ox += p[0] - hz.cPrev[0]; hz.r.oy += p[1] - hz.cPrev[1]; hz.cPrev = p; hzDrawRect(cm); })
+      .on("dragend", ()=>hzDrawRect());
+    hz.hd.c = cm;
+  } else {
+    hz.line = L.polyline([], {color:"#7c3aed", weight:3, dashArray:"6 4", interactive:false}).addTo(S.hzTmp);
+    map.doubleClickZoom.disable(); map.getContainer().classList.add("measuring");
+  }
+  hzRenderEdit();
+  if (kind === "rect"){ hzDrawRect(); map.fitBounds(hz.poly.getBounds().extend(b.edit.getBounds()), {maxZoom:20, padding:[80, 80]}); }
+  else map.fitBounds(b.edit.getBounds(), {maxZoom:20, padding:[80, 80]});
+}
+function hzDrawRect(skip){
+  const S = shade, hz = S?.hz; if (!hz?.r) return;
+  const r = hz.r, ll = (a, b)=>{ const p = hzPt(r, a, b); return S.toLL(p[0], p[1]); };
+  hz.poly.setLatLngs(hzRing(r).map(q=>S.toLL(q[0], q[1])));
+  const um = (r.u0 + r.u1)/2, vm = (r.v0 + r.v1)/2;
+  const pos = {u0:ll(r.u0, vm), u1:ll(r.u1, vm), v0:ll(um, r.v0), v1:ll(um, r.v1), c:ll(um, vm)};
+  Object.entries(hz.hd).forEach(([k, m])=>{ if (m !== skip) m.setLatLng(pos[k]); });
+  hzMeas();
+}
+function hzFit(ax){ // ax 방향 길이를 목표 넓이에 맞춤 — 그 방향에서 마지막으로 끈 변은 그대로 둠
+  const hz = shade.hz, r = hz.r;
+  const other = ax === "u" ? r.v1 - r.v0 : r.u1 - r.u0, len = Math.max(0.5, hz.target / other);
+  if (hz.fix[ax] === ax + "1") r[ax + "0"] = r[ax + "1"] - len; else r[ax + "1"] = r[ax + "0"] + len;
+}
+function hzDragSide(s, m){
+  const S = shade, hz = S.hz, r = hz.r, p = m.getLatLng(), q = S.toXY2(p.lat, p.lng), [a, bb] = hzLoc(r, q[0], q[1]), MIN = 0.5;
+  if (s === "u0") r.u0 = Math.min(a, r.u1 - MIN);
+  if (s === "u1") r.u1 = Math.max(a, r.u0 + MIN);
+  if (s === "v0") r.v0 = Math.min(bb, r.v1 - MIN);
+  if (s === "v1") r.v1 = Math.max(bb, r.v0 + MIN);
+  hz.fix[s[0]] = s;
+  if (hz.lock && hz.target > 0) hzFit(s[0] === "u" ? "v" : "u");
+  hzDrawRect(m);
+}
+function hzRotate(deg){
+  const hz = shade.hz, r = hz.r;
+  const c = hzPt(r, (r.u0 + r.u1)/2, (r.v0 + r.v1)/2), w = r.u1 - r.u0, l = r.v1 - r.v0;
+  Object.assign(r, {ox:c[0], oy:c[1], ang:deg*Math.PI/180, u0:-w/2, u1:w/2, v0:-l/2, v1:l/2});
+  hzDrawRect();
+}
+function hzCurRing(){
+  const S = shade, hz = S.hz;
+  if (hz.kind === "rect") return hzRing(hz.r);
+  return hz.ring || (hz.pts.length >= 3 ? hz.pts.map(p=>S.toXY2(p.lat, p.lng)) : null);
+}
+function hzMeas(){
+  const S = shade, hz = S?.hz, el = $("#hzMeas"); if (!hz || !el) return;
+  const ring = hzCurRing();
+  if (!ring){ el.innerHTML = `<span class="hint">지도에서 모서리를 클릭해 그리세요 (지금 ${hz.pts.length}점)</span>`; return; }
+  const A = hzArea(ring), ap = hzApplied(hz.b, ring), out = Math.max(0, A - ap);
+  let h = hz.kind === "rect" ? `가로 <b>${(hz.r.u1 - hz.r.u0).toFixed(1)}m</b> × 세로 <b>${(hz.r.v1 - hz.r.v0).toFixed(1)}m</b> = <b>${hzN(A)}㎡</b>` : `그린 넓이 <b>${hzN(A)}㎡</b>${hz.ring ? "" : ` <span class="hint">(그리는 중 · ${hz.pts.length}점)</span>`}`;
+  if (out > Math.max(1, A*0.03)) h += `<br><span style="color:#c62828">지붕 밖으로 나간 부분 약 ${hzN(out)}㎡ (계산에서 빠짐) · 지붕 위 적용 약 ${hzN(ap)}㎡</span>`;
+  h += hz.ref > 0 ? `<br>그린 영역 <b>${hzN(ap)}㎡</b> / 층별개요 <b>${hzN(hz.ref)}㎡</b> <span class="hint">(${hz.mode === "hi" ? "높은 부분" : "낮은 부분"})</span>` : "";
+  el.innerHTML = h;
+}
+function hzRenderEdit(){
+  const S = shade, hz = S.hz, el = $("#hzEdit"); if (!el) return;
+  $("#hzIdle").hidden = true; el.hidden = false;
+  const t = hz.b.t, flH = hz.flH = t && +t.heit > 0 && +t.grndFlrCnt > 0 ? Math.round(+t.heit / +t.grndFlrCnt * 100)/100 : S.flH;
+  const b = hz.b, fi = hz.fi, hi = hz.mode === "hi", z0 = hz.rep != null ? b.zones[hz.rep] : null, had = b.zones?.length;
+  let inM, inFl, outM, outFl;
+  if (z0){ inM = z0.h; inFl = z0.fl || ""; outM = b.h; outFl = b.fl || ""; }
+  else if (hi){ inM = fi.ledgerH; inFl = ""; outFl = had ? (b.fl || "") : (fi.rec?.outFl || ""); outM = outFl ? hzR1(outFl*flH) : (had ? b.h : ""); }
+  else { inFl = fi.rec?.outFl || ""; inM = inFl ? hzR1(inFl*flH) : ""; outM = had ? b.h : fi.ledgerH; outFl = had ? (b.fl || "") : ""; }
+  el.innerHTML = `<div style="margin:6px 0 2px"><b>${esc(b.name)}</b> <span class="hint">· ${hi ? "높은 부분" : "낮은 부분"} · ${hz.kind === "rect" ? "사각형" : "점 찍어 그리기"}${z0 ? " · 다시 그리기" : ""}</span></div>
+    ${hzFloorHtml(fi)}
+    ${hz.kind === "rect" ? `<div class="row hzr"><span class="hzlab">목표 넓이</span><input type="number" id="hzTgt" step="1" min="1" value="${Math.round(hz.target)}"><span class="hint">㎡</span><label class="nw" style="font-size:12.5px"><input type="checkbox" id="hzLock" checked> 넓이 고정</label></div>
+      <div class="row hzr"><span class="hzlab">회전</span><input type="number" id="hzAng" step="1" value="${Math.round(hz.r.ang*180/Math.PI)}"><span class="hint">°</span><button type="button" class="ghost sm" data-hz="ang0">건물 방향으로</button></div>
+      <div class="hint">가운데 <b>✥</b>를 끌면 옮겨지고, 변의 <b>●</b>를 끌면 그 변만 움직입니다. <b>넓이 고정</b>이 켜져 있으면 다른 쪽 길이가 목표 넓이에 맞게 자동으로 바뀝니다.</div>`
+      : `<div class="hint">지도에서 모서리를 차례로 클릭하세요. 첫 점을 다시 누르거나 더블클릭하면 끝납니다. Esc는 취소입니다.</div>`}
+    <div id="hzMeas" class="hzmeas"></div>
+    <div class="hzin">
+      <div class="row hzr"><span class="hzlab">영역 안 높이</span><input type="number" id="hzInM" step="0.1" min="0.1" value="${inM}"><span class="hint">m 또는</span><input type="number" id="hzInFl" step="1" min="1" value="${inFl}"><span class="hint">층</span><span class="hzslot" data-slot="in">${hi ? hzChip(fi) : ""}</span></div>
+      <div class="row hzr"><span class="hzlab">영역 바깥 높이</span><input type="number" id="hzOutM" step="0.1" min="0.1" value="${outM}"><span class="hint">m 또는</span><input type="number" id="hzOutFl" step="1" min="1" value="${outFl}"><span class="hint">층</span><span class="hzslot" data-slot="out">${hi ? "" : hzChip(fi)}</span></div>
+      <div class="hint"><b>📌 대장 높이</b>를 끌어서(또는 눌러서) 영역 안·바깥 중 대장 높이인 쪽에 놓으면 그 칸에 대장 높이가 들어갑니다. 다른 쪽은 층수만 넣으세요 — 층수 × 이 건물 층당 높이 <b>${flH}m</b>${t && +t.heit > 0 && +t.grndFlrCnt > 0 ? ` (대장 ${(+t.heit).toFixed(2)}m ÷ ${t.grndFlrCnt}층)` : ""}. <b>Enter</b> = 적용</div>
+      <div class="row" style="gap:6px;margin-top:6px"><button type="button" data-hz="apply">적용</button><button type="button" class="ghost" data-hz="cancel">취소</button></div>
+    </div>`;
+  hzMeas();
+  const f = $(hi ? "#hzOutFl" : "#hzInFl"); setTimeout(()=>{ f?.focus(); f?.select(); }, 30);
+}
+const hzChip = fi=>`<span class="hzchip" draggable="true" title="끌어서 옮기거나 누르면 반대쪽으로 갑니다">📌 대장 높이 ${fi.ledgerH.toFixed(2)}m</span>`;
+function hzChipTo(slot){ // 대장 높이를 영역 안(in) 또는 바깥(out)으로
+  const hz = shade?.hz; if (!hz) return;
+  const chip = document.querySelector("#hzEdit .hzchip"), to = document.querySelector(`#hzEdit .hzslot[data-slot="${slot}"]`); if (!chip || !to) return;
+  to.appendChild(chip); hz.mode = slot === "in" ? "hi" : "lo";
+  const L = hz.fi.ledgerH, mine = slot === "in" ? ["#hzInM", "#hzInFl"] : ["#hzOutM", "#hzOutFl"], other = slot === "in" ? ["#hzOutM", "#hzOutFl"] : ["#hzInM", "#hzInFl"];
+  $(mine[0]).value = L; $(mine[1]).value = "";
+  if (Math.abs((+$(other[0]).value || 0) - L) < 0.01){ $(other[0]).value = ""; $(other[1]).value = ""; }
+  const f = $(other[1]); f.focus(); f.select();
+  hzMeas();
+}
+document.addEventListener("dragstart", e=>{ if (e.target.closest?.(".hzchip")){ e.dataTransfer.setData("text/plain", "hzchip"); e.dataTransfer.effectAllowed = "move"; document.querySelectorAll("#hzEdit .hzslot").forEach(x=>x.classList.add("drop")); } });
+document.addEventListener("dragend", ()=>document.querySelectorAll(".hzslot.drop,.hzslot.over").forEach(x=>x.classList.remove("drop", "over")));
+document.addEventListener("dragover", e=>{ const sl = e.target.closest?.("#hzEdit .hzr"); if (sl && document.querySelector(".hzslot.drop")){ e.preventDefault(); document.querySelectorAll(".hzslot").forEach(x=>x.classList.toggle("over", sl.contains(x))); } });
+document.addEventListener("drop", e=>{ const r = e.target.closest?.("#hzEdit .hzr"); const sl = r?.querySelector(".hzslot"); if (sl && document.querySelector(".hzslot.drop")){ e.preventDefault(); hzChipTo(sl.dataset.slot); } });
+document.addEventListener("click", e=>{ const c = e.target.closest?.("#hzEdit .hzchip"); if (c) hzChipTo(c.parentElement.dataset.slot === "in" ? "out" : "in"); });
+function hzPolyEnd(){
+  const S = shade, hz = S.hz; if (!hz || hz.pts.length < 3) return;
+  hz.ring = hz.pts.map(p=>S.toXY2(p.lat, p.lng));
+  S.hzTmp.removeLayer(hz.line); hz.poly.setLatLngs(hz.pts);
+  setTimeout(()=>S.map.doubleClickZoom.enable(), 300); S.map.getContainer().classList.remove("measuring");
+  hzMeas();
+  const f = $(hz.mode === "hi" ? "#hzOutFl" : "#hzInFl"); f?.focus(); f?.select();
+}
+function hzCancel(){
+  const S = shade; if (!S?.hz) return;
+  S.hzTmp?.clearLayers(); S.map.doubleClickZoom.enable(); S.map.getContainer().classList.remove("measuring");
+  S.hz = null; drawMode(false);
+  const e = $("#hzEdit"), i = $("#hzIdle"); if (e){ e.hidden = true; e.innerHTML = ""; } if (i) i.hidden = false;
+  hzRenderIdle();
+}
+function hzAfter(){ shade.minZ = shadeMinZ(); hzRender(); shadeRoofList(); shade.recalc(); }
+function hzApply(){
+  const S = shade, hz = S?.hz; if (!hz) return;
+  const ring = hz.kind === "rect" ? hzRing(hz.r) : hz.ring;
+  if (!ring){ const m = $("#hzMeas"); if (m) m.innerHTML = `<span style="color:#c62828">먼저 영역 그리기를 끝내 주세요 (첫 점을 다시 누르거나 더블클릭).</span>`; return; }
+  const inM = +$("#hzInM").value, outM = +$("#hzOutM").value;
+  if (!(inM > 0)){ $("#hzInM").focus(); return; }
+  if (!(outM > 0)){ $("#hzOutFl").focus(); return; }
+  const b = hz.b; b.zones = b.zones || [];
+  if (!b.zones.length && b.h0 == null){ b.h0 = b.h; b.src0 = b.src; b.fl0 = b.fl; b.est0 = b.est; }
+  const z = {ring, h:hzR1(inM), fl:+$("#hzInFl").value || 0, kind:hz.kind, mode:hz.mode, r: hz.r ? {...hz.r} : null};
+  if (hz.rep != null && b.zones[hz.rep]) b.zones[hz.rep] = z; else b.zones.push(z);
+  b.h = hzR1(outM); b.fl = +$("#hzOutFl").value || 0; b.src = "zone"; b.est = false;
+  hzCancel(); hzAfter();
+}
+document.addEventListener("click", e=>{
+  if (!shade?.roofs) return;
+  const a = e.target.closest?.("[data-hz]")?.dataset.hz;
+  if (a === "rect" || a === "poly") hzStart(a);
+  else if (a === "apply") hzApply();
+  else if (a === "cancel") hzCancel();
+  else if (a === "ang0" && shade.hz?.r){ const d = hzAngle(shade.hz.b)*180/Math.PI; $("#hzAng").value = Math.round(d); hzRotate(d); }
+  const zz = e.target.closest?.("[data-hzz]");
+  if (zz){
+    const b = shadeB(zz.dataset.b), k = +zz.dataset.k, z = b?.zones?.[k]; if (!z) return;
+    if (zz.dataset.hzz === "zoom") shade.map.fitBounds(shade.LF.latLngBounds(z.ring.map(q=>shade.toLL(q[0], q[1]))), {maxZoom:20, padding:[120, 120]});
+    if (zz.dataset.hzz === "edit"){ shade.hzSel = b.i; hzStart(z.kind === "rect" ? "rect" : "poly", b, k); }
+    if (zz.dataset.hzz === "del"){
+      b.zones.splice(k, 1);
+      if (!b.zones.length){ if (b.h0 != null){ b.h = b.h0; b.src = b.src0 || "user"; b.fl = b.fl0 || 0; b.est = !!b.est0; } delete b.h0; }
+      hzAfter();
+    }
+  }
+  const g = e.target.closest?.("[data-rt]");
+  if (g){ rtOpen(+g.dataset.i, g.dataset.rt); return; }
+  if (e.target.closest?.("[data-rtx]")) rtClose();
+});
+document.addEventListener("change", e=>{
+  if (!shade?.roofs) return;
+  if (e.target.id === "hzB"){ shade.hzSel = +e.target.value; hzRenderIdle(); }
+  if (e.target.name === "hzMode"){ shade.hzMode = e.target.value; }
+  if (e.target.id === "hzLock" && shade.hz?.r){ shade.hz.lock = e.target.checked; if (shade.hz.lock){ hzFit("v"); hzDrawRect(); } }
+});
+document.addEventListener("input", e=>{
+  const hz = shade?.hz; if (!hz) return;
+  const id = e.target.id, v = +e.target.value, flH = hz.flH || shade.flH;
+  if (id === "hzInFl" && v > 0) $("#hzInM").value = hzR1(v*flH);
+  if (id === "hzOutFl" && v > 0) $("#hzOutM").value = hzR1(v*flH);
+  if (id === "hzInM") $("#hzInFl").value = "";
+  if (id === "hzOutM") $("#hzOutFl").value = "";
+  if (id === "hzTgt" && v > 0 && hz.r){ hz.target = v; if (hz.lock){ hzFit("v"); hzDrawRect(); } else hzMeas(); }
+  if (id === "hzAng" && hz.r && e.target.value !== "") hzRotate(v);
+});
+document.addEventListener("keydown", e=>{
+  const hz = shade?.hz; if (!hz) return;
+  if (e.key === "Enter" && /^hz(In|Out)(M|Fl)$/.test(e.target.id)){ e.preventDefault(); hzApply(); }
+  if (e.key === "Escape" && (!e.target.closest?.("input,select,textarea") || /^hz/.test(e.target.id || ""))) hzCancel();
+});
+/* ---------- ☀ 태양광 구역: 패널 범위 + 측면도 높이 → ① 패널 위 그늘 ② 패널이 만드는 그늘 ---------- */
+const SOL_COL = "#16a34a";
+const DIRS16 = ["북","북북동","북동","동북동","동","동남동","남동","남남동","남","남남서","남서","서남서","서","서북서","북서","북북서"];
+const dirName = a=>DIRS16[Math.round((((a % 360) + 360) % 360) / 22.5) % 16];
+function solHtml(){
+  return `<div id="rtSol" hidden>
+    <div class="shbar solbar"><div class="r1"><button type="button" id="solPlay" title="시간대별 그늘 재생">▶</button><b id="solClock">-</b><input type="range" id="solT" min="0" max="0" value="0" aria-label="시간 고르기"><select id="solSpeed" title="재생 속도"><option value="800">느리게</option><option value="400" selected>보통</option><option value="150">빠르게</option></select></div><div class="r2"><span id="solSun" class="hint"></span><span class="hint"><span class="lg" style="background:#1f2547;border:1px solid #d7dde8"></span>햇빛 <span class="lg" style="background:repeating-linear-gradient(45deg,#ef4444 0 2px,#111 2px 5px)"></span>그늘</span></div></div>
+    <label class="shcol" style="margin:2px 0 4px;font-size:12.5px"><input type="checkbox" class="solTagChk" ${solTagsOn() ? "checked" : ""} style="width:auto;height:auto"> 지도에 구역 이름표 보이기</label>
+    <div id="solRes"></div>
+    <div id="solList"></div>
+    <div class="row" style="gap:6px;margin-top:8px;flex-wrap:wrap"><button type="button" class="ghost sm" data-sol="rectnew">▭ 사각형으로 패널 놓기</button><button type="button" class="ghost sm" id="layAutoBtn">🎯 배치도에서 패널 자동 찾기</button></div>
+    <div id="layAuto" class="solsub" hidden></div>
+    <div id="solForm" hidden></div>
+    <details class="solsub laybox" id="layBox"><summary>🗺 설비 배치도 겹쳐 놓기 <span class="hint" id="layState"></span></summary>
+    <div class="row" style="gap:6px;justify-content:flex-end;flex-wrap:nowrap;margin-top:4px"><label class="filebtn">파일 고르기<input type="file" id="layFile" accept="image/*,.pdf,application/pdf" hidden></label></div>
+      <div id="layStep" class="hint" style="margin-top:4px">배치도 PDF·사진을 고른 뒤, 도면에서 두 점 → 지도에서 같은 두 점을 찍으면 크기·방향이 자동으로 맞춰집니다.</div>
+      <div id="layPick" hidden style="margin-top:6px"><div class="row" style="gap:6px;margin-bottom:4px"><span class="hint">🖱 휠: 확대·축소</span><button type="button" class="ghost sm" id="layUndo" style="margin-left:auto">점 다시 찍기</button><button type="button" class="ghost sm" id="layQuit">취소</button></div><div class="ovcv" id="layWrap"><canvas id="layCv"></canvas></div></div>
+      <div id="layCtl" hidden style="margin-top:6px">
+        <label class="ovlab"><input type="checkbox" id="layShow" checked> 지도에 보이기</label>
+        <label class="ovlab">진하기 <input type="range" id="layOp" min="10" max="100" value="70" style="flex:1"></label>
+        <label class="ovlab"><input type="checkbox" id="layWhite" checked> 흰 바탕 투명하게</label>
+        <label class="ovlab">각도 <input type="range" id="layRot" min="-5" max="5" step="0.05" value="0" style="flex:1"> <span id="layRotV" class="hint" style="width:50px;text-align:right">0.00°</span></label>
+        <label class="ovlab">크기 <input type="range" id="layScl" min="-5" max="5" step="0.05" value="0" style="flex:1"> <span id="laySclV" class="hint" style="width:50px;text-align:right">0.00%</span></label>
+        <div class="row" style="gap:6px;margin-top:6px"><button type="button" class="ghost sm" id="layRedo">위치 다시 맞추기</button><button type="button" class="ghost sm" id="layDel">배치도 지우기</button></div>
+      </div></details>
+  </div>`;
+}
+function solKey(kind){ const p = result?.params; return p ? `archibase_${kind}_` + [p.sigunguCd, p.bjdongCd, p.platGbCd, p.bun, p.ji].join("-") : null; }
+function solBase(x, y, q){
+  let m = 0; for (const b of shade.roofs) if (b.rings.some(r=>inRing([x, y], r))){ const h = hzHeightAt(b, x, y); if (h > m) m = h; }
+  if (m > 0 || !q) return m;
+  // 배치도와 지도 건물선이 어긋나 패널이 건물선 밖에 걸친 곳 → 그 구역이 속한 건물 지붕 위로 봄
+  const b = shadeB(q.bi); if (!b) return 0;
+  const zs = b.zones || []; for (let k = zs.length - 1; k >= 0; k--) if (inRing([x, y], zs[k].ring)) return zs[k].h;
+  return b.h;
+}
+function solPrep(q){
+  const a = q.dir*Math.PI/180; q.fx = Math.sin(a); q.fy = Math.cos(a);
+  const pr = q.ring.map(p=>-(p[0]*q.fx + p[1]*q.fy)); q.pmin = Math.min(...pr); q.pmax = Math.max(...pr);
+}
+function solSurf(q, x, y){ // 지붕에서 패널 윗면까지 (m): 앞쪽(향하는 쪽) 끝 = 낮은 쪽, 뒤쪽 끝 = 높은 쪽
+  const span = q.pmax - q.pmin, f = span > 1e-6 ? (-(x*q.fx + y*q.fy) - q.pmin)/span : 0;
+  return (q.low + (q.high - q.low)*Math.min(1, Math.max(0, f)))/1000;
+}
+function solHeightAt(q, x, y){ return inRing([x, y], q.ring) ? solBase(x, y, q) + solSurf(q, x, y) : 0; }
+function solFitDir(ring){ // 가장 긴 변에 수직인 두 방향 중 남쪽에 가까운 쪽
+  let best = 0, az = 180;
+  ring.forEach((p, i)=>{ const q = ring[(i+1) % ring.length], dx = q[0]-p[0], dy = q[1]-p[1], L = Math.hypot(dx, dy);
+    if (L > best){ best = L; const e = Math.atan2(dx, dy)*180/Math.PI; const c = [e + 90, e - 90].map(v=>((v % 360) + 360) % 360);
+      az = c.sort((u, v)=>Math.abs(180 - u) - Math.abs(180 - v))[0]; } });
+  return Math.round(az);
+}
+const SOL_MW = 1.134, SOL_ML = 2.278; // 모듈 한 장: 옆 길이, 향하는 방향 길이
+/* 모듈 줄눈 틀: 구역의 가장 긴 변 방향 축 중, 향하는 방향에 가까운 축을 세로(v)로 */
+function solFrame(q){
+  const r = q.ring; let best = 0, ang = 0;
+  r.forEach((p, i)=>{ const t = r[(i+1) % r.length], L = Math.hypot(t[0]-p[0], t[1]-p[1]); if (L > best){ best = L; ang = Math.atan2(t[1]-p[1], t[0]-p[0]); } });
+  const a = Math.PI*q.dir/180, f = [Math.sin(a), Math.cos(a)], e1 = [Math.cos(ang), Math.sin(ang)], e2 = [-Math.sin(ang), Math.cos(ang)];
+  let v = Math.abs(e1[0]*f[0] + e1[1]*f[1]) > Math.abs(e2[0]*f[0] + e2[1]*f[1]) ? e1 : e2;
+  if (v[0]*f[0] + v[1]*f[1] > 0) v = [-v[0], -v[1]]; // v = 낮은 쪽 → 높은 쪽
+  const u = [-v[1], v[0]];
+  const A = r.map(p=>p[0]*u[0] + p[1]*u[1]), B = r.map(p=>p[0]*v[0] + p[1]*v[1]);
+  return {u, v, a0:Math.min(...A), b0:Math.min(...B)};
+}
+/* 패널 구역을 직각으로 맞춤: 가장 긴 변 방향을 기준으로 변을 가로·세로로 곧게 (많이 기운 모양은 그대로) */
+function solSnap(ring){
+  if (!ring || ring.length < 4) return ring;
+  let best = 0, ang = 0;
+  ring.forEach((p, i)=>{ const q = ring[(i+1) % ring.length], L = Math.hypot(q[0]-p[0], q[1]-p[1]); if (L > best){ best = L; ang = Math.atan2(q[1]-p[1], q[0]-p[0]); } });
+  const c = Math.cos(ang), sn = Math.sin(ang), o = ring[0];
+  const loc = ring.map(p=>[(p[0]-o[0])*c + (p[1]-o[1])*sn, -(p[0]-o[0])*sn + (p[1]-o[1])*c]);
+  let E = loc.map((p, i)=>{ const q = loc[(i+1) % loc.length], dx = q[0]-p[0], dy = q[1]-p[1]; return {h: Math.abs(dx) >= Math.abs(dy), a:p, b:q, len:Math.hypot(dx, dy), dev:Math.atan2(Math.min(Math.abs(dx), Math.abs(dy)), Math.max(Math.abs(dx), Math.abs(dy)))}; });
+  if (E.some(e=>e.len > 0.3 && e.dev > 25*Math.PI/180)) return ring; // 직각 모양이 아님
+  // 같은 방향으로 이어진 변은 하나로
+  const M = [];
+  E.forEach(e=>{ const l = M[M.length - 1]; if (l && l.h === e.h){ l.pts.push(e.b); l.len += e.len; } else M.push({h:e.h, pts:[e.a, e.b], len:e.len}); });
+  if (M.length > 1 && M[0].h === M[M.length - 1].h){ const l = M.pop(); M[0].pts = l.pts.concat(M[0].pts); M[0].len += l.len; }
+  if (M.length < 4 || M.length % 2) return ring;
+  M.forEach(m=>{ const w = m.pts.map((p, i)=>i ? Math.hypot(p[0]-m.pts[i-1][0], p[1]-m.pts[i-1][1]) : 0); const k = m.h ? 1 : 0; // 가로변은 y, 세로변은 x를 평균
+    const tw = w.reduce((s, v)=>s + v, 0) || 1; m.v = m.pts.reduce((s, p, i)=>s + p[k]*(i ? (w[i] + (w[i+1] || 0))/2 : (w[1] || 0)/2), 0)/tw; });
+  const out = M.map((m, i)=>{ const n = M[(i+1) % M.length]; return m.h ? [n.v, m.v] : [m.v, n.v]; }); // m 끝 = n 시작
+  const res = out.map(p=>[o[0] + p[0]*c - p[1]*sn, o[1] + p[0]*sn + p[1]*c]);
+  return hzArea(res) > 0.5 ? res : ring;
+}
+function solDepth(ring, dir){ const F = solFrame({ring, dir}), B = ring.map(p=>p[0]*F.v[0] + p[1]*F.v[1]); return Math.max(...B) - Math.min(...B); } // 앞단→뒷단 수평 거리(m)
+const solHighOf = (low, tilt, depth)=>Math.round(low + depth*1000*Math.tan(tilt*Math.PI/180));
+/* 경사·모듈로 높이 구하기
+   경사 길이 Ls = 줄 수 × 모듈 길이 + (줄 수 − 1) × 간격
+   앞단→뒷단 수평 길이 H = Ls × cos(모듈각)
+   뒷단 높이(지붕 위) = 앞단 + H × (tan 모듈각 ± tan 지붕각)   (지붕이 뒤로 내려가면 +, 올라가면 −) */
+function solMod(q){ const L = shade?.solLast || {}; return {ml:+(q?.ml || L.ml || 2278), mw:+(q?.mw || L.mw || 1134), gap:+(q?.gap ?? L.gap ?? 20)}; }
+const solAutoRows = (D, ml, gap, tilt)=>Math.max(1, Math.round(D*1000/((ml + gap)*Math.cos((tilt ?? 12)*Math.PI/180))));
+function solMath(low, tilt, rows, ml, gap, roofA, roofS){
+  const Ls = (rows*ml + (rows - 1)*gap)/1000, t = tilt*Math.PI/180, H = Ls*Math.cos(t);
+  const up = H*Math.tan(t), rf = H*Math.tan((roofA || 0)*Math.PI/180)*(roofS ?? 1);
+  return {Ls, H, up, rf, high:Math.round(low + (up + rf)*1000)};
+}
+function solFitDepth(ring, dir, H){ // 앞단(낮은 쪽)은 그대로 두고 경사 방향 깊이를 H로
+  const F = solFrame({ring, dir}), B = ring.map(p=>p[0]*F.v[0] + p[1]*F.v[1]), b0 = Math.min(...B), D = Math.max(...B) - b0;
+  if (!(D > 0) || !(H > 0)) return ring;
+  return ring.map((p, i)=>{ const nb = b0 + (B[i] - b0)*H/D, d = nb - B[i]; return [p[0] + F.v[0]*d, p[1] + F.v[1]*d]; });
+}
+function solGeom(low, D, rows, ml, gap){
+  const Ls = (rows*ml + (rows - 1)*gap)/1000, over = D > Ls + 0.005, rise = over ? 0 : Math.sqrt(Math.max(0, Ls*Ls - D*D));
+  return {Ls, over, tilt: over ? 0 : Math.acos(Math.min(1, D/Ls))*180/Math.PI, high: Math.round(low + rise*1000)};
+}
+function solBuild(q){
+  const S = shade, L = S.LF;
+  q.ring = solSnap(q.ring);
+  if (q.tilt == null && q.high > q.low){ const d = solDepth(q.ring, q.dir); if (d > 0) q.tilt = Math.round(Math.atan((q.high - q.low)/1000/d)*1800/Math.PI)/10; } // 예전 자료: 경사로 바꿔 둠
+  if (q.rows && q.tilt != null){ q.depth = solDepth(q.ring, q.dir); const M = solMod(q), G = solMath(q.low, q.tilt, q.rows, M.ml, M.gap, q.roofA, q.roofS); q.high = G.high; q.H = G.H; q.over = Math.abs(G.H - q.depth) > 0.3; } // 경사·모듈 줄 수로 뒷단 자동
+  else if (q.tilt != null){ q.depth = solDepth(q.ring, q.dir); q.high = solHighOf(q.low, q.tilt, q.depth); } // 예전 방식(경사 입력)
+  solPrep(q);
+  q.area = hzArea(q.ring);
+  const pts = q.ring, xs = pts.map(p=>p[0]), ys = pts.map(p=>p[1]);
+  q.cx = xs.reduce((s, v)=>s + v, 0)/xs.length; q.cy = ys.reduce((s, v)=>s + v, 0)/ys.length;
+  q.rr = Math.max(...pts.map(p=>Math.hypot(p[0] - q.cx, p[1] - q.cy)));
+  q.bi = (S.roofs.find(b=>b.rings.some(r=>inRing([q.cx, q.cy], r))) || S.roofs.slice().sort((a, c)=>Math.hypot(a.cx - q.cx, a.cy - q.cy) - Math.hypot(c.cx - q.cx, c.cy - q.cy))[0])?.i;
+  const st = Math.max(0.3, Math.min(S.cell, Math.sqrt(q.area/300)));
+  q.step = st; q.cells = [];
+  // 태양광 모듈 모양: 향하는 방향으로 세로 2.28m, 옆으로 1.13m
+  q.mods = [];
+  { const F = solFrame(q), u = F.u, v = F.v, Mq = solMod(q), MW = (Mq.mw + Mq.gap)/1000, ML = q.rows ? (q.depth || solDepth(q.ring, q.dir))/q.rows : SOL_ML; // 줄눈: 옆은 모듈 폭, 경사 방향은 줄 수로 나눔
+    const base = L.polygon(q.ring.map(p=>S.toLL(p[0], p[1])), {renderer:S.rnd, color:"#d7dde8", weight:1.4, fillColor:"#1f2547", fillOpacity:0.96, interactive:false});
+    S.solLayer.addLayer(base); q.mods.push(base);
+    const A = q.ring.map(p=>p[0]*u[0] + p[1]*u[1]), B = q.ring.map(p=>p[0]*v[0] + p[1]*v[1]);
+    const a0 = Math.min(...A), a1 = Math.max(...A), b0 = Math.min(...B), b1 = Math.max(...B);
+    const at = (a, b)=>[a*u[0] + b*v[0], a*u[1] + b*v[1]];
+    const line = (P, D, L0)=>{ // P에서 D 방향 선을 구역 안쪽만 잘라 그림
+      const ts = []; rayAll(P[0], P[1], D[0], D[1], q.ring, ts); ts.sort((x, y)=>x - y);
+      for (let i = 0; i + 1 < ts.length; i += 2){
+        const s0 = [P[0] + D[0]*ts[i], P[1] + D[1]*ts[i]], s1 = [P[0] + D[0]*ts[i+1], P[1] + D[1]*ts[i+1]];
+        const m = L.polyline([S.toLL(s0[0], s0[1]), S.toLL(s1[0], s1[1])], {renderer:S.rnd, color:"#d7dde8", weight:1, opacity:0.9, interactive:false});
+        S.solLayer.addLayer(m); q.mods.push(m);
+      }
+    };
+    for (let a = a0 + MW; a < a1 - 0.05; a += MW) line(at(a, b0 - 1), v, 0);
+    for (let b = b0 + ML; b < b1 - 0.05; b += ML) line(at(a0 - 1, b), u, 0);
+  }
+  for (let x = Math.min(...xs) + st/2; x < Math.max(...xs); x += st) for (let y = Math.min(...ys) + st/2; y < Math.max(...ys); y += st){
+    if (!inRing([x, y], q.ring)) continue;
+    const rect = L.rectangle([S.toLL(x - st/2, y - st/2), S.toLL(x + st/2, y + st/2)], {renderer:S.rnd, stroke:false, fillColor:"#000", fillOpacity:0, interactive:false});
+    S.solLayer.addLayer(rect); q.cells.push({x, y, rect});
+  }
+  q.outline = L.polygon(q.ring.map(p=>S.toLL(p[0], p[1])), {color:"#e2e8f0", weight:1.5, fillOpacity:0, interactive:false});
+  S.solLayer.addLayer(q.outline);
+  q.toff = q.toff || [0, 0];
+  q.tag = L.marker(S.toLL(q.cx + q.toff[0], q.cy + q.toff[1]), {draggable:true, keyboard:false, zIndexOffset:500, title:"끌어서 옮길 수 있습니다", icon:L.divIcon({className:"cadicon", iconSize:[170, 20], iconAnchor:[85, 10], html:`<div style="text-align:center"><span class="soltag">☀ ${esc(q.name)}</span></div>`})});
+  q.tag.on("dragend", ()=>{ const p = q.tag.getLatLng(), x = S.toXY2(p.lat, p.lng); q.toff = [x[0] - q.cx, x[1] - q.cy]; solSave(); });
+  if (solTagsOn()) S.solLayer.addLayer(q.tag);
+}
+function solTagsOn(){ try{ return localStorage.getItem("archibase_soltags") !== "0"; }catch(e){ return true; } } // 기본: 보이기
+function solTagsSet(on){
+  try{ localStorage.setItem("archibase_soltags", on ? "1" : "0"); }catch(e){}
+  document.querySelectorAll(".solTagChk").forEach(c=>c.checked = on);
+  (shade?.sol || []).forEach(q=>{ if (!q.tag) return; on ? shade.solLayer.addLayer(q.tag) : shade.solLayer.removeLayer(q.tag); });
+}
+document.addEventListener("change", e=>{ if (e.target.classList?.contains("solTagChk")) solTagsSet(e.target.checked); });
+function solUnbuild(q){ const S = shade; q.cells?.forEach(c=>S.solLayer.removeLayer(c.rect)); q.mods?.forEach(m=>S.solLayer.removeLayer(m)); if (q.outline) S.solLayer.removeLayer(q.outline); if (q.tag) S.solLayer.removeLayer(q.tag); q.cells = []; }
+function solSave(){
+  const S = shade, k = solKey("sol"); if (!S?.sol || !k) return;
+  try{ S.sol.length ? localStorage.setItem(k, JSON.stringify(S.sol.map(q=>({name:q.name, ll:q.ring.map(p=>S.toLL(p[0], p[1])), low:q.low, high:q.high, tilt:q.tilt, rows:q.rows, ml:q.ml, mw:q.mw, gap:q.gap, roofA:q.roofA, roofS:q.roofS, dir:q.dir, toff:q.toff})))) : localStorage.removeItem(k); }catch(e){}
+  cloudPush("sol");
+}
+function solRestore(){
+  const S = shade, k = solKey("sol"); if (!k) return;
+  let d = null; try{ d = JSON.parse(localStorage.getItem(k) || "null"); }catch(e){}
+  (d || []).forEach(o=>{ const q = {name:o.name, ring:o.ll.map(p=>S.toXY2(p[0], p[1])), low:+o.low, high:+o.high, tilt:o.tilt, rows:o.rows, ml:o.ml, mw:o.mw, gap:o.gap, roofA:o.roofA, roofS:o.roofS, dir:+o.dir, toff:o.toff}; solBuild(q); S.sol.push(q); });
+}
+function solInit(){
+  const S = shade, map = S.map;
+  S.sol = []; S.solLayer = S.LF.layerGroup().addTo(S.group);
+  solRestore(); solList();
+  if (!map._solOn){
+    map._solOn = true;
+    map.on("click", e=>{
+      const D = shade?.solDraw; if (!D || D.ring) return;
+      const p = D.pts;
+      if (p.length >= 3 && map.latLngToContainerPoint(p[0]).distanceTo(e.containerPoint) < 12){ solEnd(); return; }
+      const last = p[p.length - 1]; if (last && map.latLngToContainerPoint(last).distanceTo(e.containerPoint) < 5) return;
+      p.push(e.latlng); D.line.setLatLngs(p); D.poly.setLatLngs(p.length >= 3 ? p : []);
+      $("#solDrawBtn").textContent = `✏ 그리는 중 (${p.length}점) — 첫 점이나 더블클릭으로 끝 · Esc 취소`;
+    });
+    map.on("dblclick contextmenu", e=>{ const D = shade?.solDraw; if (D && !D.ring){ e.originalEvent?.preventDefault(); solEnd(); } });
+    map.on("popupopen", ()=>{ if (shade?.solDraw || shade?.solShape || shade?.solRect) map.closePopup(); });
+    map.on("click", e=>{
+      const S = shade; if (!S?.sol || S.rt?.kind !== "sol" || S.solDraw || S.solShape || S.solRect || S.hz || lay.step) return;
+      const p = S.toXY2(e.latlng.lat, e.latlng.lng), k = S.sol.findIndex(q=>inRing(p, q.ring));
+      if (k >= 0){ setTimeout(()=>{ map.closePopup(); solShapeStart(k); }, 0); }
+    });
+  }
+  layEnsure(); layRestore();
+}
+function solList(){
+  const S = shade, el = $("#solList"); if (!S?.sol || !el) return;
+  if (S.times?.length){ el.innerHTML = ""; return; } // 계산 뒤에는 결과 칸에 구역과 버튼이 함께 나옴
+  const mine = S.sol.map((q, k)=>[q, k]).filter(([q])=>!S.rt || q.bi === S.rt.i);
+  el.innerHTML = mine.length ? `<div class="hzlist">` + mine.map(([q, k])=>`<div class="row hzrow" style="gap:4px;flex-wrap:nowrap"><span class="hzz"><b style="color:${SOL_COL}">☀ ${esc(q.name)}</b> · 약 ${hzN(q.area)}㎡ · 앞단 ${q.low.toLocaleString()} → 뒷단 ${q.high.toLocaleString()}mm · 모듈 ${q.tilt ?? "-"}°${q.roofA ? ` · 지붕 ${q.roofA}°` : ""}${q.rows ? ` · ${q.rows}줄` : ""} · ${dirName(q.dir)}향${q.over ? ` <b style="color:#c2410c">· 그린 깊이와 차이 있음</b>` : ""}(${q.dir}°)</span>
+    <button type="button" class="ghost sm" data-sol="shape" data-k="${k}" title="모양 고치기 (꼭짓점 끌기)">⬠</button><button type="button" class="ghost sm" data-sol="edit" data-k="${k}" title="높이·경사·방향 수정">✏ 수정</button><button type="button" class="ghost sm" data-sol="zoom" data-k="${k}" title="지도에서 보기">🔍</button><button type="button" class="ghost sm" data-sol="del" data-k="${k}" title="지우기">✕</button></div>`).join("") +
+    `<div class="hint" style="margin-top:4px">⬠ 모양 고치기(지도에서 구역을 눌러도 됨) · ✏ 높이·방향 · 구역은 이 브라우저에 주소별로 저장됩니다.</div></div>` : "";
+}
+function solStart(rep){
+  const S = shade; if (!S?.sol) return;
+  hzCancel(); solCancel(); layAutoEnd();
+  const L = S.LF, map = S.map;
+  S.solDraw = {pts:[], rep, line:L.polyline([], {color:SOL_COL, weight:3, dashArray:"6 4", interactive:false}).addTo(S.hzTmp), poly:L.polygon([], {color:SOL_COL, weight:2, fillColor:"#22c55e", fillOpacity:0.2, interactive:false}).addTo(S.hzTmp)};
+  map.closePopup(); map.doubleClickZoom.disable(); map.getContainer().classList.add("measuring"); drawMode(true);
+  const b = $("#solDrawBtn"); b.classList.add("on"); b.textContent = "✏ 그리는 중 — 패널 범위 모서리 클릭 · 첫 점이나 더블클릭으로 끝 · Esc 취소";
+  $("#solForm").hidden = true;
+}
+function solEnd(){
+  const S = shade, D = S.solDraw; if (!D || D.pts.length < 3) return;
+  D.ring = D.pts.map(p=>S.toXY2(p.lat, p.lng)); S.hzTmp.removeLayer(D.line); D.poly.setLatLngs(D.pts);
+  setTimeout(()=>S.map.doubleClickZoom.enable(), 300); S.map.getContainer().classList.remove("measuring"); drawMode(false);
+  const b = $("#solDrawBtn"); b.classList.remove("on"); b.textContent = "✏ 점 찍어 그리기";
+  const old = D.rep != null ? S.sol[D.rep] : null;
+  solForm(old ? {...old, ring:D.ring} : {ring:D.ring, low:S.solLast?.low ?? 3400, dir:solFitDir(D.ring), name:`구역 ${S.sol.length + 1}`}, D.rep);
+}
+/* ▭ 사각형 패널 구역: 가운데 ✥ 끌어 옮기기, 변 ● 끌면 모듈 한 장 단위로 늘고 줆 */
+function solRectStart(k){
+  const S = shade; if (!S?.sol) return;
+  solCancel(); hzCancel(); layAutoEnd();
+  const L = S.LF, q = k != null ? S.sol[k] : null;
+  let F, dir, r;
+  if (q){ F = solFrame(q); dir = q.dir;
+    const A = q.ring.map(p=>p[0]*F.u[0] + p[1]*F.u[1]), B = q.ring.map(p=>p[0]*F.v[0] + p[1]*F.v[1]);
+    r = {u0:Math.min(...A), u1:Math.max(...A), v0:Math.min(...B), v1:Math.max(...B)};
+  } else {
+    const b = shadeB(S.rt?.i ?? S.hzSel); if (!b) return;
+    dir = solFitDir(b.rings[0]);
+    F = solFrame({ring:b.rings[0], dir});
+    const ca = b.cx*F.u[0] + b.cy*F.u[1], cb = b.cx*F.v[0] + b.cy*F.v[1], n = 10, m = 2;
+    r = {u0:ca - n*SOL_MW/2, u1:ca + n*SOL_MW/2, v0:cb - m*SOL_ML/2, v1:cb + m*SOL_ML/2};
+  }
+  const Mq = solMod(q), t0 = (q?.tilt ?? S.solLast?.tilt ?? 12)*Math.PI/180; R0tilt = q?.tilt ?? S.solLast?.tilt ?? 12;
+  const su = (Mq.mw + Mq.gap)/1000, sv = (Mq.ml + Mq.gap)/1000*Math.cos(t0);
+  if (!q){ const ca = (r.u0 + r.u1)/2, cb = (r.v0 + r.v1)/2; r.u0 = ca - 5*su; r.u1 = ca + 5*su; r.v0 = cb - sv; r.v1 = cb + sv; }
+  const R = S.solRect = {k, F, dir, r, su, sv, M:Mq, hd:{}, poly:L.polygon([], {color:"#f59e0b", weight:3, dashArray:"6 4", fillColor:"#1f2547", fillOpacity:0.8, interactive:false}).addTo(S.hzTmp), grid:L.layerGroup().addTo(S.hzTmp)};
+  const ic = (cls, sz, t)=>L.divIcon({className:"cadicon", iconSize:[sz, sz], iconAnchor:[sz/2, sz/2], html:`<div class="${cls}">${t || ""}</div>`});
+  ["u0", "u1", "v0", "v1"].forEach(sd=>{
+    const mk = L.marker([0, 0], {draggable:true, icon:ic("hzh", 16), zIndexOffset:1000, keyboard:false, title:"끌면 모듈 한 장 단위로 늘고 줄어듭니다"}).addTo(S.hzTmp);
+    mk.on("drag", ()=>solRectSide(sd, mk)).on("dragend", ()=>solRectDraw()); R.hd[sd] = mk;
+  });
+  const cm = L.marker([0, 0], {draggable:true, icon:ic("hzc", 26, "✥"), zIndexOffset:1100, keyboard:false, title:"끌어서 옮기기"}).addTo(S.hzTmp);
+  const pxy = ()=>{ const p = cm.getLatLng(), x = S.toXY2(p.lat, p.lng); return [x[0]*F.u[0] + x[1]*F.u[1], x[0]*F.v[0] + x[1]*F.v[1]]; };
+  cm.on("dragstart", ()=>{ R.c0 = pxy(); }).on("drag", ()=>{ const c = pxy(), da = c[0] - R.c0[0], db = c[1] - R.c0[1]; R.c0 = c; r.u0 += da; r.u1 += da; r.v0 += db; r.v1 += db; solRectDraw(cm); }).on("dragend", ()=>solRectDraw());
+  R.hd.c = cm;
+  const rm = L.marker([0, 0], {draggable:true, icon:ic("hzrot", 22, "⟳"), zIndexOffset:1050, keyboard:false, title:"끌어서 돌리기"}).addTo(S.hzTmp);
+  const ang = ()=>{ const p = rm.getLatLng(), x = S.toXY2(p.lat, p.lng), r2 = R.r, cu = (r2.u0 + r2.u1)/2, cv = (r2.v0 + r2.v1)/2, C = [cu*R.F.u[0] + cv*R.F.v[0], cu*R.F.u[1] + cv*R.F.v[1]]; return Math.atan2(x[1] - C[1], x[0] - C[0])*180/Math.PI; };
+  rm.on("dragstart", ()=>{ R.a0 = ang(); }).on("drag", ()=>{ const a = ang(); let d = a - R.a0; if (d > 180) d -= 360; if (d < -180) d += 360; R.a0 = a; solRectRotate(d); }).on("dragend", ()=>solRectDraw());
+  R.hd.rot = rm;
+  S.map.closePopup(); S.map.doubleClickZoom.disable(); drawMode(true);
+  const f = $("#solForm"); f.hidden = false;
+  f.innerHTML = `<div class="solsub"><b>▭ ${q ? esc(q.name) + " 모양 고치기" : "새 사각형 구역"}</b>
+    <div class="row hzr" style="margin-top:4px"><span class="hzlab">모듈 크기</span><input type="number" id="srML" min="300" step="1" style="width:62px" value="${Mq.ml}"><span class="hint">×</span><input type="number" id="srMW" min="300" step="1" style="width:62px" value="${Mq.mw}"><span class="hint">mm (길이 × 폭)</span></div>
+    <div class="row hzr"><span class="hzlab">모듈 간격</span><input type="number" id="srGap" min="0" step="1" style="width:56px" value="${Mq.gap}"><span class="hint">mm</span><span class="hzlab" style="width:auto;margin-left:8px">모듈 각도</span><input type="number" id="srTilt" min="0" max="60" step="0.5" style="width:50px" value="${R0tilt}"><span class="hint">°</span></div>
+    <div class="row hzr"><span class="hzlab">회전</span><button type="button" class="ghost sm" data-srrot="-1">↺ 1°</button><button type="button" class="ghost sm" data-srrot="-0.2">↺ 0.2°</button><input type="number" id="srRot" step="0.1" style="width:60px" value="0"><span class="hint">°</span><button type="button" class="ghost sm" data-srrot="0.2">↻ 0.2°</button><button type="button" class="ghost sm" data-srrot="1">↻ 1°</button></div>
+    <div class="hint" style="margin:-2px 0 4px">배치도·지붕 선과 각도가 안 맞으면 돌리세요. 지도의 <b>⟳</b> 손잡이를 끌어도 돌아갑니다.</div>
+    <div class="row hzr"><span class="hzlab">모듈 수</span><input type="number" id="srN" min="1" step="1" style="width:56px"><span class="hint">장 ×</span><input type="number" id="srM" min="1" step="1" style="width:50px"><span class="hint">줄</span></div>
+    <div id="srInfo" class="hzmeas"></div>
+    <div class="hint">가운데 <b>✥</b>를 끌어 옮기고, 변의 <b>●</b>를 끌면 <b>모듈 한 장 단위</b>(옆은 모듈 폭, 경사 방향은 기운 모듈이 평면에 보이는 길이)로 늘고 줄어듭니다. 장 수·줄 수를 직접 넣어도 됩니다.</div>
+    <div class="row" style="gap:6px;margin-top:6px"><button type="button" data-sol="rectok">${q ? "완료" : "다음 (높이 넣기)"}</button><button type="button" class="ghost" data-sol="rectx">취소</button>${q ? `<button type="button" class="ghost sm" data-sol="vtx" data-k="${k}">꼭짓점으로 고치기</button>` : ""}</div></div>`;
+  solRectDraw();
+  if (!q) S.map.fitBounds(R.poly.getBounds(), {maxZoom:20, padding:[120, 120]});
+}
+let R0tilt = 12;
+function solRectRotate(deg){ // 가운데를 중심으로 돌리기 (향하는 방향도 같이)
+  const R = shade?.solRect; if (!R || !deg) return;
+  const F = R.F, r = R.r, cu = (r.u0 + r.u1)/2, cv = (r.v0 + r.v1)/2, C = [cu*F.u[0] + cv*F.v[0], cu*F.u[1] + cv*F.v[1]];
+  const t = deg*Math.PI/180, c = Math.cos(t), sn = Math.sin(t), rot = v=>[v[0]*c - v[1]*sn, v[0]*sn + v[1]*c];
+  F.u = rot(F.u); F.v = rot(F.v);
+  const nu = C[0]*F.u[0] + C[1]*F.u[1], nv = C[0]*F.v[0] + C[1]*F.v[1], hw = (r.u1 - r.u0)/2, hl = (r.v1 - r.v0)/2;
+  Object.assign(r, {u0:nu - hw, u1:nu + hw, v0:nv - hl, v1:nv + hl});
+  R.dir = ((R.dir - deg) % 360 + 360) % 360; // 지도 좌표는 반시계, 방위각은 시계 방향
+  R.rot = (R.rot || 0) + deg;
+  const ri = $("#srRot"); if (ri && document.activeElement !== ri) ri.value = (Math.round(R.rot*10)/10);
+  solRectDraw();
+}
+document.addEventListener("click", e=>{ const b = e.target.closest?.("[data-srrot]"); if (b) solRectRotate(+b.dataset.srrot); });
+document.addEventListener("change", e=>{ if (e.target.id === "srRot" && shade?.solRect){ solRectRotate((+e.target.value || 0) - (shade.solRect.rot || 0)); } });
+function solRectRing(R){ const F = R.F, r = R.r, at = (a, b)=>[a*F.u[0] + b*F.v[0], a*F.u[1] + b*F.v[1]]; return [at(r.u0, r.v0), at(r.u1, r.v0), at(r.u1, r.v1), at(r.u0, r.v1)]; }
+function solRectDraw(skip){
+  const S = shade, R = S?.solRect; if (!R) return;
+  const r = R.r, F = R.F, at = (a, b)=>{ const p = [a*F.u[0] + b*F.v[0], a*F.u[1] + b*F.v[1]]; return S.toLL(p[0], p[1]); };
+  R.poly.setLatLngs(solRectRing(R).map(p=>S.toLL(p[0], p[1])));
+  R.grid.clearLayers();
+  const n = Math.round((r.u1 - r.u0)/R.su), m = Math.round((r.v1 - r.v0)/R.sv);
+  for (let i = 1; i < n; i++) R.grid.addLayer(S.LF.polyline([at(r.u0 + i*R.su, r.v0), at(r.u0 + i*R.su, r.v1)], {color:"#d7dde8", weight:1, interactive:false}));
+  for (let j = 1; j < m; j++) R.grid.addLayer(S.LF.polyline([at(r.u0, r.v0 + j*R.sv), at(r.u1, r.v0 + j*R.sv)], {color:"#d7dde8", weight:1, interactive:false}));
+  const um = (r.u0 + r.u1)/2, vm = (r.v0 + r.v1)/2, pos = {u0:at(r.u0, vm), u1:at(r.u1, vm), v0:at(um, r.v0), v1:at(um, r.v1), c:at(um, vm), rot:at(r.u1 + 1.5, r.v1 + 1.5)};
+  Object.entries(R.hd).forEach(([k2, mk])=>{ if (mk !== skip) mk.setLatLng(pos[k2]); });
+  const iN = $("#srN"), iM = $("#srM"); if (iN && document.activeElement !== iN) iN.value = n; if (iM && document.activeElement !== iM) iM.value = m;
+  const M = R.M, tl = R.tilt ?? R0tilt;
+  const inf = $("#srInfo"); if (inf) inf.innerHTML = `가로 <b>${n}장</b> × <b>${m}줄</b> = <b>${n*m}장</b> · 평면 ${(r.u1 - r.u0).toFixed(2)}m × ${(r.v1 - r.v0).toFixed(2)}m ≈ ${hzN((r.u1 - r.u0)*(r.v1 - r.v0))}㎡<br>
+    <span class="hint">가로 = ${n}장 × (폭 ${M.mw.toLocaleString()} + 간격 ${M.gap}) · 세로 = ${m}줄 × (길이 ${M.ml.toLocaleString()} + 간격 ${M.gap}) × cos ${tl}° (기울어 평면에서 짧아 보임)</span>`;
+}
+function solRectSide(sd, mk){
+  const S = shade, R = S.solRect, r = R.r, F = R.F, p = mk.getLatLng(), x = S.toXY2(p.lat, p.lng);
+  const a = x[0]*F.u[0] + x[1]*F.u[1], b = x[0]*F.v[0] + x[1]*F.v[1];
+  if (sd === "u1") r.u1 = r.u0 + Math.max(1, Math.round((a - r.u0)/R.su))*R.su;
+  if (sd === "u0") r.u0 = r.u1 - Math.max(1, Math.round((r.u1 - a)/R.su))*R.su;
+  if (sd === "v1") r.v1 = r.v0 + Math.max(1, Math.round((b - r.v0)/R.sv))*R.sv;
+  if (sd === "v0") r.v0 = r.v1 - Math.max(1, Math.round((r.v1 - b)/R.sv))*R.sv;
+  solRectDraw(mk);
+}
+function solRectEnd(){
+  const S = shade, R = S?.solRect; if (!R) return;
+  Object.values(R.hd).forEach(m=>S.hzTmp.removeLayer(m)); S.hzTmp.removeLayer(R.poly); S.hzTmp.removeLayer(R.grid);
+  S.solRect = null; S.map.doubleClickZoom.enable(); drawMode(false);
+  const f = $("#solForm"); if (f){ f.hidden = true; f.innerHTML = ""; }
+}
+function solRectApply(){
+  const S = shade, R = S?.solRect; if (!R) return;
+  const ring = solRectRing(R), k = R.k, dir = R.dir, rows = Math.max(1, Math.round((R.r.v1 - R.r.v0)/R.sv));
+  solRectEnd();
+  if (k != null){ const q = S.sol[k]; solUnbuild(q); q.ring = ring; q.rows = rows; Object.assign(q, R.M); solBuild(q); solList(); shadeRoofList(); S.recalc(); }
+  else solForm({ring, low:S.solLast?.low ?? 3400, tilt:R0tilt, rows, ...R.M, dir, name:`구역 ${S.sol.length + 1}`}, null);
+}
+document.addEventListener("input", e=>{
+  const R = shade?.solRect; if (!R || !/^sr(N|M|ML|MW|Gap|Tilt)$/.test(e.target.id)) return;
+  if (/^sr[NM]$/.test(e.target.id)){ const v = Math.max(1, Math.round(+e.target.value || 0));
+    if (e.target.id === "srN") R.r.u1 = R.r.u0 + v*R.su; else R.r.v1 = R.r.v0 + v*R.sv; solRectDraw(); return; }
+  // 모듈 크기·간격·각도가 바뀌면 장 수·줄 수는 그대로 두고 크기만 다시
+  const n = Math.max(1, Math.round((R.r.u1 - R.r.u0)/R.su)), m = Math.max(1, Math.round((R.r.v1 - R.r.v0)/R.sv));
+  const ml = +$("#srML").value, mw = +$("#srMW").value, gap = +$("#srGap").value, tl = +$("#srTilt").value;
+  if (!(ml > 0) || !(mw > 0) || !(gap >= 0) || !(tl >= 0)) return;
+  R.M = {ml, mw, gap}; R.tilt = tl; R0tilt = tl;
+  R.su = (mw + gap)/1000; R.sv = (ml + gap)/1000*Math.cos(tl*Math.PI/180);
+  R.r.u1 = R.r.u0 + n*R.su; R.r.v1 = R.r.v0 + m*R.sv;
+  solRectDraw();
+});
+/* 태양광 구역 모양 고치기: 꼭짓점 끌기 · 변 가운데 ○ 끌어 꼭짓점 더하기 · 꼭짓점 더블클릭으로 지우기 */
+function solShapeStart2(k){ solShapeStart.force = true; try{ solShapeStart(k); } finally { solShapeStart.force = false; } }
+function solShapeStart(k){
+  const S = shade, q = S.sol[k]; if (!q) return;
+  solCancel(); hzCancel(); layAutoEnd();
+  const L = S.LF;
+  if (q.ring.length === 4 && !solShapeStart.force){ solRectStart(k); return; } // 사각형은 변 끌기로
+  const Mq = solMod(q);
+  S.solShape = {k, F:solFrame(q), su:(Mq.mw + Mq.gap)/1000, sv:(Mq.ml + Mq.gap)/1000*Math.cos((q.tilt ?? 12)*Math.PI/180), pts:q.ring.map(p=>p.slice()), mk:[], poly:L.polygon([], {color:"#f59e0b", weight:3, dashArray:"6 4", fillColor:"#fbbf24", fillOpacity:0.2, interactive:false}).addTo(S.hzTmp)};
+  S.map.closePopup(); S.map.doubleClickZoom.disable(); drawMode(true);
+  const f = $("#solForm"); f.hidden = false;
+  f.innerHTML = `<div class="solsub"><b>⬠ ${esc(q.name)} 모양 고치기</b> <span class="hint" id="solShapeA"></span>
+    <div class="hint" style="margin-top:3px">지도에서 <b>● 꼭짓점</b>을 끌어 옮기고(모듈 줄눈에 맞춰 붙음), 변 가운데 <b>○</b>를 끌면 꼭짓점이 늘어납니다. 꼭짓점을 <b>더블클릭</b>하면 지워집니다. 배치도의 패널 테두리에 맞춰 주세요.</div>
+    <div class="row" style="gap:6px;margin-top:6px"><button type="button" data-sol="shapeok">완료</button><button type="button" class="ghost" data-sol="shapex">취소</button></div></div>`;
+  solShapeDraw();
+}
+function solShapeDraw(){
+  const S = shade, E = S.solShape; if (!E) return;
+  const L = S.LF, ll = p=>S.toLL(p[0], p[1]);
+  E.mk.forEach(m=>S.hzTmp.removeLayer(m)); E.mk = [];
+  E.poly.setLatLngs(E.pts.map(ll));
+  const a = $("#solShapeA"); if (a) a.textContent = `· 약 ${hzN(hzArea(E.pts))}㎡`;
+  const ic = cls=>L.divIcon({className:"cadicon", iconSize:[16, 16], iconAnchor:[8, 8], html:`<div class="${cls}"></div>`});
+  const xy = m=>{ const p = m.getLatLng(), x = S.toXY2(p.lat, p.lng), F = E.F; // 모듈 격자에 붙임
+    const a = x[0]*F.u[0] + x[1]*F.u[1], b = x[0]*F.v[0] + x[1]*F.v[1];
+    const sa = F.a0 + Math.round((a - F.a0)/E.su)*E.su, sb = F.b0 + Math.round((b - F.b0)/E.sv)*E.sv;
+    return [sa*F.u[0] + sb*F.v[0], sa*F.u[1] + sb*F.v[1]]; };
+  E.pts.forEach((p, i)=>{
+    const m = L.marker(ll(p), {draggable:true, icon:ic("hzh"), zIndexOffset:1000, keyboard:false, title:"끌어서 옮기기 · 더블클릭하면 지우기"}).addTo(S.hzTmp);
+    m.on("drag", ()=>{ E.pts[i] = xy(m); E.poly.setLatLngs(E.pts.map(ll)); }).on("dragend", solShapeDraw)
+     .on("dblclick", ev=>{ ev.originalEvent?.preventDefault(); if (E.pts.length > 3){ E.pts.splice(i, 1); solShapeDraw(); } });
+    E.mk.push(m);
+    const q = E.pts[(i + 1) % E.pts.length];
+    const mm = L.marker(ll([(p[0] + q[0])/2, (p[1] + q[1])/2]), {draggable:true, icon:ic("hzm"), zIndexOffset:900, keyboard:false, title:"끌면 꼭짓점이 늘어납니다"}).addTo(S.hzTmp);
+    mm.on("dragstart", ()=>{ E.pts.splice(i + 1, 0, xy(mm)); E.ins = i + 1; })
+      .on("drag", ()=>{ E.pts[E.ins] = xy(mm); E.poly.setLatLngs(E.pts.map(ll)); }).on("dragend", solShapeDraw);
+    E.mk.push(mm);
+  });
+}
+function solShapeEnd(){
+  const S = shade, E = S?.solShape; if (!E) return;
+  E.mk.forEach(m=>S.hzTmp.removeLayer(m)); S.hzTmp.removeLayer(E.poly);
+  S.solShape = null; S.map.doubleClickZoom.enable(); drawMode(false);
+  const f = $("#solForm"); if (f){ f.hidden = true; f.innerHTML = ""; }
+}
+function solShapeApply(){
+  const S = shade, E = S?.solShape; if (!E) return;
+  const q = S.sol[E.k], pts = E.pts.map(p=>p.slice());
+  solShapeEnd();
+  solUnbuild(q); q.ring = pts; solBuild(q);
+  solList(); shadeRoofList(); S.recalc();
+}
+function solCancel(){
+  const S = shade; if (!S) return;
+  if (S.solShape) solShapeEnd();
+  if (S.solRect) solRectEnd();
+  if (S.solDraw) drawMode(false);
+  if (S.solDraw){ S.hzTmp?.removeLayer(S.solDraw.line); S.hzTmp?.removeLayer(S.solDraw.poly); S.solDraw = null;
+    S.map.doubleClickZoom.enable(); S.map.getContainer().classList.remove("measuring"); }
+  const b = $("#solDrawBtn"); if (b){ b.classList.remove("on"); b.textContent = "✏ 점 찍어 그리기"; }
+  const f = $("#solForm"); if (f){ f.hidden = true; f.innerHTML = ""; }
+  const md = $("#solModal"); if (md){ md.hidden = true; md.innerHTML = ""; }
+  S.solEdit = null;
+}
+function solForm(q, rep){ // 높이·경사·방향 수정창 (화면 가운데 창)
+  const S = shade;
+  S.solEdit = {q, rep};
+  let el = $("#solModal");
+  if (!el){ el = document.createElement("div"); el.id = "solModal"; el.className = "solmodal"; document.body.appendChild(el);
+    el.addEventListener("mousedown", e=>{ if (e.target === el) solCancel(); }); }
+  el.hidden = false;
+  el.innerHTML = `<div class="solcard"><div class="row" style="justify-content:space-between;margin-bottom:8px"><b style="font-size:15px">☀ ${esc(q.name)} ${rep != null ? "수정" : "만들기"}</b><span class="hint">약 ${hzN(hzArea(q.ring))}㎡</span></div>
+    <div class="row hzr"><span class="hzlab">앞단 높이</span><input type="number" id="solLow" step="10" min="0" value="${q.low}"><span class="hint">mm (지붕 위 · 낮은 쪽)</span></div>
+    <div class="row hzr"><span class="hzlab">모듈 각도</span><input type="number" id="solTilt" step="0.5" min="0" max="60" value="${q.tilt ?? S.solLast?.tilt ?? 12}"><span class="hint">° (수평 기준)</span></div>
+    <div class="row hzr"><span class="hzlab">지붕 각도</span><input type="number" id="solRoofA" step="0.5" min="0" max="45" value="${q.roofA ?? S.solLast?.roofA ?? 0}"><span class="hint">°</span><select id="solRoofS"><option value="1"${(q.roofS ?? S.solLast?.roofS ?? 1) == 1 ? " selected" : ""}>뒷단 쪽으로 내려감</option><option value="-1"${(q.roofS ?? S.solLast?.roofS ?? 1) == -1 ? " selected" : ""}>뒷단 쪽으로 올라감</option></select></div>
+    <div class="row hzr"><span class="hzlab">모듈 크기</span><input type="number" id="solML" step="1" min="300" value="${solMod(q).ml}"><span class="hint">×</span><input type="number" id="solMW" step="1" min="300" value="${solMod(q).mw}"><span class="hint">mm (경사 방향 길이 × 폭)</span></div>
+    <div class="row hzr"><span class="hzlab">모듈 간격</span><input type="number" id="solGap" step="1" min="0" value="${solMod(q).gap}"><span class="hint">mm</span></div>
+    <div class="row hzr"><span class="hzlab">경사 방향 줄 수</span><input type="number" id="solRows" step="1" min="1" max="20" value="${q.rows || solAutoRows(solDepth(solSnap(q.ring), q.dir), solMod(q).ml, solMod(q).gap, q.tilt ?? S.solLast?.tilt ?? 12)}"><span class="hint">줄 (앞단→뒷단으로 놓인 모듈 수)</span></div>
+    <label class="ovlab" style="font-size:12.5px"><input type="checkbox" id="solFit" checked> 지도의 구역 깊이를 계산된 수평 길이에 맞추기 <span class="hint">(앞단은 그대로)</span></label>
+    <div class="hzmeas" id="solHighV"></div>
+    <div class="row hzr"><span class="hzlab">향하는 방향</span><input type="number" id="solDir" step="1" min="0" max="359" value="${q.dir}"><span class="hint">° <b id="solDirN">${dirName(q.dir)}향</b></span><button type="button" class="ghost sm" data-sol="fitdir">구역 변에 맞추기</button></div>
+    <div class="hint">앞단 높이·모듈 각도·지붕 각도·모듈 크기·줄 수로 <b>뒷단 높이를 자동 계산</b>합니다. 높이는 모두 지붕면에서 잰 값입니다. 방향은 패널 앞면(낮은 쪽)이 향하는 쪽입니다 (남 180°). <b>Enter</b>를 눌러도 됩니다.</div>
+    <div class="row" style="gap:6px;margin-top:10px;justify-content:flex-end"><button type="button" data-sol="ok">${rep != null ? "수정" : "만들기"}</button><button type="button" class="ghost" data-sol="cancel">취소</button></div></div>`;
+  solHighShow();
+  setTimeout(()=>{ const f = $("#solLow"); f?.focus(); f?.select(); }, 30);
+}
+function solHighShow(){ // 뒷단 높이 = 앞단 + 깊이 × tan(경사)
+  const E = shade?.solEdit, el = $("#solHighV"); if (!E || !el) return;
+  const low = +$("#solLow").value || 0, dir = +$("#solDir").value || 0, d = solDepth(solSnap(E.q.ring), dir);
+  const tilt = +$("#solTilt").value || 0, ml = +$("#solML").value || 2278, gap = +$("#solGap").value || 0, rows = Math.max(1, Math.round(+$("#solRows").value || 1));
+  const ra = +$("#solRoofA").value || 0, rs = +$("#solRoofS").value || 1, G = solMath(low, tilt, rows, ml, gap, ra, rs), f = v=>Math.round(v*1000).toLocaleString();
+  el.innerHTML = `뒷단 높이 <b>${G.high.toLocaleString()}mm</b> <span class="hint">(지붕면에서)</span> · 앞단→뒷단 수평 <b>${f(G.H)}mm</b><br>
+    <span class="hint">= 앞단 ${low.toLocaleString()} + 모듈이 오르는 높이 ${f(G.up)}${ra ? ` ${rs > 0 ? "+" : "−"} 지붕이 ${rs > 0 ? "내려가는" : "올라가는"} 높이 ${f(Math.abs(G.rf))}` : ""}<br>경사 길이 ${f(G.Ls)}mm (${rows}줄 × ${ml.toLocaleString()} + 간격 ${gap}) · 수평 = 경사 길이 × cos ${tilt}°<br>지도에 그린 구역 깊이 ${(d*1000).toLocaleString(undefined, {maximumFractionDigits:0})}mm${Math.abs(G.H - d) > 0.05 ? ` <b style="color:#c2410c">(${G.H > d ? "+" : ""}${Math.round((G.H - d)*1000).toLocaleString()}mm 차이)</b>` : ""}</span>`;
+}
+document.addEventListener("input", e=>{ if (/^sol(Low|Dir|ML|MW|Gap|Rows|Tilt|RoofA|RoofS)$/.test(e.target.id)) solHighShow(); });
+document.addEventListener("change", e=>{ if (e.target.id === "solRoofS") solHighShow(); });
+function solApply(){
+  const S = shade, E = S?.solEdit; if (!E) return;
+  const low = +$("#solLow").value, dir = ((+$("#solDir").value % 360) + 360) % 360;
+  const ml = +$("#solML").value, mw = +$("#solMW").value, gap = +$("#solGap").value || 0, rows = Math.round(+$("#solRows").value), tilt = +$("#solTilt").value;
+  if (!(low >= 0) || $("#solLow").value === "" || !(ml > 0) || !(mw > 0) || !(rows >= 1) || !(tilt >= 0)){ $("#solLow").focus(); return; }
+  const roofA = +$("#solRoofA").value || 0, roofS = +$("#solRoofS").value || 1;
+  if ($("#solFit")?.checked) E.q.ring = solFitDepth(solSnap(E.q.ring), dir, solMath(low, tilt, rows, ml, gap).H);
+  const q = E.rep != null ? S.sol[E.rep] : {name:E.q.name};
+  if (E.rep != null) solUnbuild(q);
+  Object.assign(q, {ring:E.q.ring, low, dir, rows, ml, mw, gap, tilt, roofA, roofS});
+  solBuild(q);
+  if (E.rep == null) S.sol.push(q);
+  S.solLast = {low, ml, mw, gap, tilt, roofA, roofS};
+  solCancel(); solList(); shadeRoofList(); S.recalc();
+}
+document.addEventListener("click", e=>{
+  if (!shade?.sol) return;
+  if (e.target.id === "solDrawBtn"){ shade.solDraw ? solCancel() : solStart(null); return; }
+  const t = e.target.closest?.("[data-sol]"); if (!t) return;
+  const a = t.dataset.sol, k = +t.dataset.k, S = shade, q = S.sol[k];
+  if (a === "ok") solApply();
+  else if (a === "cancel") solCancel();
+  else if (a === "fitdir" && S.solEdit){ const d = solFitDir(S.solEdit.q.ring); $("#solDir").value = d; $("#solDirN").textContent = dirName(d) + "향"; }
+  else if (a === "edit" && q){ solCancel(); solForm({...q}, k); }
+  else if (a === "reshape" && q){ solStart(k); }
+  else if (a === "shape" && q){ solShapeStart(k); }
+  else if (a === "rectnew") solRectStart(null);
+  else if (a === "rectok") solRectApply();
+  else if (a === "rectx") solRectEnd();
+  else if (a === "vtx" && q){ solRectEnd(); solShapeStart2(k); }
+  else if (a === "shapeok") solShapeApply();
+  else if (a === "shapex") solShapeEnd();
+  else if (a === "zoom" && q) S.map.fitBounds(q.outline.getBounds(), {maxZoom:20, padding:[100, 100]});
+  else if (a === "del" && q){ solUnbuild(q); S.sol.splice(k, 1); solCancel(); solList(); shadeRoofList(); S.recalc(); }
+});
+document.addEventListener("input", e=>{
+  if (e.target.id !== "solT" || !shade?.times) return;
+  $("#shT").value = e.target.value; $("#shMode").value = "now"; shadeDraw();
+});
+document.addEventListener("click", e=>{ if (e.target.id === "solPlay" && shade?.times) shadePlay(!shPlayT); });
+document.addEventListener("change", e=>{ if (e.target.id === "solSpeed"){ $("#shSpeed").value = e.target.value; if (shPlayT) shadePlay(true); } });
+document.addEventListener("input", e=>{ if (e.target.id === "solDir" && $("#solDirN")) $("#solDirN").textContent = dirName(+e.target.value || 0) + "향"; });
+document.addEventListener("keydown", e=>{
+  if (!shade?.sol) return;
+  if (e.key === "Enter" && /^sol(Low|Dir|ML|MW|Gap|Rows|Tilt)$/.test(e.target.id)){ e.preventDefault(); solApply(); }
+  if (e.key === "Escape" && (shade.solDraw || shade.solEdit || shade.solShape || shade.solRect) && (!e.target.closest?.("input,select,textarea") || /^sol/.test(e.target.id || ""))) solCancel();
+});
+/* 결과: 구역별 시간대 그늘 넓이·비율 + 패널이 지붕에 만드는 그늘 */
+function solRanges(q, hhmm){ // 그늘(구역의 1% 이상)이 지는 시간대 "09:00~10:30, 14:20~15:00"
+  const T = shade.times, n = q.cells.length || 1, on = T.map((_, i)=>q.cells.reduce((s, c)=>s + (c.need[i] > 1e-6 ? 1 : 0), 0)/n >= 0.01);
+  const out = []; let a = -1;
+  on.forEach((v, i)=>{ if (v && a < 0) a = i; if ((!v || i === on.length - 1) && a >= 0){ const b = v ? i : i - 1; out.push(a === b ? hhmm(T[a].m) : `${hhmm(T[a].m)}~${hhmm(T[b].m)}`); a = -1; } });
+  return out.join(", ");
+}
+function solResults(ti, h, hhmm){
+  const S = shade, el = $("#solRes"); if (!S?.sol) return;
+  const T = S.times, mine = S.sol.filter(q=>!S.rt || q.bi === S.rt.i);
+  const hours = T.map((t, i)=>[t, i]).filter(([t])=>t.m % 60 === 0), curH = Math.floor(T[ti].m/60);
+  S.sol.forEach(q=>{ // 지도 이름표: 그늘 없으면 "그늘 없음", 있으면 그늘 지는 시간대
+    const n = q.cells.length || 1, pc = i=>q.cells.reduce((s, c)=>s + (c.need[i] > 1e-6 ? 1 : 0), 0)/n*100;
+    const rg = solRanges(q, hhmm), now = Math.round(pc(ti));
+    q.rangeTxt = rg;
+    const txt = rg ? `그늘 ${rg}${now >= 1 ? ` · 지금 ${now}%` : ""}` : "그늘 없음";
+    q.tag?.setIcon(S.LF.divIcon({className:"cadicon", iconSize:[240, 20], iconAnchor:[120, 10], html:`<div style="text-align:center"><span class="soltag ${!rg ? "ok" : now >= 1 ? "ng" : "warn"}">☀ ${esc(q.name)} · ${txt}</span></div>`}));
+  });
+  document.querySelectorAll("[data-shpct]").forEach(td=>{ const b = shadeB(+td.dataset.shpct), p = b ? solPct(b) : null; td.innerHTML = p == null ? "-" : `<b class="${p ? "ng" : "ok"}">${p}%</b>`; });
+  if (!el) return;
+  if (!mine.length){ el.innerHTML = `<div class="hint" style="margin:6px 0">아직 구역이 없습니다. 아래 <b>▭ 사각형으로 패널 놓기</b>나 <b>🎯 배치도에서 패널 자동 찾기</b>로 패널 자리를 정하세요.</div>`; return; }
+  let html = `<div class="solres">`;
+  mine.forEach(q=>{
+    const n = q.cells.length || 1, ca = q.area / n, k = S.sol.indexOf(q);
+    const cnt = i=>q.cells.reduce((s, c)=>s + (c.need[i] > 1e-6 ? 1 : 0), 0);
+    const avg = Math.round(T.reduce((s, _, i)=>s + cnt(i), 0)/(n*T.length)*100);
+    html += `<div class="solr"><div class="row" style="justify-content:space-between;gap:6px"><b>☀ ${esc(q.name)} <span class="hint" style="font-weight:400">약 ${hzN(q.area)}㎡</span></b><span class="solavg ${avg ? "ng" : "ok"}">하루 평균 그늘 ${avg}%</span></div>
+      <div style="font-size:12.5px;margin-top:2px">${q.rangeTxt ? `그늘 지는 시간 <b style="color:#b91c1c">${q.rangeTxt}</b>` : `<b style="color:#16a34a">하루 종일 그늘 없음</b>`}</div>
+      <div class="row" style="gap:4px;flex-wrap:wrap;margin-top:2px;justify-content:flex-end"><span class="hint" style="flex:1 1 100%">앞단 ${q.low.toLocaleString()} → 뒷단 ${q.high.toLocaleString()}mm · 모듈 ${q.tilt ?? "-"}°${q.roofA ? ` · 지붕 ${q.roofA}°` : ""}${q.rows ? ` · ${q.rows}줄` : ""} · ${dirName(q.dir)}향${q.over ? ` <b style="color:#c2410c">· 그린 깊이와 차이 있음</b>` : ""}</span><button type="button" class="ghost sm" data-sol="shape" data-k="${k}" title="모양 고치기 (지도에서 구역을 눌러도 됨)">⬠ 모양</button><button type="button" class="ghost sm" data-sol="edit" data-k="${k}" title="높이·경사·방향 수정">✏ 수정</button><button type="button" class="ghost sm" data-sol="zoom" data-k="${k}" title="지도에서 보기">🔍</button><button type="button" class="ghost sm" data-sol="del" data-k="${k}" title="지우기">✕</button></div>` +
+      (hours.length ? `<div class="solhr">${hours.map(([t, i])=>{ const c = cnt(i), p = Math.round(c/n*100); return `<span class="${p ? "ng" : "ok"}${t.m/60 === curH ? " cur" : ""}">${t.m/60}시 ${p}%</span>`; }).join("")}</div>` : "") + `</div>`;
+  });
+  const cs = S.cells.filter(c=>c.pneed && mine.some(q=>q.bi === c.b.i)), a1 = S.cell*S.cell;
+  const everP = cs.filter(c=>c.pneed.some(v=>v > h + 1e-6)).length;
+  html += `<div class="hint" style="margin-top:6px">패널이 옆 지붕에 만드는 그늘: 하루 중 약 <b>${hzN(everP*a1)}㎡</b></div></div>`;
+  el.innerHTML = html;
+}
+/* ---------- 🗺 설비 배치도 겹쳐 놓기 (도면 2점 ↔ 지도 2점) ---------- */
+const LZ = 20;
+let lay = {map:null};
+function layEnsure(){
+  const map = shade?.map; if (!map) return null;
+  if (lay.map !== map){
+    lay = {map, src:null, dpts:[], mpts:[], T0:null, T:null, adj:{rot:0, sc:0}, step:"", zoom:1};
+    if (!map.getPane("layPane")){ map.createPane("layPane"); map.getPane("layPane").style.zIndex = 392; map.getPane("layPane").style.pointerEvents = "none"; }
+    const img = document.createElement("img"); img.className = "leaflet-zoom-hide";
+    img.style.cssText = "position:absolute;left:0;top:0;transform-origin:0 0;pointer-events:none;display:none;max-width:none";
+    map.getPane("layPane").appendChild(img); lay.img = img;
+    lay.tmp = shade.LF.layerGroup().addTo(map);
+    map.on("zoomend viewreset moveend resize", layPlace);
+    map.on("click", e=>{ if (lay.map !== map) return; if (lay.step === "m") layPickMap(e.latlng); else if (lay.step === "color") layAutoAt(e.latlng); else if (lay.step === "review") layAutoToggleAt(e.latlng); });
+    map.on("popupopen", ()=>{ if (lay.step === "m" || lay.step === "color" || lay.step === "review") map.closePopup(); });
+  }
+  return map;
+}
+async function layToCanvas(file){
+  let cv = document.createElement("canvas");
+  if (/pdf/i.test(file.type) || /\.pdf$/i.test(file.name)){
+    if (!window.pdfjsLib){
+      await new Promise((res, rej)=>{ const s = document.createElement("script"); s.src = "https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"; s.onload = res; s.onerror = ()=>rej(new Error("PDF 읽기 도구를 불러오지 못했습니다 (인터넷 연결 확인)")); document.head.appendChild(s); });
+      pdfjsLib.GlobalWorkerOptions.workerSrc = "https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js";
+    }
+    const pdf = await pdfjsLib.getDocument({data: await file.arrayBuffer()}).promise;
+    const page = await pdf.getPage(1), vp = page.getViewport({scale: 2.5});
+    cv.width = vp.width; cv.height = vp.height;
+    const g = cv.getContext("2d"); g.fillStyle = "#fff"; g.fillRect(0, 0, cv.width, cv.height);
+    await page.render({canvasContext: g, viewport: vp}).promise;
+  } else {
+    const url = URL.createObjectURL(file);
+    const im = await layImg(url); URL.revokeObjectURL(url);
+    cv.width = im.naturalWidth; cv.height = im.naturalHeight;
+    const g = cv.getContext("2d"); g.fillStyle = "#fff"; g.fillRect(0, 0, cv.width, cv.height); g.drawImage(im, 0, 0);
+  }
+  const M = 2600, k = Math.min(1, M/Math.max(cv.width, cv.height)); // 저장할 수 있게 크기 제한
+  if (k < 1){ const c2 = document.createElement("canvas"); c2.width = Math.round(cv.width*k); c2.height = Math.round(cv.height*k); c2.getContext("2d").drawImage(cv, 0, 0, c2.width, c2.height); cv = c2; }
+  return cv;
+}
+const layImg = url=>new Promise((res, rej)=>{ const i = new Image(); i.onload = ()=>res(i); i.onerror = ()=>rej(new Error("그림 파일을 읽지 못했습니다")); i.src = url; });
+function layPaint(){ // 지도에 올릴 그림 (흰 바탕 투명 선택)
+  const src = lay.src; if (!src) return;
+  const W = src.width, H = src.height, c = document.createElement("canvas"); c.width = W; c.height = H;
+  const g = c.getContext("2d"); g.drawImage(src, 0, 0);
+  if ($("#layWhite")?.checked !== false){
+    const d = g.getImageData(0, 0, W, H), p = d.data;
+    for (let i = 0; i < p.length; i += 4) if (p[i] > 225 && p[i+1] > 225 && p[i+2] > 225) p[i+3] = 0;
+    g.putImageData(d, 0, 0);
+  }
+  lay.img.src = c.toDataURL("image/png");
+}
+function layDrawPick(){
+  const cv = $("#layCv"), wrap = $("#layWrap"); if (!cv || !lay.src) return;
+  const k = Math.min(1, (wrap.clientWidth - 4) / lay.src.width) * lay.zoom;
+  cv.width = Math.max(1, Math.round(lay.src.width * k)); cv.height = Math.max(1, Math.round(lay.src.height * k));
+  const g = cv.getContext("2d"); g.drawImage(lay.src, 0, 0, cv.width, cv.height);
+  lay.dpts.forEach((q, i)=>{
+    const x = q[0]*k, y = q[1]*k;
+    g.strokeStyle = "#e53935"; g.lineWidth = 2.5; g.beginPath(); g.arc(x, y, 9, 0, 7); g.moveTo(x-16, y); g.lineTo(x+16, y); g.moveTo(x, y-16); g.lineTo(x, y+16); g.stroke();
+    g.fillStyle = "#e53935"; g.font = "bold 16px sans-serif"; g.fillText(String(i+1), x + 11, y - 11);
+  });
+  lay.k = k;
+}
+function layStep(html){ const el = $("#layStep"); if (el) el.innerHTML = html; const st = $("#layState"); if (st) st.textContent = lay.T0 ? "· 겹쳐 놓음" : ""; }
+function layNext(){
+  const nd = lay.dpts.length, nm = lay.mpts.length, map = lay.map;
+  if (nd < 2){ lay.step = "d"; layStep(nd === 0 ? `<b>① 배치도</b>에서 건물 모서리 한 곳을 클릭하세요. <span class="hint">(서로 멀리 떨어진 두 모서리가 정확합니다)</span>` : `<b>② 배치도</b>에서 두 번째 모서리를 클릭하세요.`); }
+  else if (nm < 2){ lay.step = "m"; map.doubleClickZoom.disable(); map.getContainer().classList.add("measuring"); drawMode(true);
+    layStep(`<b>${nm === 0 ? "③" : "④"} 지도(항공사진)</b>에서 배치도의 <b style="color:#e53935">${nm + 1}번 점</b>과 같은 모서리를 클릭하세요.`); }
+  else { lay.step = ""; map.doubleClickZoom.enable(); map.getContainer().classList.remove("measuring"); drawMode(false); layFit(true); }
+}
+function layPickMap(ll){
+  const prev = lay.mpts[lay.mpts.length - 1];
+  if (prev && lay.map.distance(prev, ll) < 1) return;
+  lay.mpts.push(ll);
+  const L = shade.LF;
+  lay.tmp.addLayer(L.circleMarker(ll, {radius:8, color:"#e53935", weight:3, fillColor:"#fff", fillOpacity:1}));
+  lay.tmp.addLayer(L.tooltip({permanent:true, direction:"right", offset:[8, 0], className:"mlabel"}).setLatLng(ll).setContent(String(lay.mpts.length)));
+  layNext();
+}
+function layFit(ui){
+  const map = lay.map, [d1, d2] = lay.dpts, P1 = map.project(lay.mpts[0], LZ), P2 = map.project(lay.mpts[1], LZ);
+  const dl = Math.hypot(d2[0]-d1[0], d2[1]-d1[1]), pl = Math.hypot(P2.x-P1.x, P2.y-P1.y);
+  if (dl < 5 || pl < 1){ layStep(`<span style="color:#c62828">두 점이 너무 가깝습니다. [점 다시 찍기]로 멀리 떨어진 모서리를 다시 찍어 주세요.</span>`); return; }
+  const s = pl/dl, th = Math.atan2(P2.y-P1.y, P2.x-P1.x) - Math.atan2(d2[1]-d1[1], d2[0]-d1[0]), c = Math.cos(th), sn = Math.sin(th);
+  lay.T0 = {s, c, sn, tx: P1.x - s*(c*d1[0] - sn*d1[1]), ty: P1.y - s*(sn*d1[0] + c*d1[1])};
+  lay.pivot = {x:(P1.x + P2.x)/2, y:(P1.y + P2.y)/2};
+  layApply();
+  lay.tmp.clearLayers();
+  $("#layPick").hidden = true; $("#layCtl").hidden = false;
+  if (ui){
+    lay.adj = {rot:0, sc:0}; laySyncAdj(); layApply();
+    const mpp = 40075016.686*Math.cos(lay.mpts[0].lat*Math.PI/180)/(256*Math.pow(2, LZ));
+    layStep(`✅ 겹쳐졌습니다. <b>[🎯 배치도에서 패널 자동 찾기]</b>를 누르고 패널 선 하나를 클릭하면 구역이 자동으로 잡힙니다. <span class="hint">(도면 1픽셀 ≈ ${(s*mpp*1000).toFixed(0)}mm)</span>`);
+    laySave();
+    if (lay.autoAfter){ lay.autoAfter = false; setTimeout(()=>layAutoStart(false), 200); }
+  }
+}
+function layApply(){
+  const T0 = lay.T0; if (!T0) return;
+  const A = lay.adj, k = 1 + A.sc/100, d = A.rot*Math.PI/180, cd = Math.cos(d), sd = Math.sin(d), P = lay.pivot;
+  const x = T0.tx - P.x, y = T0.ty - P.y;
+  lay.T = {s:T0.s*k, c:T0.c*cd - T0.sn*sd, sn:T0.sn*cd + T0.c*sd, tx:P.x + k*(cd*x - sd*y), ty:P.y + k*(sd*x + cd*y)};
+  layPlace();
+}
+function layHasSrc(){ return !!lay.src; }
+function layShowSet(on){ lay.show = on; const ls = $("#layShow"); if (ls) ls.checked = on; layPlace(); }
+function layPlace(){
+  const img = lay.img, map = lay.map; if (!img) return;
+  const mb = $('#mapBar [data-lay="layshow"]'); if (mb){ mb.disabled = !lay.T; mb.checked = !!lay.T && lay.show !== false; }
+  if (!lay.T || lay.show === false){ img.style.display = "none"; return; }
+  const T = lay.T, k = map.getZoomScale(map.getZoom(), LZ), po = map.getPixelOrigin();
+  img.style.display = ""; img.style.opacity = (+($("#layOp")?.value) || 70)/100;
+  img.style.transform = `matrix(${k*T.s*T.c},${k*T.s*T.sn},${-k*T.s*T.sn},${k*T.s*T.c},${k*T.tx - po.x},${k*T.ty - po.y})`;
+}
+function laySyncAdj(){ const r = $("#layRot"), s = $("#layScl"); if (!r) return; r.value = lay.adj.rot; s.value = lay.adj.sc; $("#layRotV").textContent = lay.adj.rot.toFixed(2) + "°"; $("#laySclV").textContent = lay.adj.sc.toFixed(2) + "%"; }
+function laySave(){
+  const k = solKey("lay"); if (!k) return;
+  cloudPush("lay");
+  if (!lay.T0 || !lay.src){ try{ localStorage.removeItem(k); }catch(e){} return; }
+  try{ localStorage.setItem(k, JSON.stringify({img: lay.src.toDataURL("image/jpeg", 0.85), dpts: lay.dpts, mpts: lay.mpts.map(p=>[p.lat, p.lng]), adj: lay.adj, white: $("#layWhite")?.checked !== false, op: +($("#layOp")?.value) || 70})); }
+  catch(e){ layStep(`✅ 겹쳐졌습니다. <span style="color:#c62828">배치도 그림이 커서 브라우저에 저장하지 못했습니다 — 다음에 다시 올려야 합니다.</span>`); }
+}
+async function layRestore(){
+  const k = solKey("lay"); if (!k || lay.T0) return;
+  let d = null; try{ d = JSON.parse(localStorage.getItem(k) || "null"); }catch(e){}
+  if (!d?.img && lay.cloudLay){ d = lay.cloudLay; lay.cloudLay = null; }
+  if (!d?.img) return;
+  try{
+    const im = await layImg(d.img), cv = document.createElement("canvas"); cv.width = im.naturalWidth; cv.height = im.naturalHeight; cv.getContext("2d").drawImage(im, 0, 0);
+    lay.src = cv; lay.dpts = d.dpts; lay.mpts = d.mpts.map(p=>shade.LF.latLng(p[0], p[1])); lay.adj = d.adj || {rot:0, sc:0};
+    $("#layWhite").checked = d.white !== false; $("#layOp").value = d.op || 70;
+    layPaint(); layFit(false); laySyncAdj(); layApply();
+    layStep(`✅ 저장된 배치도를 불러왔습니다.`);
+    if (fb?.fresh && fb.fresh === cloudId()) cloudPush("lay");
+  }catch(e){}
+}
+function layQuitPick(){
+  lay.step = ""; lay.tmp?.clearLayers(); lay.map?.doubleClickZoom.enable(); lay.map?.getContainer().classList.remove("measuring"); drawMode(false);
+  $("#layPick").hidden = true;
+  if (lay.T0){ lay.dpts = lay.saved?.dpts || lay.dpts; lay.mpts = lay.saved?.mpts || lay.mpts; $("#layCtl").hidden = false; layFit(false); layApply(); layStep("✅ 배치도가 겹쳐져 있습니다."); }
+  else layStep("배치도 PDF·사진을 고른 뒤, 도면에서 두 점 → 지도에서 같은 두 점을 찍으면 크기·방향이 자동으로 맞춰집니다.");
+}
+function layBeginPick(){
+  lay.saved = lay.T0 ? {dpts:lay.dpts, mpts:lay.mpts} : null;
+  lay.dpts = []; lay.mpts = []; lay.zoom = 1; lay.tmp.clearLayers();
+  $("#layPick").hidden = false; $("#layCtl").hidden = true; const lb = $("#layBox"); if (lb) lb.open = true;
+  setTimeout(layDrawPick, 50); layDrawPick(); layNext();
+}
+document.addEventListener("change", async e=>{
+  if (e.target.id === "layFile"){
+    const f = e.target.files[0]; e.target.value = ""; if (!f || !layEnsure()) return;
+    layStep(`<span class="spinner"></span>배치도 읽는 중…`);
+    try{ lay.src = await layToCanvas(f); lay.T0 = null; lay.T = null; layPaint(); layPlace(); layBeginPick(); }
+    catch(err){ layStep(`<span style="color:#c62828">${esc(err.message)}</span>`); }
+  }
+  if (e.target.id === "layWhite"){ layPaint(); laySave(); }
+  if (e.target.id === "layShow"){ lay.show = e.target.checked; layPlace(); }
+  if (e.target.id === "layOp" || e.target.id === "layRot" || e.target.id === "layScl") laySave();
+});
+document.addEventListener("input", e=>{
+  if (e.target.id === "layOp") layPlace();
+  if (e.target.id === "layRot"){ lay.adj.rot = +e.target.value; laySyncAdj(); layApply(); }
+  if (e.target.id === "layScl"){ lay.adj.sc = +e.target.value; laySyncAdj(); layApply(); }
+});
+document.addEventListener("click", e=>{
+  const id = e.target.id;
+  if (id === "layUndo"){ lay.dpts = []; lay.mpts = []; lay.tmp?.clearLayers(); layDrawPick(); layNext(); }
+  if (id === "layQuit") layQuitPick();
+  if (id === "layRedo" && lay.src) layBeginPick();
+  if (id === "layDel" || id === "layRedo") layAutoEnd();
+  if (id === "layDel"){ lay.src = null; lay.T0 = null; lay.T = null; lay.dpts = []; lay.mpts = []; layQuitPick(); $("#layCtl").hidden = true; layPlace(); laySave(); }
+  if (id === "layCv" && lay.step === "d"){
+    const r = e.target.getBoundingClientRect();
+    lay.dpts.push([(e.clientX - r.left)*(e.target.width/r.width)/lay.k, (e.clientY - r.top)*(e.target.height/r.height)/lay.k]);
+    layDrawPick(); layNext();
+    if (lay.step === "m") $("#map")?.scrollIntoView({behavior:"smooth", block:"nearest"});
+  }
+});
+document.addEventListener("wheel", e=>{
+  const w = e.target.closest?.("#layWrap"); if (!w || !lay.src || $("#layPick").hidden) return;
+  e.preventDefault();
+  const r = w.getBoundingClientRect(), ox = e.clientX - r.left, oy = e.clientY - r.top;
+  const sx = (w.scrollLeft + ox)/lay.k, sy = (w.scrollTop + oy)/lay.k;
+  lay.zoom = Math.max(1, Math.min(10, lay.zoom*(e.deltaY < 0 ? 1.25 : 0.8)));
+  layDrawPick(); w.scrollLeft = sx*lay.k - ox; w.scrollTop = sy*lay.k - oy;
+}, {passive:false});
+document.addEventListener("keydown", e=>{ if (e.key === "Escape" && (lay.step === "d" || lay.step === "m") && !e.target.closest?.("input,select,textarea")) layQuitPick(); });
+/* ---------- 🎯 배치도에서 패널 자동 찾기: 클릭한 선과 같은 색을 모아 덩어리마다 구역으로 ---------- */
+function layAutoStart(add){
+  const el = $("#layAuto"); if (!el) return;
+  if (!lay.T || !lay.src){
+    el.hidden = false; el.innerHTML = `<div class="hint"><b>1단계</b> 배치도 파일을 고르세요 → <b>2단계</b> 배치도와 지도에서 같은 두 점 찍기 → <b>3단계</b> 패널 선 클릭. 겹쳐지면 자동으로 3단계로 넘어갑니다.</div>`;
+    const lb = $("#layBox"); if (lb) lb.open = true;
+    lay.autoAfter = true; layEnsure();
+    if (lay.src && !lay.T0) layBeginPick(); else $("#layFile")?.click();
+    return;
+  }
+  hzCancel(); solCancel();
+  lay.autoAdd = !!add && !!lay.autoCols?.length;
+  if (!lay.autoAdd) layAutoClear();
+  lay.step = "color"; lay.map.closePopup(); lay.map.getContainer().classList.add("measuring"); drawMode(true);
+  el.hidden = false;
+  if (lay.autoAdd){ const h = el.querySelector(".hint"); if (h) h.innerHTML = `<b style="color:#c2410c">지도 위 배치도에서 더할 다른 색 패널 선을 클릭하세요.</b> (Esc 취소)`; return; }
+  el.innerHTML = `<b style="font-size:12.5px">🎯 패널 자동 찾기</b><div class="hint" style="margin-top:3px">지도 위 배치도에서 <b>패널 선 하나</b>를 클릭하세요. 같은 색으로 그려진 패널 묶음을 모두 찾습니다. 패널이 여러 색으로 그려졌으면 다음 화면에서 색을 더할 수 있습니다. (Esc 취소)</div>`;
+}
+function layAutoToggleAt(ll){ // 지도에서 찾은 구역을 눌러 고르기/풀기
+  const p = shade.toXY2(ll.lat, ll.lng), i = (lay.cands || []).findIndex(c=>inRing(p, c.ring)); if (i < 0) return;
+  layCandSet(i, !lay.cands[i].on);
+}
+function layCandSet(i, on){
+  const c = lay.cands[i]; c.on = on;
+  c.poly.setStyle(on ? {color:"#ea580c", weight:3, dashArray:null, fillOpacity:0.35} : {color:"#f97316", weight:2, dashArray:"6 4", fillOpacity:0.04});
+  const cb = document.querySelector(`[data-cand="${i}"]`); if (cb) cb.checked = on;
+  const n = $("#layCandN"); if (n) n.textContent = lay.cands.filter(x=>x.on).length;
+}
+function layAutoClear(){ lay.cands?.forEach(c=>{ lay.tmp.removeLayer(c.poly); lay.tmp.removeLayer(c.tag); }); lay.cands = null; }
+function layAutoEnd(){
+  layAutoClear();
+  if (lay.step === "color" || lay.step === "review"){ lay.step = ""; lay.map?.getContainer().classList.remove("measuring"); drawMode(false); }
+  const el = $("#layAuto"); if (el){ el.hidden = true; el.innerHTML = ""; }
+}
+function layToDraw(ll){ const T = lay.T, P = lay.map.project(ll, LZ), x = P.x - T.tx, y = P.y - T.ty; return [(T.c*x + T.sn*y)/T.s, (-T.sn*x + T.c*y)/T.s]; }
+function layFromDraw(dx, dy){ const T = lay.T, X = T.s*(T.c*dx - T.sn*dy) + T.tx, Y = T.s*(T.sn*dx + T.c*dy) + T.ty, ll = lay.map.unproject([X, Y], LZ); return shade.toXY2(ll.lat, ll.lng); }
+function layAutoAt(ll){
+  const src = lay.src, W = src.width, H = src.height, px = src.getContext("2d").getImageData(0, 0, W, H).data;
+  const [cx, cy] = layToDraw(ll), k = lay.map.getZoomScale(lay.map.getZoom(), LZ), rr = Math.max(2, Math.round(8/(k*lay.T.s)));
+  let best = null, bs = -1;
+  for (let y = Math.round(cy) - rr; y <= Math.round(cy) + rr; y++) for (let x = Math.round(cx) - rr; x <= Math.round(cx) + rr; x++){
+    if (x < 0 || y < 0 || x >= W || y >= H) continue;
+    const i = (y*W + x)*4, r = px[i], g = px[i+1], b = px[i+2], mx = Math.max(r, g, b), mn = Math.min(r, g, b);
+    if (mn > 215) continue; // 흰 바탕
+    const sc = (mx - mn)*2 + (255 - (r + g + b)/3)*0.3 - Math.hypot(x - cx, y - cy)*0.5;
+    if (sc > bs){ bs = sc; best = [r, g, b]; }
+  }
+  if (!best){ $("#layAuto").querySelector(".hint").innerHTML = `<span style="color:#c62828">선을 찾지 못했습니다. 패널 선 위를 정확히 클릭해 주세요 (지도를 더 확대하면 쉽습니다).</span>`; return; }
+  lay.autoLL = ll;
+  if (lay.autoAdd && !lay.autoCols.some(c=>Math.hypot(c[0]-best[0], c[1]-best[1], c[2]-best[2]) < 20)) lay.autoCols.push(best);
+  else if (!lay.autoAdd) lay.autoCols = [best];
+  lay.step = "review"; lay.map.getContainer().classList.remove("measuring"); // 고르는 동안에도 건물 선택은 꺼 둠
+  layAutoClear(); layAutoRun();
+}
+function layAutoRun(){
+  const S = shade, src = lay.src, W = src.width, H = src.height, px = src.getContext("2d").getImageData(0, 0, W, H).data;
+  const cols = lay.autoCols, tol = +($("#layTol")?.value || lay.tolV || 70), gap = Math.max(0.05, +($("#layGap")?.value || 0.3));
+  const mppZ = 40075016.686*Math.cos(lay.mpts[0].lat*Math.PI/180)/(256*Math.pow(2, LZ)), mppD = lay.T.s*mppZ; // 도면 1픽셀 = m
+  const f = Math.max(1, Math.round(0.08/mppD)), GW = Math.ceil(W/f), GH = Math.ceil(H/f), N = GW*GH, cm = mppD*f; // 작업 칸 ≈ 8cm
+  const mask = new Uint8Array(N), cnt = new Uint32Array(N);
+  for (let y = 0; y < H; y++) for (let x = 0; x < W; x++){
+    const i = (y*W + x)*4, r = px[i], g = px[i+1], b = px[i+2];
+    if (r > 215 && g > 215 && b > 215) continue;
+    let hit = false; for (const c of cols){ const dr = r - c[0], dg = g - c[1], db = b - c[2]; if (dr*dr + dg*dg + db*db < tol*tol){ hit = true; break; } }
+    if (hit){ const j = ((y/f)|0)*GW + ((x/f)|0); mask[j] = 1; cnt[j]++; }
+  }
+  const R = Math.max(1, Math.round(gap/2/cm));
+  const integ = a=>{ const I = new Int32Array((GW+1)*(GH+1)); for (let y = 1; y <= GH; y++){ let row = 0; for (let x = 1; x <= GW; x++){ row += a[(y-1)*GW + x-1]; I[y*(GW+1) + x] = I[(y-1)*(GW+1) + x] + row; } } return I; };
+  const box = (I, x, y)=>{ const x0 = Math.max(0, x-R), y0 = Math.max(0, y-R), x1 = Math.min(GW, x+R+1), y1 = Math.min(GH, y+R+1), w = GW+1;
+    return [I[y1*w + x1] - I[y0*w + x1] - I[y1*w + x0] + I[y0*w + x0], (x1-x0)*(y1-y0)]; };
+  // ① 틈 메우기(넓히기) ② 안쪽 구멍 채우기 ③ 다시 줄이기
+  let I = integ(mask); const dil = new Uint8Array(N);
+  for (let y = 0; y < GH; y++) for (let x = 0; x < GW; x++) dil[y*GW + x] = box(I, x, y)[0] > 0 ? 1 : 0;
+  // 패널 한 장 크기 정도의 작은 구멍만 채움 (건물 외곽선 같은 큰 테두리 안은 채우지 않음)
+  const bg = new Int32Array(N), maxHole = 8/(cm*cm);
+  for (let j0 = 0; j0 < N; j0++){
+    if (dil[j0] || bg[j0]) continue;
+    const list = [j0], q = [j0]; bg[j0] = 1; let edge = false;
+    while (q.length){ const j = q.pop(), x = j % GW, y = (j/GW)|0;
+      if (x === 0 || y === 0 || x === GW-1 || y === GH-1) edge = true;
+      for (const n of [x > 0 ? j-1 : -1, x < GW-1 ? j+1 : -1, y > 0 ? j-GW : -1, y < GH-1 ? j+GW : -1]) if (n >= 0 && !dil[n] && !bg[n]){ bg[n] = 1; q.push(n); list.push(n); } }
+    if (!edge && list.length <= maxHole) list.forEach(j=>dil[j] = 1);
+  }
+  I = integ(dil); const fin = new Uint8Array(N);
+  for (let y = 0; y < GH; y++) for (let x = 0; x < GW; x++){ const [s, a] = box(I, x, y); fin[y*GW + x] = s === a ? 1 : 0; }
+  // 덩어리 나누기
+  const lab = new Int32Array(N), comps = [];
+  for (let j0 = 0; j0 < N; j0++){
+    if (!fin[j0] || lab[j0]) continue;
+    const id = comps.length + 1, cells = [], q = [j0]; lab[j0] = id; let ink = 0;
+    while (q.length){ const j = q.pop(); cells.push(j); ink += cnt[j]; const x = j % GW, y = (j/GW)|0;
+      for (const n of [x > 0 ? j-1 : -1, x < GW-1 ? j+1 : -1, y > 0 ? j-GW : -1, y < GH-1 ? j+GW : -1]) if (n >= 0 && fin[n] && !lab[n]){ lab[n] = id; q.push(n); } }
+    const area = cells.length*cm*cm, dens = ink*mppD*mppD/area;
+    let x0 = GW, x1 = 0, y0 = GH, y1 = 0; cells.forEach(j=>{ const x = j % GW, y = (j/GW)|0; if (x < x0) x0 = x; if (x > x1) x1 = x; if (y < y0) y0 = y; if (y > y1) y1 = y; });
+    const fill = cells.length/((x1 - x0 + 1)*(y1 - y0 + 1)); // 속이 찬 덩어리만 (가는 테두리선 제외)
+    if (area >= 3 && area < 30000 && dens >= 0.012 && fill >= 0.3 && Math.min(x1 - x0, y1 - y0)*cm >= 0.8) comps.push({id, cells, area, dens});
+  }
+  // 테두리 따라가기 → 꼭짓점 줄이기 → 지도 좌표
+  lay.cands = comps.map(c=>{
+    const ring = layTrace(c.cells, lab, c.id, GW, GH).map(([gx, gy])=>layFromDraw(gx*f, gy*f));
+    return {ring, area:hzArea(ring)};
+  }).filter(c=>c.ring.length >= 3 && c.area >= 3);
+  const roofs = S.roofs;
+  lay.cands.forEach((c, i)=>{
+    const ctr = c.ring.reduce((s, p)=>[s[0] + p[0]/c.ring.length, s[1] + p[1]/c.ring.length], [0, 0]);
+    const tgt = roofs.filter(b=>!S.rt || b.i === S.rt.i);
+    const xs = c.ring.map(p=>p[0]), ys = c.ring.map(p=>p[1]); let n = 0, hit = 0;
+    for (let x = Math.min(...xs) + 0.25; x < Math.max(...xs); x += 0.5) for (let y = Math.min(...ys) + 0.25; y < Math.max(...ys); y += 0.5){
+      if (!inRing([x, y], c.ring)) continue; n++; if (tgt.some(b=>b.rings.some(r=>inRing([x, y], r)))) hit++; }
+    c.on = n > 0 && hit/n >= 0.3; // 지도 건물선과 배치도가 조금 어긋나도 고르도록 30% 이상 겹치면 선택
+    c.poly = S.LF.polygon(c.ring.map(p=>S.toLL(p[0], p[1])), {color:"#f97316", weight:2.5, dashArray:"6 4", fillColor:"#fb923c", fillOpacity:c.on ? 0.25 : 0.05, interactive:false}).addTo(lay.tmp);
+    c.tag = S.LF.marker(S.toLL(ctr[0], ctr[1]), {interactive:false, keyboard:false, icon:S.LF.divIcon({className:"cadicon", iconSize:[26, 18], iconAnchor:[13, 9], html:`<div class="autotag">${i + 1}</div>`})}).addTo(lay.tmp);
+  });
+  layAutoUi();
+  lay.cands.forEach((c, i)=>layCandSet(i, c.on));
+}
+function layTrace(cells, lab, id, GW, GH){ // 칸 덩어리 바깥 테두리 (시계 방향 모서리 따라가기)
+  const inC = (x, y)=>x >= 0 && y >= 0 && x < GW && y < GH && lab[y*GW + x] === id;
+  const E = new Map(), key = (x, y)=>x + "," + y, add = (a, b)=>{ const k = key(...a); (E.get(k) || E.set(k, []).get(k)).push(b); };
+  let start = null;
+  cells.forEach(j=>{ const x = j % GW, y = (j/GW)|0;
+    if (!inC(x, y-1)) add([x, y], [x+1, y]); if (!inC(x+1, y)) add([x+1, y], [x+1, y+1]);
+    if (!inC(x, y+1)) add([x+1, y+1], [x, y+1]); if (!inC(x-1, y)) add([x, y+1], [x, y]);
+    if (!start || y < start[1] || (y === start[1] && x < start[0])) start = [x, y]; });
+  const loop = [start]; let cur = start, guard = cells.length*4 + 10;
+  while (guard--){ const l = E.get(key(...cur)); if (!l?.length) break; const nx = l.pop(); if (nx[0] === start[0] && nx[1] === start[1]) break; loop.push(nx); cur = nx; }
+  const pts = loop.filter((p, i)=>{ const a = loop[(i - 1 + loop.length) % loop.length], b = loop[(i + 1) % loop.length]; return (p[0] - a[0])*(b[1] - p[1]) !== (p[1] - a[1])*(b[0] - p[0]); });
+  return layRdp(pts, 1.5);
+}
+function layRdp(P, tol){ // 닫힌 다각형 꼭짓점 줄이기
+  if (P.length < 5) return P;
+  const d = (p, a, b)=>{ const dx = b[0]-a[0], dy = b[1]-a[1], L = Math.hypot(dx, dy) || 1; return Math.abs(dx*(a[1]-p[1]) - dy*(a[0]-p[0]))/L; };
+  const rdp = (pts)=>{ if (pts.length < 3) return pts; let m = 0, im = 0; for (let i = 1; i < pts.length - 1; i++){ const v = d(pts[i], pts[0], pts[pts.length-1]); if (v > m){ m = v; im = i; } }
+    return m > tol ? rdp(pts.slice(0, im + 1)).slice(0, -1).concat(rdp(pts.slice(im))) : [pts[0], pts[pts.length-1]]; };
+  let far = 0, fd = 0; P.forEach((p, i)=>{ const v = Math.hypot(p[0]-P[0][0], p[1]-P[0][1]); if (v > fd){ fd = v; far = i; } });
+  const A = rdp(P.slice(0, far + 1)), B = rdp(P.slice(far).concat([P[0]]));
+  return A.slice(0, -1).concat(B.slice(0, -1));
+}
+function layAutoUi(){
+  const el = $("#layAuto"), S = shade, C = lay.cands || [];
+  const sw = lay.autoCols.map(([r, g, b])=>`<span style="display:inline-block;width:16px;height:16px;border-radius:3px;background:rgb(${r},${g},${b});border:1px solid #999" title="찾는 선 색"></span>`).join("");
+  el.innerHTML = `<div class="row" style="gap:6px;flex-wrap:wrap"><b style="font-size:12.5px">🎯 찾은 패널 묶음 ${C.length}곳 · 고름 <span id="layCandN">0</span></b><span class="hint">찾는 색</span>${sw}<button type="button" class="ghost sm" id="layAddCol">＋ 다른 색 선 더하기</button></div>
+    <div class="hint" style="margin:3px 0">패널이 두 가지 색 이상으로 그려졌으면 <b>[＋ 다른 색 선 더하기]</b>로 나머지 색 선도 클릭하세요.</div>` +
+    (C.length ? `<div class="hint" style="margin:3px 0">${shade.rt ? "이 건물" : "지붕"}과 겹치는 묶음을 미리 골랐습니다(진한 주황). <b>지도에서 묶음을 클릭</b>하거나 아래 칸을 눌러 고르고 풀 수 있습니다.</div>` + C.map((c, i)=>`<label class="ovlab" style="font-size:12.5px"><input type="checkbox" data-cand="${i}"${c.on ? " checked" : ""}> ${i + 1}번 · 약 ${hzN(c.area)}㎡ · 꼭짓점 ${c.ring.length}개</label>`).join("")
+      : `<div class="hint" style="color:#c62828;margin:3px 0">찾지 못했습니다. 비슷한 색 범위를 넓히거나 틈 메우기를 키워 [다시 찾기]를 눌러 보세요.</div>`) +
+    `<div class="row hzr" style="margin-top:6px"><span class="hzlab">비슷한 색 범위</span><select id="layTol"><option value="40">좁게</option><option value="70" selected>보통</option><option value="110">넓게</option></select></div>
+    <div class="row hzr"><span class="hzlab">틈 메우기</span><input type="number" id="layGap" step="0.1" min="0.1" value="0.3"><span class="hint">m (끊긴 선을 이어 붙이는 거리)</span></div>
+    <div class="row hzr"><span class="hzlab">앞단 높이</span><input type="number" id="layLow" step="10" min="0" value="${S.solLast?.low ?? 3400}"><span class="hint">mm (지붕 위)</span></div>
+    <div class="row hzr"><span class="hzlab">모듈 각도</span><input type="number" id="layTilt" step="0.5" min="0" max="60" value="${S.solLast?.tilt ?? 12}"><span class="hint">°</span></div>
+    <div class="row hzr"><span class="hzlab">지붕 각도</span><input type="number" id="layRoofA" step="0.5" min="0" max="45" value="${S.solLast?.roofA ?? 0}"><span class="hint">°</span><select id="layRoofS"><option value="1">뒷단 쪽으로 내려감</option><option value="-1"${S.solLast?.roofS == -1 ? " selected" : ""}>뒷단 쪽으로 올라감</option></select></div>
+    <div class="row hzr"><span class="hzlab">모듈 크기</span><input type="number" id="layML" step="1" min="300" value="${solMod().ml}"><span class="hint">×</span><input type="number" id="layMW" step="1" min="300" value="${solMod().mw}"><span class="hint">mm · 간격</span><input type="number" id="layGap2" step="1" min="0" value="${solMod().gap}"><span class="hint">mm</span></div>
+    <div class="hint">줄 수는 구역 깊이로 자동으로 정하고, 뒷단 높이는 경사·모듈로 계산합니다. 만든 뒤 ✏ 수정에서 줄 수를 확인하세요.</div>
+    <div class="hint">방향은 구역마다 긴 변에 맞춰 남쪽에 가까운 쪽으로 들어갑니다. 만든 뒤 구역 목록의 ✏로 따로 고칠 수 있습니다.</div>
+    <div class="row" style="gap:6px;margin-top:6px;flex-wrap:wrap"><button type="button" id="layMake"${C.length ? "" : " disabled"}>고른 구역 만들기</button><button type="button" class="ghost sm" id="layAgain">다시 찾기</button><button type="button" class="ghost sm" id="layPickAgain">처음부터 다시 고르기</button><button type="button" class="ghost sm" id="layAutoX">취소</button></div>`;
+  const tl = $("#layTol"); if (lay.tolV) tl.value = lay.tolV; const gp = $("#layGap"); if (lay.gapV) gp.value = lay.gapV;
+}
+function layAutoMake(){
+  const S = shade, C = (lay.cands || []).filter(c=>c.on);
+  const roofA = +$("#layRoofA").value || 0, roofS = +$("#layRoofS").value || 1;
+  const low = +$("#layLow").value, tilt = +$("#layTilt").value || 0, ml = +$("#layML").value || 2278, mw = +$("#layMW").value || 1134, gap = +$("#layGap2").value || 0;
+  if (!C.length || !(low >= 0)) return;
+  // 새로 만든 구역과 겹치는 기존 구역은 새 것으로 바꿈
+  for (let k = S.sol.length - 1; k >= 0; k--){ const o = S.sol[k]; if (C.some(c=>inRing([o.cx, o.cy], c.ring) || o.ring.some(p=>inRing(p, c.ring)))){ solUnbuild(o); S.sol.splice(k, 1); } }
+  C.forEach(c=>{ const q = {name:`구역 ${S.sol.length + 1}`, ring:c.ring, low, tilt, roofA, roofS, ml, mw, gap, dir:solFitDir(c.ring)}; q.rows = solAutoRows(solDepth(solSnap(c.ring), q.dir), ml, gap, tilt); solBuild(q); S.sol.push(q); });
+  S.solLast = {low, ml, mw, gap, tilt, roofA, roofS};
+  layAutoEnd(); solList(); shadeRoofList(); S.recalc();
+}
+document.addEventListener("click", e=>{
+  const id = e.target.id;
+  if (id === "layAutoBtn") layAutoStart(false);
+  if (id === "layAutoX") layAutoEnd();
+  if (id === "layPickAgain") layAutoStart(false);
+  if (id === "layAddCol") layAutoStart(true);
+  if (id === "layAgain" && lay.autoCols?.length){ lay.tolV = $("#layTol").value; lay.gapV = $("#layGap").value; layAutoClear(); layAutoRun(); }
+  if (id === "layMake") layAutoMake();
+});
+document.addEventListener("change", e=>{
+  const i = e.target.dataset?.cand; if (i === undefined || !lay.cands) return;
+  layCandSet(+i, e.target.checked);
+});
+document.addEventListener("keydown", e=>{ if (e.key === "Escape" && (lay.step === "color" || lay.step === "review") && !e.target.closest?.("input,select,textarea")){
+  if (lay.step === "color" && lay.autoAdd){ lay.step = "review"; lay.map.getContainer().classList.remove("measuring"); layAutoUi(); lay.cands?.forEach((c, i)=>layCandSet(i, c.on)); } else layAutoEnd(); } });
+/* ---------- 그림자를 실제 모양으로: 지붕·패널 위에 떨어지는 그림자 (칸 대신 매끈한 모양) ---------- */
+function shadeGeoInit(){
+  const S = shade, map = S.map;
+  if (!map.getPane("shGeo")){ map.createPane("shGeo"); const p = map.getPane("shGeo"); p.style.zIndex = 404; p.style.pointerEvents = "none"; }
+  if (!map._shGeo){
+    const cv = document.createElement("canvas"); cv.className = "leaflet-zoom-hide"; cv.style.position = "absolute"; cv.style.left = "0"; cv.style.top = "0";
+    map.getPane("shGeo").appendChild(cv); map._shGeo = cv;
+    map.on("moveend zoomend viewreset resize", ()=>{ if (shade?.map === map) shadeGeoDraw(); });
+  }
+  S.geo = map._shGeo; S.geoScratch = document.createElement("canvas");
+}
+function shadeGeoDraw(){
+  const S = shade; if (!S?.geo) return;
+  const map = S.map, cv = S.geo, size = map.getSize(), dpr = window.devicePixelRatio || 1;
+  S.LF.DomUtil.setPosition(cv, map.containerPointToLayerPoint([0, 0]));
+  cv.width = Math.round(size.x*dpr); cv.height = Math.round(size.y*dpr); cv.style.width = size.x + "px"; cv.style.height = size.y + "px";
+  const g = cv.getContext("2d"); g.setTransform(dpr, 0, 0, dpr, 0, 0); g.clearRect(0, 0, size.x, size.y);
+  if (!S.times?.length || !map.hasLayer(S.group)) return;
+  const t = S.times[Math.min(+$("#shT").value || 0, S.times.length - 1)];
+  // 평면 좌표(m) → 화면 좌표: 좁은 범위라 1차식으로
+  const o0 = map.latLngToContainerPoint(S.toLL(0, 0)), ox = map.latLngToContainerPoint(S.toLL(100, 0)), oy = map.latLngToContainerPoint(S.toLL(0, 100));
+  const ax = (ox.x - o0.x)/100, ay = (ox.y - o0.y)/100, bx = (oy.x - o0.x)/100, by = (oy.y - o0.y)/100;
+  const path = (c, ring)=>{ ring.forEach((p, i)=>{ const X = o0.x + ax*p[0] + bx*p[1], Y = o0.y + ay*p[0] + by*p[1]; i ? c.lineTo(X, Y) : c.moveTo(X, Y); }); c.closePath(); };
+  // 그림자를 만드는 것: 건물(높이 영역 포함)과 태양광 패널
+  const obs = [];
+  S.blds.forEach(o=>{ obs.push({rings:o.rings, H:o.h, o}); (o.zones || []).forEach(z=>obs.push({rings:[z.ring], H:z.h, o})); });
+  (S.sol || []).forEach(q=>{ const Hv = q.ring.map(p=>solBase(p[0], p[1], q) + solSurf(q, p[0], p[1])); obs.push({rings:[q.ring], H:Math.max(...Hv), Hv, q}); });
+  const sc = S.geoScratch; sc.width = cv.width; sc.height = cv.height; const sg = sc.getContext("2d");
+  const cast = (z, skip)=>{ // 높이 z인 면에 떨어지는 그림자 모양을 sc에 (겹친 곳도 한 번만 진하게)
+    sg.setTransform(dpr, 0, 0, dpr, 0, 0); sg.clearRect(0, 0, size.x, size.y); sg.fillStyle = "#000"; let any = false;
+    obs.forEach(ob=>{
+      if (ob.H <= z + 0.02 || skip?.(ob)) return;
+      ob.rings.forEach(r=>{
+        any = true; const r2 = r.map((p, i)=>{ const L = Math.max(0, (ob.Hv ? ob.Hv[i] : ob.H) - z)/t.tan; return [p[0] - t.ux*L, p[1] - t.uy*L]; });
+        sg.beginPath(); path(sg, r); sg.fill(); sg.beginPath(); path(sg, r2); sg.fill();
+        r.forEach((p, i)=>{ const j = (i + 1) % r.length; sg.beginPath(); path(sg, [p, r[j], r2[j], r2[i]]); sg.fill(); });
+      });
+    });
+    return any;
+  };
+  const put = (clips, alpha)=>{ // clips: 차례로 겹쳐 자르기 [{rings, rect, rule}]
+    g.save();
+    clips.forEach(c=>{ g.beginPath(); if (c.rect) g.rect(-10, -10, size.x + 20, size.y + 20); c.rings.forEach(r=>path(g, r)); g.clip(c.rule || "nonzero"); });
+    g.globalAlpha = alpha; g.setTransform(1, 0, 0, 1, 0, 0); g.drawImage(sc, 0, 0); g.restore();
+  };
+  const sols = S.sol || [];
+  // ① 땅 (선택했을 때만): 건물 밖에만
+  if ($("#shGround")?.checked && cast(0)) put([{rect:true, rings:S.blds.flatMap(o=>o.rings), rule:"evenodd"}], 0.28);
+  // ② 우리 지붕: 바탕 지붕(높이 영역·패널 자리 빼고)과 높이 영역 따로
+  S.roofs.forEach(b=>{
+    const panels = sols.filter(q=>q.bi === b.i).map(q=>q.ring);
+    if (cast(b.h)) put([{rings:b.rings}, {rect:true, rings:(b.zones || []).map(z=>z.ring).concat(panels), rule:"evenodd"}], 0.45);
+    (b.zones || []).forEach((z, k)=>{
+      const later = b.zones.slice(k + 1).map(x=>x.ring);
+      if (cast(z.h)) put([{rings:b.rings}, {rings:[z.ring]}, {rect:true, rings:later.concat(panels), rule:"evenodd"}], 0.45);
+    });
+  });
+  // ③ 패널 위 (패널 평균 높이 기준)
+  sols.forEach(q=>{
+    const z = q.cells?.length ? q.cells.reduce((s, c)=>s + (c.z || 0), 0)/q.cells.length : 0;
+    if (cast(z, ob=>ob.q === q)){
+      put([{rings:[q.ring]}], 0.55);
+      // 빗금: 그림자 모양 안에만
+      const hc = S.geoHatch || (S.geoHatch = document.createElement("canvas")); hc.width = sc.width; hc.height = sc.height;
+      const hg = hc.getContext("2d"), pc = document.createElement("canvas"); pc.width = pc.height = Math.round(9*dpr);
+      const pg = pc.getContext("2d"); pg.strokeStyle = "#ff3b30"; pg.lineWidth = 1.6*dpr; pg.beginPath(); pg.moveTo(0, pc.height); pg.lineTo(pc.width, 0); pg.stroke();
+      hg.fillStyle = hg.createPattern(pc, "repeat"); hg.fillRect(0, 0, hc.width, hc.height);
+      hg.globalCompositeOperation = "destination-in"; hg.drawImage(sc, 0, 0); hg.globalCompositeOperation = "source-over";
+      g.save(); g.beginPath(); path(g, q.ring); g.clip(); g.globalAlpha = 0.9; g.setTransform(1, 0, 0, 1, 0, 0); g.drawImage(hc, 0, 0); g.restore();
+    }
+  });
+}
+/* ---------- ☁ 클라우드 저장 (Firebase): 로그인하면 어느 PC에서나 같은 입력 내용 ---------- */
+const FB_CFG = {
+  apiKey: "AIzaSyBYG3cbkPFcT8DzFOKVZS1xYC-gJwUj--I",
+  authDomain: "archibase-f586f.firebaseapp.com",
+  projectId: "archibase-f586f",
+  storageBucket: "archibase-f586f.firebasestorage.app",
+  messagingSenderId: "614129054907",
+  appId: "1:614129054907:web:e443cf6683ac7874bb659e"
+};
+const FB_BASE = "https://www.gstatic.com/firebasejs/13.4.0/";
+let fb = null, fbLoading = null;
+function fbInit(){
+  if (fbLoading) return fbLoading;
+  fbLoading = (async ()=>{
+    try{
+      const [A, AU, FS] = await Promise.all([import(FB_BASE + "firebase-app.js"), import(FB_BASE + "firebase-auth.js"), import(FB_BASE + "firebase-firestore.js")]);
+      const app = A.initializeApp(FB_CFG), auth = AU.getAuth(app), db = FS.getFirestore(app);
+      fb = {AU, FS, auth, db, user:null, q:{}, t:{}, img:{}};
+      AU.onAuthStateChanged(auth, u=>{ fb.user = u; fbUi(); });
+      if (auth.authStateReady) await auth.authStateReady();
+      if (!auth.currentUser){ // 따로 로그인하지 않아도 자동으로 (익명 로그인)
+        try{ await AU.signInAnonymously(auth); fb.user = auth.currentUser; }
+        catch(e){ fb.err = FB_ERR[e.code] || e.code || e.message; }
+      }
+    }catch(e){ fb = {err:e.message}; }
+    fbUi(); return fb;
+  })();
+  return fbLoading;
+}
+function fbUi(msg){
+  const b = $("#fbBtn"); if (!b) return;
+  if (msg){ b.innerHTML = msg; return; }
+  b.classList.toggle("on", !!fb?.user);
+  b.innerHTML = !fb ? "☁ 연결 중…" : fb.user ? "☁ 자동 저장 중" : `☁ <span style="color:#c62828">클라우드 연결 안 됨</span>`;
+  b.title = fb?.user ? "입력한 높이·영역·태양광·배치도가 주소별로 클라우드에 자동 저장되어, 어느 PC에서 열어도 같이 나옵니다" : "클라우드에 연결하지 못해 이 브라우저에만 저장됩니다";
+}
+const FB_ERR = {
+  "auth/unauthorized-domain":"이 주소에서는 로그인할 수 없습니다. GitHub 주소(…github.io)로 열었는지 확인하고, Firebase의 승인된 도메인에 그 주소를 넣어 주세요. (파일을 내려받아 연 경우에는 로그인이 되지 않습니다)",
+  "auth/popup-blocked":"로그인 창이 막혔습니다. 브라우저 주소창 오른쪽에서 팝업을 허용해 주세요.",
+  "auth/popup-closed-by-user":"로그인 창을 닫았습니다.",
+  "auth/operation-not-allowed":"Firebase에서 익명 로그인이 아직 켜져 있지 않습니다 (Authentication → 로그인 방법 → 익명 사용 설정).",
+  "auth/admin-restricted-operation":"Firebase에서 익명 로그인이 아직 켜져 있지 않습니다 (Authentication → 로그인 방법 → 익명 사용 설정).",
+  "permission-denied":"저장 권한이 없습니다. Firestore 규칙을 확인해 주세요."
+};
+async function fbLogin(){ // 버튼: 상태 안내만
+  await fbInit();
+  alert(fb?.user ? "클라우드에 자동 저장 중입니다.\n입력한 높이·높이 영역·태양광 구역·배치도가 주소별로 저장되어, 다른 PC에서 같은 주소를 검색해도 그대로 나옵니다."
+    : "클라우드에 연결하지 못했습니다. 지금은 이 브라우저에만 저장됩니다.\n" + (fb?.err || ""));
+}
+document.addEventListener("click", e=>{ if (e.target.closest?.("#fbBtn")) fbLogin(); });
+function cloudId(){ const p = result?.params; return p ? [p.sigunguCd, p.bjdongCd, p.platGbCd, p.bun, p.ji].join("-") : null; }
+const CL_KINDS = ["hz", "sol", "roof", "lay", "bld", "ov"];
+// 저장할 때마다 부름: 이 브라우저 저장 내용을 클라우드에도 (1.5초 모아서 한 번에)
+function cloudPush(kind){
+  if (!fb?.user) return;
+  const id = cloudId(); if (!id) return;
+  let v = localStorage.getItem(`archibase_${kind}_${id}`);
+  if (kind === "lay"){
+    if (lay.T0 && lay.src){
+      v = JSON.stringify({dpts:lay.dpts, mpts:lay.mpts.map(p=>[p.lat, p.lng]), adj:lay.adj, white:$("#layWhite")?.checked !== false, op:+($("#layOp")?.value) || 70});
+      if (fb.img[id] !== lay.src){ fb.img[id] = lay.src; cloudImg(id, lay.src); }
+    } else v = null;
+  }
+  if (kind === "ov"){ // 현황도: 그림은 따로 (문서 하나 1MB 제한)
+    const O = window._ovCloud;
+    if (O){ v = JSON.stringify(O.meta); if ((fb.ovimg ||= {})[id] !== O.cv){ fb.ovimg[id] = O.cv; cloudImg(id, O.cv, "ovimg"); } } else v = null;
+  }
+  (fb.q[id] = fb.q[id] || {})[kind] = v;
+  clearTimeout(fb.t[id]); fb.t[id] = setTimeout(()=>cloudFlush(id), 1500);
+}
+async function cloudFlush(id){
+  const data = fb.q[id]; if (!data || !fb?.user) return; delete fb.q[id];
+  try{ await fb.FS.setDoc(fb.FS.doc(fb.db, "sites", id), Object.assign({}, data, {at: Date.now(), by: fb.user.email || ""}), {merge:true}); fbUi(); }
+  catch(e){ fbUi(`☁ <span style="color:#c62828">클라우드 저장 실패</span> <span class="hint">${esc(FB_ERR[e.code] ? "권한 없음" : e.code || "")}</span>`); }
+}
+async function cloudImg(id, cv, coll){ // 배치도·현황도 그림: 문서 한 개(1MB) 안에 들어가게 줄여서
+  let k = 1, q = 0.8, data = cv.toDataURL("image/jpeg", q);
+  while (data.length > 900000 && k > 0.2){ k *= 0.8; const c = document.createElement("canvas"); c.width = Math.round(cv.width*k); c.height = Math.round(cv.height*k); c.getContext("2d").drawImage(cv, 0, 0, c.width, c.height); data = c.toDataURL("image/jpeg", 0.75); }
+  try{ await fb.FS.setDoc(fb.FS.doc(fb.db, coll || "layimg", id), {data, scale:k, at:Date.now()}); }catch(e){}
+}
+// 주소를 열 때: 클라우드 내용을 먼저 받아 이 브라우저에 넣음 (클라우드에 없으면 이 브라우저 내용을 올림)
+async function cloudLoad(id){
+  await Promise.race([fbInit(), new Promise(r=>setTimeout(r, 4000))]);
+  if (!fb?.user || !id) return;
+  try{
+    const snap = await Promise.race([fb.FS.getDoc(fb.FS.doc(fb.db, "sites", id)), new Promise((_, rej)=>setTimeout(()=>rej(new Error("시간 초과")), 12000))]);
+    if (!snap.exists()){ fb.fresh = id; return; } // 처음 → 저장할 때 올라감
+    const d = snap.data();
+    for (const kind of CL_KINDS){
+      const key = `archibase_${kind}_${id}`;
+      if (!(kind in d)) continue;
+      if (d[kind] == null){ localStorage.removeItem(key); continue; }
+      if (kind === "lay" || kind === "ov"){
+        const im = await fb.FS.getDoc(fb.FS.doc(fb.db, kind === "lay" ? "layimg" : "ovimg", id));
+        if (!im.exists()) continue;
+        const o = JSON.parse(d[kind]), sc = im.data().scale || 1;
+        o.img = im.data().data; o.dpts = o.dpts.map(p=>[p[0]*sc, p[1]*sc]); // 줄인 그림에 맞게 점 위치도
+        try{ localStorage.setItem(key, JSON.stringify(o)); }catch(e){ if (kind === "lay") lay.cloudLay = o; else window._ovCloudLoaded = o; }
+      } else localStorage.setItem(key, d[kind]);
+    }
+  }catch(e){ fbUi(`☁ <span style="color:#c62828">불러오기 실패</span> <span class="hint">${esc(FB_ERR[e.code] ? "권한 없음" : e.message || "")}</span>`); }
+}
+/* 지붕 조각 높이를 직접 고친 것도 저장 (주소별) */
+function roofSave(){
+  const S = shade, id = cloudId(); if (!S?.roofs || !id) return;
+  const out = {};
+  S.roofs.forEach(b=>{ if (b.src === "user" || b.src === "userfl") out[b.key] = {h:b.h, fl:b.fl || 0, src:b.src}; });
+  if (S.flRef === "직접 입력") out._flH = S.flH;
+  try{ Object.keys(out).length ? localStorage.setItem(`archibase_roof_${id}`, JSON.stringify(out)) : localStorage.removeItem(`archibase_roof_${id}`); }catch(e){}
+  cloudPush("roof");
+}
+function roofRestore(){
+  const S = shade, id = cloudId(); if (!S?.roofs || !id) return;
+  let d = null; try{ d = JSON.parse(localStorage.getItem(`archibase_roof_${id}`) || "null"); }catch(e){}
+  if (!d) return;
+  if (d._flH > 0){ S.flH = d._flH; S.flRef = "직접 입력"; S.roofs.forEach(b=>{ if (b.src === "floors" && b.fl) b.h = Math.round(b.fl*S.flH*10)/10; }); }
+  S.roofs.forEach(b=>{ const o = d[b.key]; if (o){ b.h = +o.h; b.fl = o.fl || 0; b.src = o.src; b.est = false; } });
+}
+fbInit();
 /* 시간별 해 위치 → 칸마다 "그늘을 피하려면 지붕에서 몇 m 띄워야 하는지" 계산 */
 function shadeCompute(){
   const S = shade, rad = Math.PI/180;
@@ -2415,25 +4131,72 @@ function shadeCompute(){
     if (sp.alt > 1) S.times.push({m, alt: sp.alt, az: sp.az, tan: Math.tan(sp.alt*rad), ux: Math.sin(sp.az*rad), uy: Math.cos(sp.az*rad)});
   }
   const T = S.times, minTan = Math.min(...T.map(t=>t.tan));
-  S.blds.forEach(b=>b.hit = false);
+  const sols = S.sol || [];
+  sols.forEach(q=>{ q.cells.forEach(pc=>pc.z = solBase(pc.x, pc.y, q) + solSurf(q, pc.x, pc.y)); q.hmax = q.cells.reduce((m, pc)=>Math.max(m, pc.z), 0); });
+  S.blds.forEach(b=>{ b.hit = false; b.hmax = b.zones?.length ? Math.max(b.h, ...b.zones.map(q=>q.h)) : b.h; });
   S.cells.forEach(c=>{
-    const z = c.b.h;
+    const z = c.z = hzHeightAt(c.b, c.x, c.y);
+    c.under = sols.some(q=>inRing([c.x, c.y], q.ring)); // 패널 밑 지붕 (계산 제외)
+    const qc = c.under ? [] : sols.filter(q=>q.hmax > z && Math.hypot(q.cx - c.x, q.cy - c.y) - q.rr <= (q.hmax - z)/minTan);
     // 이 칸에 그림자를 드리울 수 있는 건물만 (지붕보다 높고, 그림자 길이 안에 있는 것)
-    const cand = S.blds.filter(o=>o !== c.b && o.h > z && !(o.mine && c.b.mine && o.src === "ledgermax" && c.b.src === "ledgermax") && Math.hypot(o.cx - c.x, o.cy - c.y) - o.rr <= (o.h - z)/minTan)
-      .filter(o=>!o.rings.some(r=>inRing([c.x, c.y], r)));
-    c.need = new Float32Array(T.length);
+    const cand = S.blds.filter(o=>(o !== c.b || o.zones?.length) && o.hmax > z && !(o.mine && c.b.mine && o.src === "ledgermax" && c.b.src === "ledgermax" && !o.zones?.length && !c.b.zones?.length) && Math.hypot(o.cx - c.x, o.cy - c.y) - o.rr <= (o.hmax - z)/minTan)
+      .filter(o=>o.zones?.length || !o.rings.some(r=>inRing([c.x, c.y], r)));
+    c.need = new Float32Array(T.length); c.pneed = new Float32Array(T.length);
     let mx = 0;
-    T.forEach((t, ti)=>{
+    if (!c.under) T.forEach((t, ti)=>{
       let v = 0;
       for (const o of cand){
+        if (o.zones?.length){ // 높이 영역이 있는 지붕: 해 쪽으로 쏜 선이 테두리를 넘는 곳마다 그 자리 높이로 확인 (높이가 바뀌는 곳이 가장 불리한 곳)
+          const ts = [];
+          for (const r of o.rings) rayAll(c.x, c.y, t.ux, t.uy, r, ts);
+          for (const q of o.zones) rayAll(c.x, c.y, t.ux, t.uy, q.ring, ts);
+          for (const d of ts){
+            const hh = hzHeightAt(o, c.x + t.ux*(d + 0.01), c.y + t.uy*(d + 0.01));
+            if (hh > 0){ const n = hh - d*t.tan - z; if (n > v){ v = n; o.hit = true; } }
+          }
+          continue;
+        }
         let dmin = Infinity;
         for (const r of o.rings){ const dd = rayHit(c.x, c.y, t.ux, t.uy, r); if (dd < dmin) dmin = dd; }
         if (dmin < Infinity){ const n = o.h - dmin*t.tan - z; if (n > v){ v = n; o.hit = true; } }
       }
+      let pv = 0; // 태양광 패널이 만드는 그늘
+      for (const q of qc){
+        const ts = rayAll(c.x, c.y, t.ux, t.uy, q.ring, []);
+        for (const d of ts) for (const e of [d - 0.01, d + 0.01]){
+          if (e <= 0) continue;
+          const hh = solHeightAt(q, c.x + t.ux*e, c.y + t.uy*e);
+          if (hh > 0){ const n = hh - e*t.tan - z; if (n > pv) pv = n; }
+        }
+      }
+      c.pneed[ti] = pv; if (pv > v) v = pv;
       c.need[ti] = v; if (v > mx) mx = v;
     });
     c.max = mx;
   });
+  // 패널 윗면 칸: 주변 건물·높이 영역·다른 구역 패널이 만드는 그늘
+  sols.forEach(q=>q.cells.forEach(pc=>{
+    const z = pc.z; pc.need = new Float32Array(T.length);
+    const cand = S.blds.filter(o=>o.hmax > z && Math.hypot(o.cx - pc.x, o.cy - pc.y) - o.rr <= (o.hmax - z)/minTan);
+    const qs = sols.filter(r=>r !== q && r.hmax > z && Math.hypot(r.cx - pc.x, r.cy - pc.y) - r.rr <= (r.hmax - z)/minTan);
+    T.forEach((t, ti)=>{
+      let v = 0;
+      for (const o of cand){
+        const ts = [];
+        for (const r of o.rings) rayAll(pc.x, pc.y, t.ux, t.uy, r, ts);
+        for (const zz of (o.zones || [])) rayAll(pc.x, pc.y, t.ux, t.uy, zz.ring, ts);
+        for (const d of ts){ const hh = hzHeightAt(o, pc.x + t.ux*(d + 0.01), pc.y + t.uy*(d + 0.01)); if (hh > 0){ const n = hh - d*t.tan - z; if (n > v){ v = n; o.hit = true; } } }
+      }
+      for (const r of qs){
+        for (const d of rayAll(pc.x, pc.y, t.ux, t.uy, r.ring, [])) for (const e of [d - 0.01, d + 0.01]){
+          if (e <= 0) continue;
+          const hh = solHeightAt(r, pc.x + t.ux*e, pc.y + t.uy*e);
+          if (hh > 0){ const n = hh - e*t.tan - z; if (n > v) v = n; }
+        }
+      }
+      pc.need[ti] = v;
+    });
+  }));
   const sl = $("#shT");
   sl.max = Math.max(0, T.length - 1);
   const noon = T.findIndex(t=>t.m >= 720);
@@ -2452,6 +4215,7 @@ function shadeDraw(){
   $("#shClock").textContent = hhmm(t.m);
   const dirs = ["북","북동","동","남동","남","남서","서","북서"];
   $("#shSun").textContent = `해 높이 ${t.alt.toFixed(1)}° · 방향 ${dirs[Math.round(t.az/45) % 8]}(${t.az.toFixed(0)}°)`;
+  { const sT = $("#solT"); if (sT){ sT.max = $("#shT").max; sT.value = ti; $("#solClock").textContent = hhmm(t.m); $("#solSun").textContent = $("#shSun").textContent; } }
 
   // 칸 색칠 — 그늘 없는 칸은 칠하지 않고, 그늘 지는 칸만 노랑→빨강으로
   const col = f=>{
@@ -2463,23 +4227,16 @@ function shadeDraw(){
   const maxNeed = Math.max(0.1, ...S.cells.map(c=>c.max - h));
   S.cells.forEach(c=>{
     let fill = "#000", op = 0;
-    if (mode === "need"){ const v = c.max - h; if (v > 1e-6){ fill = col(v / maxNeed); op = 0.55; } }
-    else if (mode === "now"){ if (c.need[ti] > h + 1e-6){ fill = "#3f51b5"; op = 0.55; } }
-    else { const n = c.need.reduce((s,v)=>s + (v > h + 1e-6 ? 1 : 0), 0); if (n){ fill = col(n / T.length); op = 0.55; } }
+    // 지도에는 칸 대신 그림자 모양으로 그림 (shadeGeoDraw)
     c.rect.setStyle({fillColor: fill, fillOpacity: op});
   });
-  // 선택 시각: 그늘을 만드는 건물의 그림자만 연하게
+  (S.sol || []).forEach(q=>q.cells.forEach(pc=>{
+    let fill = "#000", op = 0;
+    // 패널 그늘도 그림자 모양으로
+    pc.rect.setStyle({fillColor: fill, fillOpacity: op});
+  }));
   S.shadowLayer.clearLayers();
-  if (mode === "now"){
-    const z = S.minZ + h;
-    S.blds.filter(o=>o.hit && o.h > z).forEach(o=>{
-      const L = (o.h - z) / t.tan, dx = -t.ux*L, dy = -t.uy*L;
-      o.rings.forEach(r=>{
-        const hl = hull(r.concat(r.map(q=>[q[0] + dx, q[1] + dy])));
-        S.shadowLayer.addLayer(S.LF.polygon(hl.map(q=>S.toLL(q[0], q[1])), {renderer:S.rnd, stroke:false, fillColor:"#000", fillOpacity:0.18, interactive:false}));
-      });
-    });
-  }
+  shadeGeoDraw();
   const hitCol = $("#shHitCol")?.value || "#ff9800";
   S.blds.forEach(o=>{ if (!o.mine) o.layer.setStyle(o.hit ? {color:hitCol, weight:2.5, opacity:1} : {color:"#fff", weight:1, opacity:0.5}); });
 
@@ -2496,6 +4253,7 @@ function shadeDraw(){
   // 더 띄워야 하는 지붕만 글자표 (필지 밖으로 꺼내 지시선으로 연결)
   const tags = [];
   rows.forEach(r=>{
+    if ((S.sol || []).some(q=>q.bi === r.b.i)) return; // 태양광 구역이 있는 지붕은 구역 결과로 봄
     const sc = S.cells.filter(c=>c.b === r.b && c.max > h + 1e-6);
     if (sc.length * S.cell * S.cell < 6) return; // 6㎡ 미만 자투리는 글자 생략 (색칠은 그대로)
     const half = S.cell/2, hl = hull(sc.flatMap(c=>[[c.x-half, c.y-half], [c.x+half, c.y-half], [c.x+half, c.y+half], [c.x-half, c.y+half]]));
@@ -2506,25 +4264,23 @@ function shadeDraw(){
 
   // 범례
   const sw = c=>`<span style="display:inline-block;width:14px;height:14px;border-radius:2px;background:${c};vertical-align:-2px"></span>`;
-  $("#shLeg").innerHTML = mode === "now"
-    ? `${sw("#3f51b5")} ${hhmm(t.m)}에 그늘 지는 곳 · 색 없음 = 햇빛 · 연한 검정 = 주변 건물 그림자`
-    : mode === "need"
-    ? `색 없음 = 지금 설치 높이로 그늘 없음 · 색칠 = 더 띄워야 하는 높이 ${sw(col(0))} 조금 → ${sw(col(1))} 최대 ${mm(maxNeed)}`
-    : `색 없음 = 하루 종일 햇빛 · 색칠 = 그늘 지는 시간 ${sw(col(0))} 잠깐 → ${sw(col(1))} ${span.toFixed(0)}시간 내내`;
+  $("#shLeg").innerHTML = `${hhmm(t.m)} · ${sw("rgba(0,0,0,.45)")} 지붕·패널 위에 실제로 떨어지는 그림자`;
 
   // 결과
-  const tilt = +$("#shTilt").value || 0, len = (+$("#shLen").value || 0) / 1000, rise = len * Math.sin(tilt*rad2);
   const allMax = Math.max(0, ...rows.map(r=>r.max));
   const from = hhmm(T[0].m), to = hhmm(T[T.length-1].m);
   st.innerHTML = `지붕 ${S.roofs.length}조각 · ${S.cells.length.toLocaleString()}칸(칸 크기 ${S.cell}m) · 주변 건물 ${S.blds.length - S.roofs.length}동 계산 · 날짜 ${esc($("#shDate").value)}`;
   let head;
   if (allMax <= 1e-6) head = `<div class="shbig ok">✅ ${from}~${to} 그늘 없음 — 지붕에 바로 설치해도 됩니다.</div>`;
   else if (allMax <= h + 1e-6) head = `<div class="shbig ok">✅ 설치 높이 <b>${mm(h)}</b>면 ${from}~${to} 그늘 없음 <span class="hint">(최소 ${mm(allMax)})</span></div>`;
-  else head = `<div class="shbig ng">⚠ 지붕 전체를 그늘 없이 쓰려면 패널 아래 끝을 지붕에서 <b>${mm(allMax)}</b> 이상
-      <button type="button" class="xs" onclick="document.getElementById('shH').value='${Math.round(up(allMax)*1000)}';shadeDraw()">이 높이로 보기</button></div>`;
-  $("#shRes").innerHTML = head +
-    (rise > 0 ? `<div class="hint" style="margin:4px 0 0">경사 ${tilt}°, 세로 ${Math.round(len*1000).toLocaleString()}mm 패널이면 위쪽 끝은 지붕에서 약 ${Math.round((h + rise)*1000).toLocaleString()}mm (지금 설치 높이 ${Math.round(h*1000).toLocaleString()}mm 기준)</div>` : "") +
-    "";
+  else head = `<div class="shbig ng">⚠ ${from}~${to} 지붕에 그늘이 생깁니다. 지붕 전체를 그늘 없이 쓰려면 패널 아래 끝을 지붕에서 <b>${mm(allMax)}</b> 이상 띄워야 합니다.</div>`;
+  { // 답 상자를 누르면 지붕의 빨간 "그늘 · +○mm" 글자를 켜고 끔 (기본: 보임)
+    const on = $('#mapBar [data-lay="shtxt"]')?.checked !== false;
+    const ind = `<div class="shtog">${on ? "👁 지도에 빨간 「그늘 · +○mm」 글자 보이는 중 · 누르면 숨기기" : "🙈 지도 글자 숨김 · 누르면 보이기"}</div>`;
+    head = head.replace(/<\/div>\s*$/, ind + "</div>");
+  }
+  $("#shRes").innerHTML = head;
+  solResults(ti, h, hhmm);
 }
 const rad2 = Math.PI/180;
 
@@ -2578,15 +4334,17 @@ function renderSummary(errs, any){
       `<div class="srcnote">출처: 건축HUB 건축물대장정보 · 동수=표제부 · ${result.lots?.length > 1 ? `면적=지번 ${result.lots.length}개 합계` : `면적·건폐율·용적률=${recap ? "총괄표제부" : "표제부(총괄 없음)"}`}</div>`;
 
     /* 2. 동별 구조·지붕·높이 (빨간 강조 항목) — 옆 칸에 맞게 건물별 카드로 */
-    h += `<div class="bldtitle">동별 구조 · 지붕 · 높이${qm(MEMO_BLD)}</div><div class="srcnote">출처: 건축HUB 건축물대장정보 · 표제부</div>` + titles.map(t=>{
+    let grp = null;
+    h += `<div class="bldtitle">동별 구조 · 지붕 · 높이${qm(MEMO_BLD)}</div><div class="srcnote">출처: 건축HUB 건축물대장정보 · 표제부 · 지도에서 주건축물은 파란 실선, 부속건축물은 회색 점선</div>` + titles.map(t=>{
+      const g = isMain(t) ? "주건축물" : "부속건축물", gh = g !== grp ? `${grp ? "</details>" : ""}<details class="bgrpd"${isMain(t) ? " open" : ""}><summary class="bgrp ${isMain(t) ? "main" : "atch"}">${g} ${titles.filter(x=>isMain(x) === isMain(t)).length}동${isMain(t) ? "" : `<button type="button" class="xs ghost" data-atchname style="margin-left:auto">${$('#mapBar [data-lay="atchnames"]')?.checked ? "☑" : "☐"} 지도에 이름 보이기 (대장 없는 건물 포함)</button>`}</summary>` : ""; grp = g;
       const name = [t.bldNm, t.dongNm].map(x=>String(x??"").trim()).filter(Boolean).join(" ") || "-";
       const fl = [+t.grndFlrCnt ? `지상 ${val(t,"grndFlrCnt")}층` : "", +t.ugrndFlrCnt ? `지하 ${val(t,"ugrndFlrCnt")}층` : ""].filter(Boolean).join(" / ");
-      return `<div class="bcard pick" data-bti="${R.getBrTitleInfo.items.indexOf(t)}"><div>${result.lots?.length > 1 ? `<span class="hint">[${esc(t._jibun || "")}]</span> ` : ""}<b>${esc(name)}</b> <span class="hint">${esc([val(t,"mainAtchGbCdNm"), join2(val(t,"mainPurpsCdNm"), val(t,"etcPurps"))].filter(Boolean).join(" · "))}</span></div>
+      return gh + `<div class="bcard pick ${isMain(t) ? "main" : "atch"}" data-bti="${R.getBrTitleInfo.items.indexOf(t)}"><div>${result.lots?.length > 1 ? `<span class="hint">[${esc(t._jibun || "")}]</span> ` : ""}<b>${esc(name)}</b> <span class="hint">${esc([val(t,"mainAtchGbCdNm"), join2(val(t,"mainPurpsCdNm"), val(t,"etcPurps"))].filter(Boolean).join(" · "))}</span></div>
         <div class="hlrow"><span class="k">✔ 구조</span><span class="v">${esc(join2(val(t,"strctCdNm"), val(t,"etcStrct")) || "-")}</span>
           <span class="k">✔ 지붕</span><span class="v">${esc(join2(val(t,"roofCdNm"), val(t,"etcRoof")) || "-")}</span>
           <span class="k">✔ 높이</span><span class="v">${esc(val(t,"heit") ? val(t,"heit") + "m" : "-")}</span></div>
         <div class="hint">${esc([fl, val(t,"archArea") ? "건축면적 " + val(t,"archArea") + "㎡" : "", val(t,"totArea") ? "연면적 " + val(t,"totArea") + "㎡" : "", val(t,"useAprDay") ? "사용승인 " + val(t,"useAprDay") : ""].filter(Boolean).join(" · "))}</div></div>`;
-    }).join("");
+    }).join("") + (grp ? "</details>" : "");
   }
 
   /* 3. 가설건축물 요약 */
