@@ -446,7 +446,8 @@ details.issuehelp ul{position:absolute;right:0;top:34px;z-index:1500;width:min(4
   const KEY = "archibase_pw_ok";
   const box = document.getElementById("pwLock");
   const open = ()=>{ box.remove(); document.documentElement.style.overflow = ""; };
-  let ok = false; try { ok = localStorage.getItem(KEY) === H; } catch(e){}
+  try { localStorage.removeItem(KEY); } catch(e){} // 예전 방식(브라우저에 계속 기억) 지우기
+  let ok = false; try { ok = sessionStorage.getItem(KEY) === H; } catch(e){} // 이 창(탭)을 닫기 전까지만 기억
   if (ok){ open(); return; }
   document.documentElement.style.overflow = "hidden";
   const hash = async t=>{
@@ -457,7 +458,7 @@ details.issuehelp ul{position:absolute;right:0;top:34px;z-index:1500;width:min(4
   document.getElementById("pwForm").addEventListener("submit", async e=>{
     e.preventDefault();
     const inp = document.getElementById("pwIn");
-    if (await hash(inp.value.trim()) === H){ try { localStorage.setItem(KEY, H); } catch(e){} open(); }
+    if (await hash(inp.value.trim()) === H){ try { sessionStorage.setItem(KEY, H); } catch(e){} open(); }
     else { document.getElementById("pwMsg").textContent = "암호가 맞지 않습니다"; inp.value = ""; inp.focus(); }
   });
 })();
