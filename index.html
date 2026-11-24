@@ -451,7 +451,7 @@ details.issuehelp ul{position:absolute;right:0;top:34px;z-index:1500;width:min(4
   document.documentElement.style.overflow = "hidden";
   const hash = async t=>{
     if (window.crypto?.subtle){ const b = await crypto.subtle.digest("SHA-256", new TextEncoder().encode(t)); return [...new Uint8Array(b)].map(x=>x.toString(16).padStart(2,"0")).join(""); }
-    return t === "0526" ? H : "";
+    return ""; // 암호 확인 기능이 없는 브라우저 — 암호 글자를 코드에 두지 않음
   };
   setTimeout(()=>document.getElementById("pwIn")?.focus(), 50);
   document.getElementById("pwForm").addEventListener("submit", async e=>{
@@ -525,7 +525,7 @@ function keyState(){
   if (!ok && $("#keyBox").hidden) openKeyBox();
 }
 keyState();
-/* API 인증키 설정 열기는 암호(9939) 확인 후 — 페이지를 열어 둔 동안 한 번만 묻기 */
+/* API 인증키 설정 열기는 암호 확인 후 — 페이지를 열어 둔 동안 한 번만 묻기 */
 var keyUnlocked = false;
 function openKeyBox(){
   if (keyUnlocked){ $("#keyBox").hidden = false; return; }
@@ -548,7 +548,6 @@ function openKeyBox(){
     const v = inp.value.trim();
     let h = "";
     if (window.crypto?.subtle){ const b = await crypto.subtle.digest("SHA-256", new TextEncoder().encode(v)); h = [...new Uint8Array(b)].map(x=>x.toString(16).padStart(2,"0")).join(""); }
-    else if (v === "9939") h = H;
     if (h === H){ keyUnlocked = true; close(); $("#keyBox").hidden = false; }
     else { f.querySelector("[data-m]").textContent = "암호가 맞지 않습니다"; inp.value = ""; inp.focus(); }
   });
